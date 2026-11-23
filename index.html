@@ -3,38 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TKJ Learning Platform — Teknik Komputer &amp; Jaringan</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <title>TKJ LEARNING PLATFORM — Belajar Jaringan, Hardware & Kabel LAN Bareng BUNBYTE 🐰</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
     :root {
-      --navy: #0b2545;
-      --navy-mid: #134074;
-      --royal: #1d4ed8;
-      --blue: #2563eb;
-      --cyan: #06b6d4;
-      --cyan-light: #e0f2fe;
-      --bg-page: #f4f7fb;
-      --bg-card: #ffffff;
-      --bg-subtle: #f8fafc;
-      --text-main: #0f172a;
-      --text-muted: #475569;
-      --text-light: #64748b;
-      --border: #e2e8f0;
-      --border-strong: #cbd5e1;
-      --success: #059669;
-      --success-bg: #ecfdf5;
-      --warning: #d97706;
-      --warning-bg: #fffbeb;
-      --danger: #dc2626;
-      --danger-bg: #fef2f2;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
-      --shadow-md: 0 8px 24px rgba(11, 37, 69, 0.08);
-      --shadow-lg: 0 16px 36px rgba(11, 37, 69, 0.14);
+      --bg-cream: #FFFDF9;
+      --cream-soft: #FAF3E8;
+      --pink-baby: #FFD6E5;
+      --pink-main: #FF8FB7;
+      --pink-dark: #E0578A;
+      --matcha-light: #E4F2E1;
+      --matcha-main: #88B884;
+      --matcha-dark: #4E7A4B;
+      --white: #FFFFFF;
+      --text-dark: #4A3B42;
+      --text-muted: #7C6A72;
+      --shadow-soft: 0 12px 28px rgba(224, 87, 138, 0.12);
     }
 
     * {
@@ -44,2789 +31,1945 @@
     }
 
     body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
+      font-family: 'Nunito', sans-serif;
+      background: linear-gradient(180deg, var(--pink-baby) 0%, var(--bg-cream) 22%, var(--cream-soft) 100%);
+      color: var(--text-dark);
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
-    h1, h2, h3, h4, .brand-font {
-      font-family: 'Poppins', 'Inter', sans-serif;
-      color: var(--navy);
-      line-height: 1.25;
+    h1, h2, h3, .brand-title {
+      font-family: 'Fredoka', sans-serif;
     }
 
-    button, input, select {
-      font-family: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    /* Top Navigation */
-    .topbar {
+    /* Navbar */
+    header {
       position: sticky;
       top: 0;
-      z-index: 100;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      box-shadow: var(--shadow-sm);
+      z-index: 45;
+      background: rgba(255, 253, 249, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 3px solid var(--pink-baby);
     }
 
-    .topbar-inner {
-      max-width: 1240px;
+    .nav-wrap {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 0 20px;
-      height: 68px;
+      padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      background: none;
-      border: none;
-      text-align: left;
-    }
-
-    .brand-badge {
-      width: 42px;
-      height: 42px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, var(--royal), var(--cyan));
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      font-size: 0.95rem;
-      letter-spacing: 0.5px;
-      box-shadow: 0 4px 12px rgba(29, 78, 216, 0.25);
-      flex-shrink: 0;
+      gap: 10px;
+      flex-wrap: wrap;
     }
 
     .brand-title {
+      font-size: 1.28rem;
       font-weight: 700;
-      font-size: 1rem;
-      color: var(--navy);
-      display: block;
+      color: var(--pink-dark);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .brand-sub {
-      font-size: 0.72rem;
-      color: var(--text-light);
-      display: block;
-      font-weight: 500;
+    .brand-pill {
+      background: var(--matcha-light);
+      color: var(--matcha-dark);
+      font-size: 0.76rem;
+      padding: 3px 10px;
+      border-radius: 999px;
+      border: 1.5px solid var(--matcha-main);
     }
 
     .nav-links {
       display: flex;
-      align-items: center;
-      gap: 6px;
+      gap: 4px;
+      flex-wrap: wrap;
     }
 
     .nav-btn {
       background: transparent;
-      border: 1px solid transparent;
-      color: var(--text-muted);
-      font-weight: 500;
-      font-size: 0.9rem;
-      padding: 8px 14px;
-      border-radius: var(--radius-sm);
-      transition: all 0.2s ease;
-      white-space: nowrap;
-    }
-
-    .nav-btn:hover {
-      color: var(--royal);
-      background: var(--cyan-light);
-    }
-
-    .nav-btn.active {
-      color: #fff;
-      background: linear-gradient(135deg, var(--navy-mid), var(--royal));
-      font-weight: 600;
-      box-shadow: 0 2px 8px rgba(29, 78, 216, 0.25);
-    }
-
-    .topbar-right {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .pill-progress {
-      background: var(--cyan-light);
-      color: var(--navy-mid);
-      border: 1px solid #bae6fd;
-      padding: 6px 12px;
+      border: none;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.88rem;
+      color: var(--text-dark);
+      padding: 7px 12px;
       border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      white-space: nowrap;
-    }
-
-    .btn-ghost-sm {
-      background: #fff;
-      border: 1px solid var(--border-strong);
-      color: var(--navy);
-      padding: 6px 11px;
-      border-radius: var(--radius-sm);
-      font-size: 0.78rem;
-      font-weight: 600;
+      cursor: pointer;
       transition: all 0.2s ease;
     }
 
-    .btn-ghost-sm:hover {
-      border-color: var(--royal);
-      color: var(--royal);
-      background: var(--bg-subtle);
+    .nav-btn:hover, .nav-btn.active {
+      background: var(--pink-baby);
+      color: var(--pink-dark);
     }
 
-    .mobile-menu-btn {
-      display: none;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      color: var(--navy);
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-sm);
-      font-size: 1.2rem;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .mobile-drawer {
-      display: none;
-      flex-direction: column;
-      padding: 12px 20px 18px;
-      background: #fff;
-      border-bottom: 1px solid var(--border);
-      gap: 6px;
-    }
-
-    .mobile-drawer.open {
-      display: flex;
-    }
-
-    /* Container */
-    .container {
-      max-width: 1240px;
+    /* Main Container */
+    main {
+      max-width: 1120px;
       margin: 0 auto;
-      padding: 28px 20px 64px;
+      padding: 26px 18px 115px;
     }
 
-    /* Hero Section */
-    .hero {
-      background: linear-gradient(125deg, var(--navy) 0%, var(--navy-mid) 52%, #0e7490 100%);
-      border-radius: var(--radius-lg);
-      padding: 40px 36px;
-      color: #fff;
-      box-shadow: var(--shadow-lg);
-      position: relative;
-      overflow: hidden;
-      margin-bottom: 28px;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -80px;
-      top: -80px;
-      width: 300px;
-      height: 300px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(6, 182, 212, 0.25), transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-grid {
+    /* Hero */
+    .hero-card {
+      background: var(--white);
+      border: 3px solid var(--pink-baby);
+      border-radius: 32px;
+      padding: 34px;
+      box-shadow: var(--shadow-soft);
       display: grid;
-      grid-template-columns: 1.45fr 0.85fr;
-      gap: 28px;
+      grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      position: relative;
-      z-index: 1;
+      gap: 26px;
+      margin-bottom: 38px;
     }
 
     .hero-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(255, 255, 255, 0.14);
-      border: 1px solid rgba(255, 255, 255, 0.24);
-      color: #e0f2fe;
-      padding: 5px 12px;
+      display: inline-block;
+      background: var(--matcha-light);
+      color: var(--matcha-dark);
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 14px;
       border-radius: 999px;
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.4px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
-    .hero h1 {
-      color: #fff;
-      font-size: clamp(1.75rem, 3.3vw, 2.5rem);
-      font-weight: 700;
-      margin-bottom: 14px;
+    .hero-card h1 {
+      font-size: 2.3rem;
+      line-height: 1.18;
+      color: var(--pink-dark);
+      margin-bottom: 12px;
     }
 
-    .hero h1 span {
-      color: #38bdf8;
-    }
-
-    .hero p {
-      color: #e2e8f0;
-      font-size: 0.98rem;
-      max-width: 620px;
-      margin-bottom: 22px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn-primary {
-      background: #fff;
-      color: var(--navy);
-      border: none;
-      padding: 11px 20px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: transform 0.15s ease, box-shadow 0.2s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-1px);
-      background: #f0f9ff;
-    }
-
-    .btn-secondary-light {
-      background: rgba(255, 255, 255, 0.12);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.35);
-      padding: 11px 18px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.92rem;
-      transition: background 0.2s ease;
-    }
-
-    .btn-secondary-light:hover {
-      background: rgba(255, 255, 255, 0.2);
-    }
-
-    .btn-royal {
-      background: linear-gradient(135deg, var(--royal), var(--blue));
-      color: #fff;
-      border: none;
-      padding: 10px 18px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.88rem;
-      transition: opacity 0.2s ease, transform 0.15s ease;
-    }
-
-    .btn-royal:hover {
-      opacity: 0.94;
-      transform: translateY(-1px);
-    }
-
-    .btn-outline {
-      background: #fff;
-      color: var(--navy);
-      border: 1px solid var(--border-strong);
-      padding: 9px 15px;
-      border-radius: var(--radius-sm);
-      font-weight: 600;
-      font-size: 0.86rem;
-      transition: all 0.2s ease;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--royal);
-      color: var(--royal);
-    }
-
-    .btn-outline.active {
-      background: var(--cyan-light);
-      border-color: var(--royal);
-      color: var(--royal);
-    }
-
-    /* RUTI Companion Card */
-    .ruti-hero-card {
-      background: rgba(255, 255, 255, 0.97);
-      color: var(--text-main);
-      border-radius: var(--radius-md);
-      padding: 18px;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      gap: 10px;
-    }
-
-    .ruti-companion-bar {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-left: 4px solid var(--royal);
-      border-radius: var(--radius-md);
-      padding: 14px 18px;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      box-shadow: var(--shadow-sm);
-      margin-bottom: 24px;
-    }
-
-    .ruti-speech-title {
-      font-weight: 700;
-      font-size: 0.85rem;
-      color: var(--royal);
-      margin-bottom: 2px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .ruti-speech-text {
-      font-size: 0.88rem;
+    .hero-card p {
+      font-size: 1rem;
+      line-height: 1.62;
       color: var(--text-muted);
-    }
-
-    /* Cards & Grids */
-    .section-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 18px;
-    }
-
-    .section-kicker {
-      font-size: 0.75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
-      color: var(--royal);
-      margin-bottom: 4px;
-    }
-
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 700;
-    }
-
-    .card {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 20px;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 18px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    /* Badges & Status */
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      font-size: 0.74rem;
-      font-weight: 600;
-    }
-
-    .badge-not-started {
-      background: #f1f5f9;
-      color: #475569;
-    }
-
-    .badge-in-progress {
-      background: var(--warning-bg);
-      color: var(--warning);
-      border: 1px solid #fde68a;
-    }
-
-    .badge-completed {
-      background: var(--success-bg);
-      color: var(--success);
-      border: 1px solid #a7f3d0;
-    }
-
-    .badge-blue {
-      background: var(--cyan-light);
-      color: var(--navy-mid);
-    }
-
-    /* Progress Bar */
-    .progress-track {
-      width: 100%;
-      height: 9px;
-      background: #e2e8f0;
-      border-radius: 999px;
-      overflow: hidden;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--royal), var(--cyan));
-      border-radius: 999px;
-      transition: width 0.35s ease;
-    }
-
-    /* Module Card */
-    .module-card {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      gap: 14px;
-      transition: transform 0.18s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-    }
-
-    .module-card:hover {
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-      border-color: #93c5fd;
-    }
-
-    .module-num {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--royal);
-      background: var(--cyan-light);
-      padding: 3px 9px;
-      border-radius: 6px;
-    }
-
-    .module-topics {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: 0.84rem;
-      color: var(--text-muted);
-    }
-
-    .module-topics li::before {
-      content: "• ";
-      color: var(--royal);
-      font-weight: 700;
-    }
-
-    /* Workspace Tabs inside Module */
-    .subtabs {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 12px;
       margin-bottom: 20px;
     }
 
-    .subtab-btn {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      color: var(--text-muted);
-      padding: 7px 14px;
-      border-radius: var(--radius-sm);
-      font-size: 0.84rem;
-      font-weight: 600;
+    .btn-pink {
+      background: var(--pink-main);
+      color: var(--white);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.98rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 16px;
+      cursor: pointer;
+      box-shadow: 0 4px 0 var(--pink-dark);
       transition: all 0.15s ease;
     }
 
-    .subtab-btn.active {
-      background: var(--navy);
-      color: #fff;
-      border-color: var(--navy);
+    .btn-pink:hover {
+      background: var(--pink-dark);
+      transform: translateY(-2px);
     }
 
-    /* Simulation Areas */
-    .sim-box {
-      background: var(--bg-subtle);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-md);
-      padding: 18px;
+    .btn-pink:active {
+      transform: translateY(3px);
+      box-shadow: 0 2px 0 var(--pink-dark);
     }
 
-    .canvas-stage {
-      position: relative;
-      background: #f8fafc;
-      background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
-      background-size: 18px 18px;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      min-height: 290px;
-      overflow: hidden;
-    }
-
-    .node-chip {
-      position: absolute;
-      transform: translate(-50%, -50%);
-      background: #fff;
-      border: 2px solid var(--navy-mid);
-      border-radius: var(--radius-sm);
-      padding: 8px 12px;
-      font-size: 0.78rem;
-      font-weight: 700;
-      color: var(--navy);
-      box-shadow: var(--shadow-sm);
+    .btn-matcha {
+      background: var(--matcha-light);
+      color: var(--matcha-dark);
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.92rem;
+      padding: 9px 15px;
+      border: 2px solid var(--matcha-main);
+      border-radius: 15px;
       cursor: pointer;
-      user-select: none;
-      z-index: 2;
-      text-align: center;
-      min-width: 96px;
+      transition: all 0.15s ease;
     }
 
-    .node-chip.selected {
-      border-color: var(--cyan);
-      box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.3);
-      background: #f0f9ff;
+    .btn-matcha:hover, .btn-matcha.active-mode {
+      background: var(--matcha-main);
+      color: var(--white);
     }
 
-    .node-chip small {
-      display: block;
-      font-weight: 500;
-      color: var(--text-light);
-      font-size: 0.68rem;
-    }
-
-    /* Component Hotspot Diagram */
-    .mobo-board {
-      position: relative;
-      background: linear-gradient(145deg, #0f2942, #183a5a);
-      border: 2px solid #2b5882;
-      border-radius: var(--radius-md);
-      padding: 18px;
-      min-height: 310px;
-      color: #fff;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .comp-hotspot {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1.5px solid rgba(125, 211, 252, 0.35);
-      border-radius: var(--radius-sm);
-      padding: 10px 12px;
-      text-align: left;
-      color: #fff;
-      transition: all 0.18s ease;
-    }
-
-    .comp-hotspot:hover, .comp-hotspot.active {
-      background: rgba(6, 182, 212, 0.24);
-      border-color: #38bdf8;
-      transform: translateY(-1px);
-    }
-
-    .comp-hotspot strong {
-      display: block;
-      font-size: 0.85rem;
-      color: #e0f2fe;
-    }
-
-    .comp-hotspot span {
-      font-size: 0.72rem;
-      color: #bae6fd;
-    }
-
-    /* UTP Wiring Simulator */
-    .rj45-connector {
-      background: #fff;
-      border: 2px solid var(--border-strong);
-      border-radius: var(--radius-md);
-      padding: 14px;
-    }
-
-    .pin-row {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 6px;
-      margin-top: 8px;
-    }
-
-    .pin-slot {
-      border: 1px solid var(--border-strong);
-      border-radius: 6px;
-      padding: 6px 4px;
-      text-align: center;
-      font-size: 0.7rem;
-      background: var(--bg-subtle);
-    }
-
-    .wire-swatch {
-      width: 100%;
-      height: 16px;
-      border-radius: 4px;
-      border: 1px solid rgba(15, 23, 42, 0.25);
-      margin-bottom: 4px;
-    }
-
-    .tester-leds {
-      display: grid;
-      grid-template-columns: repeat(8, 1fr);
-      gap: 8px;
-      background: #0f172a;
-      padding: 14px;
-      border-radius: var(--radius-sm);
-      margin-top: 12px;
-    }
-
-    .led-unit {
+    .mascot-stage {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 5px;
-      color: #cbd5e1;
-      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    .speech-bubble {
+      background: var(--cream-soft);
+      border: 2.5px solid var(--pink-main);
+      border-radius: 20px;
+      padding: 11px 16px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      margin-bottom: 12px;
+      position: relative;
+      box-shadow: 0 6px 16px rgba(255, 143, 183, 0.16);
+      max-width: 280px;
+    }
+
+    .speech-bubble::after {
+      content: '';
+      position: absolute;
+      bottom: -11px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 11px 10px 0;
+      border-style: solid;
+      border-color: var(--pink-main) transparent transparent;
+    }
+
+    .bunbyte-float {
+      animation: floatBunny 3s ease-in-out infinite;
+      cursor: pointer;
+    }
+
+    @keyframes floatBunny {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+
+    .sec-head {
+      text-align: center;
+      margin-bottom: 22px;
+    }
+
+    .sec-head h2 {
+      font-size: 1.88rem;
+      color: var(--pink-dark);
+      margin-bottom: 6px;
+    }
+
+    .sec-head p {
+      color: var(--text-muted);
       font-weight: 600;
+    }
+
+    /* Grid 5 Bab Materi */
+    .chapters-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .chapter-card {
+      background: var(--white);
+      border: 2.5px solid var(--pink-baby);
+      border-radius: 24px;
+      padding: 18px;
+      cursor: pointer;
+      transition: all 0.22s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 8px 20px rgba(74, 59, 66, 0.05);
+    }
+
+    .chapter-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--pink-main);
+    }
+
+    .chapter-card.active {
+      background: #FFF7FA;
+      border-color: var(--pink-dark);
+      box-shadow: 0 10px 24px rgba(224, 87, 138, 0.16);
+    }
+
+    .bab-tag {
+      display: inline-block;
+      background: var(--matcha-light);
+      color: var(--matcha-dark);
+      font-weight: 800;
+      font-size: 0.76rem;
+      padding: 4px 11px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+
+    .chapter-card h3 {
+      font-size: 1.12rem;
+      color: var(--text-dark);
+      margin-bottom: 7px;
+    }
+
+    .chapter-card p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.48;
+      margin-bottom: 12px;
+    }
+
+    .chapter-link {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--pink-dark);
+    }
+
+    /* Panel Utama */
+    .panel-box {
+      background: var(--white);
+      border: 3px solid var(--pink-baby);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 34px;
+    }
+
+    .panel-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 15px;
+      border-bottom: 2px dashed var(--pink-baby);
+      margin-bottom: 20px;
+    }
+
+    .panel-box h2 {
+      font-size: 1.68rem;
+      color: var(--pink-dark);
+      margin-bottom: 12px;
+    }
+
+    .materi-summary {
+      background: var(--cream-soft);
+      border-left: 5px solid var(--matcha-main);
+      padding: 15px 18px;
+      border-radius: 14px;
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    .materi-points {
+      margin: 0 0 20px 20px;
+      line-height: 1.72;
+    }
+
+    .materi-points li {
+      margin-bottom: 7px;
+    }
+
+    code {
+      background: var(--matcha-light);
+      color: var(--matcha-dark);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    /* Galeri Komponen Komputer */
+    .hw-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 12px;
+      margin: 14px 0 22px;
+    }
+
+    .hw-card {
+      background: var(--bg-cream);
+      border: 2px solid var(--pink-baby);
+      border-radius: 18px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .hw-card h4 {
+      font-family: 'Fredoka', sans-serif;
+      color: var(--pink-dark);
+      font-size: 0.96rem;
+      margin: 6px 0 3px;
+    }
+
+    .hw-card p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.38;
+    }
+
+    .bunbyte-tip-bar {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: var(--matcha-light);
+      border: 2px solid var(--matcha-main);
+      border-radius: 22px;
+      padding: 14px 18px;
+      margin-top: 10px;
+    }
+
+    .bunbyte-tip-bar strong {
+      color: var(--matcha-dark);
+      display: block;
+      font-family: 'Fredoka', sans-serif;
+      font-size: 0.98rem;
+      margin-bottom: 2px;
+    }
+
+    .bunbyte-tip-bar span {
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      font-weight: 700;
+    }
+
+    /* Game Tebak Komponen */
+    .tebak-box {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 22px;
+      align-items: center;
+      background: var(--bg-cream);
+      border: 2.5px solid var(--pink-baby);
+      border-radius: 22px;
+      padding: 20px;
+      margin-top: 14px;
+    }
+
+    .tebak-img-frame {
+      background: var(--white);
+      border: 2px dashed var(--pink-main);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    /* Game OSI Pancake Stack */
+    .pancake-arena {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 22px;
+      align-items: start;
+      margin-top: 14px;
+    }
+
+    .pancake-pool {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .pancake-choice {
+      background: var(--cream-soft);
+      border: 2px solid var(--pink-main);
+      border-radius: 15px;
+      padding: 10px 14px;
+      font-weight: 800;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.18s;
+    }
+
+    .pancake-choice:hover:not(:disabled) {
+      background: var(--pink-baby);
+      transform: translateX(3px);
+    }
+
+    .pancake-choice:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .pancake-plate {
+      background: var(--cream-soft);
+      border: 2.5px solid var(--matcha-main);
+      border-radius: 22px;
+      padding: 18px;
+      min-height: 360px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .stack-list {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 6px;
+      margin: 12px 0;
+    }
+
+    .pancake-layer {
+      background: linear-gradient(180deg, #FDE68A 0%, #F59E0B 100%);
+      color: #4A2C11;
+      border: 2px solid #B45309;
+      border-radius: 999px;
+      padding: 7px 14px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 0.84rem;
+      box-shadow: 0 3px 0 rgba(180, 83, 9, 0.35);
+    }
+
+    .pancake-layer.top-syrup {
+      background: linear-gradient(180deg, #FF8FB7 0%, #E0578A 100%);
+      color: #FFFFFF;
+      border-color: #9D174D;
+    }
+
+    .plate-base {
+      height: 14px;
+      background: var(--white);
+      border: 2.5px solid var(--matcha-dark);
+      border-radius: 999px;
+      margin-top: 8px;
+    }
+
+    /* Simulasi Kabel LAN */
+    .rj45-head {
+      background: var(--cream-soft);
+      border: 2.5px solid var(--pink-main);
+      border-radius: 22px;
+      padding: 18px 14px 14px;
+      margin: 16px 0;
+    }
+
+    .rj45-label {
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--pink-dark);
+      margin-bottom: 12px;
+    }
+
+    .utp-slots {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+    }
+
+    .slot {
+      background: var(--white);
+      border: 2px solid var(--pink-baby);
+      border-radius: 14px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 4px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .slot:hover {
+      transform: translateY(-3px);
+    }
+
+    .wire-bar {
+      width: 20px;
+      height: 44px;
+      border-radius: 6px;
+      border: 1px solid rgba(74, 59, 66, 0.25);
+    }
+
+    .wire-palette {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 15px 0 18px;
+    }
+
+    .wire-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--bg-cream);
+      border: 2px solid var(--pink-baby);
+      padding: 7px 13px;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.84rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .wire-btn:hover:not(:disabled) {
+      background: #FFF2F7;
+      border-color: var(--pink-main);
+      transform: scale(1.04);
+    }
+
+    .wire-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .dot-color {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .c-putih-oranye { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #f97316 4px, #f97316 8px); }
+    .c-oranye       { background: #f97316; }
+    .c-putih-hijau  { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #22c55e 4px, #22c55e 8px); }
+    .c-biru         { background: #2563eb; }
+    .c-putih-biru   { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #2563eb 4px, #2563eb 8px); }
+    .c-hijau        { background: #22c55e; }
+    .c-putih-coklat { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #78350f 4px, #78350f 8px); }
+    .c-coklat       { background: #78350f; }
+
+    .lan-tester {
+      background: var(--matcha-light);
+      border: 2.5px solid var(--matcha-main);
+      border-radius: 20px;
+      padding: 15px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .led-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .led-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--matcha-dark);
     }
 
     .led-bulb {
       width: 18px;
       height: 18px;
       border-radius: 50%;
-      background: #334155;
-      border: 2px solid #475569;
-      transition: all 0.2s ease;
+      background: var(--white);
+      border: 2px solid var(--matcha-main);
+      transition: all 0.2s;
     }
 
-    .led-bulb.on-green {
-      background: #10b981;
-      border-color: #6ee7b7;
-      box-shadow: 0 0 10px #10b981;
+    .led-bulb.on {
+      background: #22c55e;
+      box-shadow: 0 0 12px #22c55e;
+      border-color: var(--matcha-dark);
     }
 
-    .led-bulb.on-red {
-      background: #ef4444;
-      border-color: #fca5a5;
-      box-shadow: 0 0 10px #ef4444;
+    /* Kuis */
+    .quiz-layout {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 24px;
+      align-items: center;
     }
 
-    /* OSI Stack */
-    .osi-stack {
+    .quiz-question {
+      font-size: 1.15rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: var(--text-dark);
+    }
+
+    .options-list {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .opt-btn {
+      background: var(--bg-cream);
+      border: 2.5px solid var(--pink-baby);
+      border-radius: 15px;
+      padding: 12px 16px;
+      text-align: left;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.94rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .opt-btn:hover:not(:disabled) {
+      background: #FFF2F7;
+      border-color: var(--pink-main);
+    }
+
+    .opt-btn.correct {
+      background: var(--matcha-light);
+      border-color: var(--matcha-main);
+      color: var(--matcha-dark);
+    }
+
+    .opt-btn.wrong {
+      background: #FFE4EC;
+      border-color: var(--pink-dark);
+      color: #9F1239;
+    }
+
+    /* Achievement */
+    .badges-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .badge-item {
+      background: var(--cream-soft);
+      border: 2px dashed var(--pink-main);
+      border-radius: 20px;
+      padding: 16px;
+      text-align: center;
+      opacity: 0.65;
+      transition: all 0.25s;
+    }
+
+    .badge-item.unlocked {
+      background: var(--matcha-light);
+      border: 2.5px solid var(--matcha-main);
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    .badge-icon {
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    /* Sudut BUNBYTE */
+    .corner-buddy {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 60;
       display: flex;
       flex-direction: column;
-      gap: 8px;
+      align-items: flex-end;
+      pointer-events: none;
     }
 
-    .osi-layer-bar {
+    .corner-bubble {
+      pointer-events: auto;
+      background: var(--white);
+      border: 2.5px solid var(--matcha-main);
+      color: var(--text-dark);
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 8px 13px;
+      border-radius: 18px;
+      margin-bottom: 8px;
+      box-shadow: 0 8px 20px rgba(74, 59, 66, 0.12);
+      max-width: 215px;
+      text-align: center;
+    }
+
+    .corner-avatar {
+      pointer-events: auto;
+      background: var(--white);
+      border: 3px solid var(--pink-main);
+      border-radius: 50%;
+      width: 72px;
+      height: 72px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 11px 14px;
-      border-radius: var(--radius-sm);
-      border: 1.5px solid var(--border);
-      background: #fff;
-      text-align: left;
-      transition: all 0.18s ease;
-    }
-
-    .osi-layer-bar:hover, .osi-layer-bar.active {
-      border-color: var(--royal);
-      background: #f0f9ff;
-    }
-
-    .osi-layer-bar.packet-active {
-      background: linear-gradient(90deg, #dbeafe, #cffafe);
-      border-color: var(--cyan);
-      transform: translateX(4px);
-    }
-
-    /* Quiz & Feedback */
-    .quiz-option {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      padding: 10px 14px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
-      background: #fff;
-      cursor: pointer;
-      font-size: 0.88rem;
-      transition: border-color 0.15s ease, background 0.15s ease;
-    }
-
-    .quiz-option:hover {
-      border-color: var(--royal);
-      background: var(--bg-subtle);
-    }
-
-    .feedback-box {
-      padding: 12px 14px;
-      border-radius: var(--radius-sm);
-      font-size: 0.86rem;
-      margin-top: 12px;
-    }
-
-    .feedback-pass {
-      background: var(--success-bg);
-      border: 1px solid #a7f3d0;
-      color: #065f46;
-    }
-
-    .feedback-fail {
-      background: var(--danger-bg);
-      border: 1px solid #fecaca;
-      color: #991b1b;
-    }
-
-    .feedback-info {
-      background: var(--cyan-light);
-      border: 1px solid #bae6fd;
-      color: var(--navy);
-    }
-
-    /* Modal for Legacy Admin / Integration */
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(15, 23, 42, 0.55);
-      display: none;
       align-items: center;
       justify-content: center;
-      padding: 16px;
-      z-index: 200;
+      box-shadow: 0 10px 24px rgba(224, 87, 138, 0.24);
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .modal-backdrop.open {
-      display: flex;
+    .corner-avatar:hover {
+      transform: scale(1.08);
     }
 
-    .modal-card {
-      background: #fff;
-      border-radius: var(--radius-md);
-      max-width: 540px;
-      width: 100%;
-      padding: 22px;
-      box-shadow: var(--shadow-lg);
-      max-height: 88vh;
-      overflow-y: auto;
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -10px;
+      z-index: 100;
+      border-radius: 3px;
+      animation: fallConfetti 2.8s linear forwards;
     }
 
-    .field-group {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      margin-bottom: 12px;
-    }
-
-    .field-group label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--navy);
-    }
-
-    .field-group input, .field-group select {
-      padding: 8px 11px;
-      border: 1px solid var(--border-strong);
-      border-radius: var(--radius-sm);
-      font-size: 0.86rem;
-      background: #fff;
-    }
-
-    /* Footer */
-    footer {
-      background: var(--navy);
-      color: #cbd5e1;
-      padding: 28px 20px;
-      margin-top: 48px;
-      font-size: 0.84rem;
-    }
-
-    .footer-inner {
-      max-width: 1240px;
-      margin: 0 auto;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-    }
-
-    @media (max-width: 960px) {
-      .hero-grid, .grid-3, .grid-4 {
-        grid-template-columns: 1fr 1fr;
-      }
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-btn {
-        display: flex;
+    @keyframes fallConfetti {
+      to {
+        transform: translateY(105vh) rotate(720deg);
+        opacity: 0;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero {
-        padding: 26px 20px;
-      }
-      .hero-grid, .grid-3, .grid-2, .grid-4, .mobo-board {
-        grid-template-columns: 1fr;
-      }
-      .topbar-inner {
-        padding: 0 14px;
-      }
-      .pill-progress {
-        display: none;
-      }
+    @media (max-width: 768px) {
+      .hero-card, .quiz-layout, .tebak-box, .pancake-arena { grid-template-columns: 1fr; }
+      .hero-card { padding: 24px 18px; text-align: center; }
+      .hero-card h1 { font-size: 1.9rem; }
+      .panel-box { padding: 20px 15px; }
+      .utp-slots { grid-template-columns: repeat(4, 1fr); }
+      .bunbyte-tip-bar { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Header -->
-  <header class="topbar">
-    <div class="topbar-inner">
-      <button class="brand" onclick="navigateTo('beranda')" aria-label="Beranda TKJ Learning Platform">
-        <span class="brand-badge">TKJ</span>
-        <span>
-          <span class="brand-title">TKJ Learning Platform</span>
-          <span class="brand-sub">Teknik Komputer &amp; Jaringan • SMK</span>
-        </span>
-      </button>
-
-      <nav class="nav-links" aria-label="Navigasi Utama">
-        <button class="nav-btn active" data-nav="beranda" onclick="navigateTo('beranda')">Beranda</button>
-        <button class="nav-btn" data-nav="materi" onclick="navigateTo('materi')">Materi</button>
-        <button class="nav-btn" data-nav="lab" onclick="navigateTo('lab')">Practice Lab</button>
-        <button class="nav-btn" data-nav="evaluasi" onclick="navigateTo('evaluasi')">Evaluasi</button>
-        <button class="nav-btn" data-nav="progres" onclick="navigateTo('progres')">Progres Belajar</button>
-      </nav>
-
-      <div class="topbar-right">
-        <span class="pill-progress" id="headerProgressPill">Progres: 0%</span>
-        <button class="btn-ghost-sm" id="legacyAdminBtn" onclick="openAdminModal()" title="Panel Admin &amp; Sinkronisasi Data">Mode Admin</button>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Buka Menu">☰</button>
+  <!-- Navigasi -->
+  <header>
+    <div class="nav-wrap">
+      <a href="#" class="brand-title" onclick="scrollKe('hero')">
+        <span>🐰 TKJ LEARNING PLATFORM</span>
+        <span class="brand-pill">with BUNBYTE</span>
+      </a>
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="scrollKe('hero', this)">Home</button>
+        <button class="nav-btn" onclick="scrollKe('materi-section', this)">5 Materi</button>
+        <button class="nav-btn" onclick="scrollKe('interactive-section', this)">Game & Praktik</button>
+        <button class="nav-btn" onclick="scrollKe('kuis-section', this)">Kuis (5 Soal)</button>
+        <button class="nav-btn" onclick="scrollKe('achievement-section', this)">Achievement</button>
       </div>
-    </div>
-
-    <div class="mobile-drawer" id="mobileDrawer">
-      <button class="nav-btn active" data-nav="beranda" onclick="navigateTo('beranda'); toggleMobileMenu(false);">Beranda</button>
-      <button class="nav-btn" data-nav="materi" onclick="navigateTo('materi'); toggleMobileMenu(false);">Materi</button>
-      <button class="nav-btn" data-nav="lab" onclick="navigateTo('lab'); toggleMobileMenu(false);">Practice Lab</button>
-      <button class="nav-btn" data-nav="evaluasi" onclick="navigateTo('evaluasi'); toggleMobileMenu(false);">Evaluasi</button>
-      <button class="nav-btn" data-nav="progres" onclick="navigateTo('progres'); toggleMobileMenu(false);">Progres Belajar</button>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="container" id="appRoot"></main>
-
-  <!-- Legacy Admin / Database Integration Modal -->
-  <div class="modal-backdrop" id="adminModal" onclick="if(event.target===this)closeAdminModal()">
-    <div class="modal-card">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">
-        <h3>Mode Admin &amp; Penyimpanan Data</h3>
-        <button class="btn-outline" onclick="closeAdminModal()">Tutup</button>
-      </div>
-      <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:14px;">
-        Panel ini menjaga kompatibilitas dengan sistem login, database, backup, dan import data yang sudah ada pada website sebelumnya.
-      </p>
-
-      <div id="legacyCustomSlot" style="margin-bottom:14px;"></div>
-
-      <div class="field-group">
-        <label for="studentNameInput">Nama Siswa / Identitas Sesi</label>
-        <input type="text" id="studentNameInput" placeholder="Masukkan nama siswa..." oninput="updateStudentName(this.value)" />
+  <main>
+    <!-- Hero -->
+    <section class="hero-card" id="hero">
+      <div>
+        <span class="hero-tag">🍵 Pink • Cream • Putih • Matcha</span>
+        <h1>Belajar TKJ Seru & Terstruktur Bareng BUNBYTE!</h1>
+        <p>
+          Selamat datang di <strong>TKJ LEARNING PLATFORM</strong>! Kuasai 5 materi inti TKJ—mulai dari Jaringan Komputer, Komponen Komputer, Kabel LAN, OSI Layer, hingga IP Address & Subnetting—lengkap dengan mini-game, simulasi crimping, dan kuis 5 soal tiap bab!
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:inherit;">
+          <button class="btn-pink" onclick="scrollKe('materi-section')">Mulai Belajar 🚀</button>
+          <button class="btn-matcha" onclick="gantiDialogHero()">Sapa BUNBYTE 💬</button>
+        </div>
       </div>
 
-      <div style="display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;">
-        <button class="btn-royal" onclick="exportProgressJSON()">Export / Backup JSON</button>
-        <button class="btn-outline" onclick="document.getElementById('importJsonInput').click()">Import JSON</button>
-        <input type="file" id="importJsonInput" accept="application/json" style="display:none" onchange="importProgressJSON(event)" />
-        <button class="btn-outline" style="color:var(--danger);border-color:#fecaca;" onclick="resetAllProgress()">Reset Progres</button>
+      <div class="mascot-stage">
+        <div class="speech-bubble" id="heroBubble">
+          "Hiii! Siap belajar di TKJ Learning Platform?"
+        </div>
+        <div class="bunbyte-float" id="heroMascotSlot" onclick="gantiDialogHero()" title="Klik BUNBYTE!"></div>
       </div>
-      <div id="adminStatusMsg" class="feedback-box feedback-info" style="display:none;"></div>
-    </div>
+    </section>
+
+    <!-- 5 Bab Materi -->
+    <section id="materi-section">
+      <div class="sec-head">
+        <h2>📘 5 Materi Utama TKJ</h2>
+        <p>Klik salah satu bab di bawah untuk membaca materi, membuka aktivitas/praktik bab tersebut, dan mengerjakan kuis 5 soal</p>
+      </div>
+      <div class="chapters-grid" id="chaptersGrid"></div>
+
+      <div class="panel-box" id="readerPanel">
+        <div class="panel-top">
+          <span class="hero-tag" style="margin:0;" id="readerBadge">MATERI 1 • JARINGAN KOMPUTER</span>
+          <div style="display:flex; gap:8px; flex-wrap:wrap;">
+            <button class="btn-matcha" onclick="gantiBab(-1)">← Sebelumnya</button>
+            <button class="btn-matcha" onclick="gantiBab(1)">Berikutnya →</button>
+          </div>
+        </div>
+
+        <h2 id="readerTitle">Pengenalan Jaringan Komputer</h2>
+        <div class="materi-summary" id="readerSummary"></div>
+        <ul class="materi-points" id="readerPoints"></ul>
+
+        <!-- Galeri gambar komponen khusus Materi 2 -->
+        <div id="komponenGalleryWrap" style="display:none;">
+          <h3 style="color:var(--pink-dark); margin-bottom:6px;">🖼️ Galeri Ilustrasi Komponen Komputer</h3>
+          <div class="hw-gallery" id="hwGalleryGrid"></div>
+        </div>
+
+        <div class="bunbyte-tip-bar">
+          <div id="materiMascotSlot" style="flex-shrink:0;"></div>
+          <div>
+            <strong>💡 Tips Belajar dari BUNBYTE:</strong>
+            <span id="materiTipText"></span>
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;">
+          <button class="btn-matcha" id="btnKeAktivitas" onclick="scrollKe('interactive-section')">Buka Praktik / Game 🎮</button>
+          <button class="btn-pink" onclick="mulaiKuisBab(true)">Kerjakan Kuis 5 Soal 📝</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bagian Game & Praktik Dinamis per Materi -->
+    <section class="panel-box" id="interactive-section">
+      <div class="panel-top">
+        <div>
+          <span class="hero-tag" style="margin-bottom:6px;" id="interBadge">AKTIVITAS INTERAKTIF</span>
+          <h2 style="margin-bottom:2px;" id="interTitle">Aktivitas Bab</h2>
+        </div>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button class="btn-matcha" onclick="pilihBab(0, false)">1. Jaringan</button>
+          <button class="btn-matcha" onclick="pilihBab(1, false)">2. Tebak Komponen</button>
+          <button class="btn-matcha" onclick="pilihBab(2, false)">3. Kabel LAN</button>
+          <button class="btn-matcha" onclick="pilihBab(3, false)">4. OSI Pancake</button>
+          <button class="btn-matcha" onclick="pilihBab(4, false)">5. IP & Subnetting</button>
+        </div>
+      </div>
+
+      <div id="interactiveContent"></div>
+    </section>
+
+    <!-- Kuis 5 Soal -->
+    <section class="panel-box" id="kuis-section">
+      <div class="panel-top">
+        <span class="hero-tag" style="margin:0;" id="quizBadge">KUIS 5 SOAL • MATERI 1</span>
+        <span style="font-weight:800; color:var(--pink-dark);" id="quizCounter">Soal 1 dari 5</span>
+      </div>
+
+      <div class="quiz-layout" id="quizContainer">
+        <div>
+          <div class="quiz-question" id="quizQuestionText">Memuat pertanyaan...</div>
+          <div class="options-list" id="quizOptions"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button class="btn-pink" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
+          </div>
+        </div>
+
+        <div class="mascot-stage">
+          <div class="speech-bubble" id="quizBubble">"Let's explore the world of technology!"</div>
+          <div id="quizMascotSlot"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Achievement -->
+    <section class="panel-box" id="achievement-section">
+      <div class="sec-head" style="margin-bottom:14px;">
+        <h2>🏆 Achievement TKJ LEARNING PLATFORM</h2>
+        <p>Selesaikan kuis 5 soal tiap bab (nilai ≥ 80) dan selesaikan game/praktik untuk membuka semua lencana!</p>
+      </div>
+
+      <div class="bunbyte-tip-bar" style="background:#FFF5F9; border-color:var(--pink-main); margin-bottom:18px;">
+        <div id="achieveMascotSlot" style="flex-shrink:0;"></div>
+        <div>
+          <strong style="color:var(--pink-dark);">🐰 Pesan Spesial BUNBYTE:</strong>
+          <span id="achieveSpeech">"Hiii! Siap belajar TKJ hari ini? Ayo taklukkan 5 materi dan game serunya!"</span>
+        </div>
+      </div>
+
+      <div class="badges-grid" id="badgesGrid"></div>
+    </section>
+  </main>
+
+  <!-- Sudut BUNBYTE -->
+  <div class="corner-buddy">
+    <div class="corner-bubble" id="cornerBubble">"Hiii! Siap belajar TKJ hari ini?"</div>
+    <div class="corner-avatar" id="cornerMascotSlot" onclick="sapaCornerBuddy()" title="Klik BUNBYTE teman belajarmu!"></div>
   </div>
 
-  <footer>
-    <div class="footer-inner">
-      <div>
-        <strong style="color:#fff;">TKJ Learning Platform</strong> — Media Pembelajaran Interaktif Teknik Komputer dan Jaringan
-      </div>
-      <div>
-        Pendamping Belajar: <strong>RUTI (Router Biru)</strong> • Tersimpan otomatis di penyimpanan lokal &amp; hook data aktif
-      </div>
-    </div>
-  </footer>
-
   <script>
-    /* =========================================================================
-       RUTI SVG GENERATOR (Consistent Blue Router Mascot with Antennas, Eyes,
-       Friendly Smile, Green & Yellow Indicator LEDs, and Expressions)
-       ========================================================================= */
-    function renderRutiSVG(mood = 'happy', size = 84) {
-      const mouthPaths = {
-        happy: 'M 42 57 Q 50 64 58 57',
-        thinking: 'M 44 59 Q 50 56 56 59',
-        explaining: 'M 43 57 Q 50 65 57 57',
-        cheering: 'M 41 56 Q 50 66 59 56'
-      };
-      const browPaths = {
-        happy: '',
-        thinking: '<path d="M 32 42 L 42 40" stroke="#0b2545" stroke-width="2.3" stroke-linecap="round"/><path d="M 58 40 L 68 43" stroke="#0b2545" stroke-width="2.3" stroke-linecap="round"/>',
-        explaining: '<path d="M 33 40 Q 37 37 41 40" stroke="#0b2545" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M 59 40 Q 63 37 67 40" stroke="#0b2545" stroke-width="2" stroke-linecap="round" fill="none"/>',
-        cheering: ''
-      };
-      const leftAntAngle = mood === 'cheering' ? -14 : (mood === 'thinking' ? -6 : 0);
-      const rightAntAngle = mood === 'cheering' ? 14 : (mood === 'thinking' ? 8 : 0);
+    // --- MASKOT BUNBYTE ---
+    function renderBunbyteSVG(expression = 'normal', size = 145) {
+      let eyesSVG = '';
+      let mouthSVG = '';
+      let extraDecor = '';
+
+      if (expression === 'happy') {
+        eyesSVG = `
+          <path d="M68 92 Q75 83 82 92" stroke="#4A3B42" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+          <path d="M118 92 Q125 83 132 92" stroke="#4A3B42" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+        `;
+        mouthSVG = `<path d="M93 102 Q100 112 107 102 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5" stroke-linejoin="round"/>`;
+        extraDecor = `<text x="152" y="65" font-size="18">✨</text>`;
+      } else if (expression === 'oops') {
+        eyesSVG = `
+          <path d="M69 86 L80 91 L69 96" stroke="#4A3B42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M131 86 L120 91 L131 96" stroke="#4A3B42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        `;
+        mouthSVG = `<circle cx="100" cy="105" r="4.5" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.3"/>`;
+        extraDecor = `<text x="150" y="68" font-size="16">💧</text>`;
+      } else if (expression === 'celebrate') {
+        eyesSVG = `
+          <circle cx="75" cy="90" r="6.5" fill="#4A3B42"/>
+          <circle cx="77" cy="88" r="2.4" fill="#FFFFFF"/>
+          <circle cx="72" cy="92" r="1.3" fill="#FFFFFF"/>
+          <circle cx="125" cy="90" r="6.5" fill="#4A3B42"/>
+          <circle cx="127" cy="88" r="2.4" fill="#FFFFFF"/>
+          <circle cx="122" cy="92" r="1.3" fill="#FFFFFF"/>
+        `;
+        mouthSVG = `<path d="M91 101 Q100 114 109 101 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5"/>`;
+        extraDecor = `<text x="26" y="62" font-size="18">🎉</text><text x="154" y="62" font-size="18">⭐</text>`;
+      } else {
+        eyesSVG = `
+          <circle cx="75" cy="90" r="6" fill="#4A3B42"/>
+          <circle cx="77" cy="88" r="2.2" fill="#FFFFFF"/>
+          <circle cx="125" cy="90" r="6" fill="#4A3B42"/>
+          <circle cx="127" cy="88" r="2.2" fill="#FFFFFF"/>
+        `;
+        mouthSVG = `<path d="M93 102 Q97 107 100 103 Q103 107 107 102" stroke="#4A3B42" stroke-width="2.8" stroke-linecap="round" fill="none"/>`;
+      }
 
       return `
-        <svg width="${size}" height="${size}" viewBox="0 0 100 100" role="img" aria-label="Maskot RUTI Router Biru (${mood})">
-          <g transform="rotate(${leftAntAngle} 32 34)">
-            <line x1="32" y1="36" x2="32" y2="16" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="32" cy="14" r="6" fill="#06b6d4" stroke="#1e40af" stroke-width="2"/>
-          </g>
-          <g transform="rotate(${rightAntAngle} 68 34)">
-            <line x1="68" y1="36" x2="68" y2="16" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round"/>
-            <circle cx="68" cy="14" r="6" fill="#06b6d4" stroke="#1e40af" stroke-width="2"/>
-          </g>
-          <rect x="24" y="76" width="10" height="7" rx="3" fill="#1e3a8a"/>
-          <rect x="66" y="76" width="10" height="7" rx="3" fill="#1e3a8a"/>
-          <rect x="14" y="34" width="72" height="43" rx="14" fill="#2563eb" stroke="#1e3a8a" stroke-width="3"/>
-          <rect x="20" y="39" width="60" height="26" rx="10" fill="#eff6ff"/>
-          <circle cx="37" cy="50" r="6.5" fill="#0f172a"/>
-          <circle cx="35" cy="48" r="2.2" fill="#ffffff"/>
-          <circle cx="63" cy="50" r="6.5" fill="#0f172a"/>
-          <circle cx="61" cy="48" r="2.2" fill="#ffffff"/>
-          <circle cx="28" cy="56" r="3.5" fill="#93c5fd" opacity="0.7"/>
-          <circle cx="72" cy="56" r="3.5" fill="#93c5fd" opacity="0.7"/>
-          ${browPaths[mood] || ''}
-          <path d="${mouthPaths[mood] || mouthPaths.happy}" stroke="#0f172a" stroke-width="2.6" stroke-linecap="round" fill="none"/>
-          <circle cx="30" cy="71" r="3.5" fill="#22c55e"/>
-          <circle cx="41" cy="71" r="3.5" fill="#eab308"/>
-          <circle cx="52" cy="71" r="3.5" fill="#22c55e"/>
-          <circle cx="63" cy="71" r="3.5" fill="#eab308"/>
+        <svg width="${size}" height="${size}" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="64" y="14" width="22" height="54" rx="11" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
+          <rect x="70" y="22" width="10" height="38" rx="5" fill="#FFD6E5"/>
+          <rect x="114" y="14" width="22" height="54" rx="11" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
+          <rect x="120" y="22" width="10" height="38" rx="5" fill="#FFD6E5"/>
+          <path d="M52 84 C52 46, 148 46, 148 84" stroke="#88B884" stroke-width="7" stroke-linecap="round"/>
+          <path d="M54 134 C54 118, 146 118, 146 134 L154 176 C154 184, 46 184, 46 176 Z" fill="#FFD6E5" stroke="#4A3B42" stroke-width="3"/>
+          <line x1="88" y1="126" x2="88" y2="142" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round"/>
+          <line x1="112" y1="126" x2="112" y2="142" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round"/>
+          <rect x="77" y="128" width="46" height="14" rx="7" fill="#E4F2E1" stroke="#88B884" stroke-width="1.5"/>
+          <text x="100" y="138" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="8.2" font-weight="700" fill="#4E7A4B">TKJ LEARN</text>
+          <ellipse cx="100" cy="90" rx="46" ry="38" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
+          <rect x="44" y="74" width="14" height="30" rx="7" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
+          <rect x="142" y="74" width="14" height="30" rx="7" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
+          <ellipse cx="64" cy="100" rx="7.5" ry="4.5" fill="#FF8FB7" opacity="0.55"/>
+          <ellipse cx="136" cy="100" rx="7.5" ry="4.5" fill="#FF8FB7" opacity="0.55"/>
+          <ellipse cx="100" cy="96" rx="3.5" ry="2.5" fill="#FF8FB7"/>
+          ${eyesSVG}
+          ${mouthSVG}
+          <rect x="64" y="145" width="72" height="42" rx="8" fill="#FAF3E8" stroke="#4A3B42" stroke-width="3"/>
+          <circle cx="100" cy="166" r="7" fill="#88B884"/>
+          <path d="M97 166 L99 168 L104 163" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          <rect x="56" y="185" width="88" height="7" rx="3.5" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
+          ${extraDecor}
         </svg>
       `;
     }
 
-    /* =========================================================================
-       CURRICULUM DATA (5 COMPLETE TKJ MODULES + QUIZZES)
-       ========================================================================= */
-    const MODULES = [
+    // --- ILUSTRASI SVG KOMPONEN KOMPUTER ---
+    const komponenData = [
       {
-        id: 'm1',
-        code: 'MODUL 01',
-        title: 'Pengenalan Jaringan Komputer',
-        shortDesc: 'Konsep dasar jaringan, LAN/MAN/WAN, topologi, serta fungsi perangkat jaringan utama.',
-        objectives: [
-          'Memahami pengertian, fungsi, dan manfaat jaringan komputer dalam berbagi data dan sumber daya.',
-          'Membedakan cakupan jaringan LAN, MAN, dan WAN beserta contoh penerapannya.',
-          'Mengenali karakteristik topologi jaringan dan fungsi Router, Switch, Access Point, serta Modem.'
+        id: 'cpu',
+        nama: 'Processor (CPU)',
+        fungsi: 'Otak pemroses instruksi dan perhitungan komputer.',
+        svg: `<svg width="90" height="70" viewBox="0 0 90 70">
+          <rect x="20" y="10" width="50" height="50" rx="8" fill="#E4F2E1" stroke="#4E7A4B" stroke-width="3"/>
+          <rect x="31" y="21" width="28" height="28" rx="4" fill="#FFD6E5" stroke="#E0578A" stroke-width="2"/>
+          <line x1="12" y1="20" x2="20" y2="20" stroke="#4A3B42" stroke-width="2.5"/>
+          <line x1="12" y1="35" x2="20" y2="35" stroke="#4A3B42" stroke-width="2.5"/>
+          <line x1="12" y1="50" x2="20" y2="50" stroke="#4A3B42" stroke-width="2.5"/>
+          <line x1="70" y1="20" x2="78" y2="20" stroke="#4A3B42" stroke-width="2.5"/>
+          <line x1="70" y1="35" x2="78" y2="35" stroke="#4A3B42" stroke-width="2.5"/>
+          <line x1="70" y1="50" x2="78" y2="50" stroke="#4A3B42" stroke-width="2.5"/>
+        </svg>`
+      },
+      {
+        id: 'ram',
+        nama: 'RAM (Memory)',
+        fungsi: 'Penyimpanan sementara berkecepatan tinggi saat program berjalan.',
+        svg: `<svg width="90" height="70" viewBox="0 0 90 70">
+          <rect x="8" y="20" width="74" height="30" rx="5" fill="#88B884" stroke="#4E7A4B" stroke-width="2.5"/>
+          <rect x="16" y="26" width="12" height="12" rx="2" fill="#4A3B42"/>
+          <rect x="33" y="26" width="12" height="12" rx="2" fill="#4A3B42"/>
+          <rect x="50" y="26" width="12" height="12" rx="2" fill="#4A3B42"/>
+          <rect x="66" y="26" width="9" height="12" rx="2" fill="#4A3B42"/>
+          <rect x="20" y="45" width="50" height="5" fill="#FDE047"/>
+        </svg>`
+      },
+      {
+        id: 'psu',
+        nama: 'Power Supply (PSU)',
+        fungsi: 'Mengubah arus listrik AC menjadi DC stabil untuk komponen PC.',
+        svg: `<svg width="90" height="70" viewBox="0 0 90 70">
+          <rect x="14" y="14" width="62" height="42" rx="7" fill="#FAF3E8" stroke="#4A3B42" stroke-width="2.5"/>
+          <circle cx="36" cy="35" r="13" fill="#FFD6E5" stroke="#E0578A" stroke-width="2"/>
+          <circle cx="36" cy="35" r="5" fill="#88B884"/>
+          <rect x="56" y="22" width="13" height="8" rx="2" fill="#4A3B42"/>
+          <rect x="56" y="36" width="13" height="10" rx="2" fill="#88B884"/>
+        </svg>`
+      },
+      {
+        id: 'motherboard',
+        nama: 'Motherboard',
+        fungsi: 'Papan sirkuit utama penghubung seluruh komponen komputer.',
+        svg: `<svg width="90" height="70" viewBox="0 0 90 70">
+          <rect x="16" y="10" width="58" height="50" rx="6" fill="#E4F2E1" stroke="#4E7A4B" stroke-width="2.5"/>
+          <rect x="24" y="18" width="20" height="20" rx="3" fill="#FFFFFF" stroke="#4A3B42" stroke-width="2"/>
+          <rect x="50" y="18" width="16" height="32" rx="2" fill="#FFD6E5" stroke="#E0578A" stroke-width="1.8"/>
+          <line x1="24" y1="46" x2="44" y2="46" stroke="#4A3B42" stroke-width="2"/>
+        </svg>`
+      }
+    ];
+
+    // --- 5 MATERI + KUIS 5 SOAL TIAP BAB ---
+    const daftarBab = [
+      {
+        bab: "Materi 1",
+        judul: "Pengenalan Jaringan Komputer",
+        desc: "Konsep dasar jaringan, jenis LAN/MAN/WAN, topologi, dan perangkat jaringan.",
+        ringkasan: "<strong>Jaringan Komputer</strong> adalah hubungan antara dua atau lebih perangkat yang saling terhubung untuk berbagi data, informasi, dan sumber daya (seperti printer atau koneksi internet).",
+        poin: [
+          "<strong>Cakupan Jaringan:</strong> <em>LAN</em> (area lokal seperti rumah/sekolah), <em>MAN</em> (antar gedung/kota), dan <em>WAN</em> (area luas/internet).",
+          "<strong>Topologi Populer:</strong> <em>Star</em> (terhubung ke switch/hub pusat), <em>Bus</em>, <em>Ring</em>, dan <em>Mesh</em>.",
+          "<strong>Perangkat Utama:</strong> <em>Switch</em> (menghubungkan perangkat di LAN), <em>Router</em> (menghubungkan antar jaringan), dan <em>Access Point</em> (jaringan nirkabel/Wi-Fi)."
         ],
-        topics: [
+        tipsBunbyte: "Bedakan fungsi Switch dan Router: Switch menghubungkan perangkat dalam satu jaringan lokal, sedangkan Router menghubungkan jaringan yang berbeda!",
+        kuis: [
           {
-            title: '1. Pengertian Jaringan Komputer',
-            body: 'Jaringan komputer adalah sekumpulan perangkat komputasi (PC, laptop, server, smartphone) yang saling terhubung melalui media transmisi kabel atau nirkabel untuk bertukar data dan informasi.'
+            tanya: "Jaringan komputer yang mencakup area terbatas seperti satu ruang lab atau sekolah disebut...",
+            opsi: ["LAN", "MAN", "WAN", "PAN"],
+            benar: 0
           },
           {
-            title: '2. Fungsi dan Manfaat Jaringan Komputer',
-            body: 'Memungkinkan resource sharing (berbagi printer, file, penyimpanan), komunikasi cepat (email, pesan instan, konferensi video), manajemen terpusat, serta efisiensi biaya perangkat keras.'
+            tanya: "Perangkat yang berfungsi menghubungkan beberapa komputer dalam satu jaringan lokal (LAN) berdasarkan MAC Address adalah...",
+            opsi: ["Modem", "Switch", "Antena", "UPS"],
+            benar: 1
           },
           {
-            title: '3. Jenis Jaringan: LAN, MAN, dan WAN',
-            body: 'LAN (Local Area Network) mencakup area lokal seperti ruang kelas, lab, atau rumah; MAN (Metropolitan Area Network) menghubungkan antarlokasi dalam satu kota; WAN (Wide Area Network) mencakup wilayah luas antar-kota atau negara seperti internet.'
+            tanya: "Topologi jaringan yang menggunakan perangkat pusat (seperti switch) untuk menghubungkan setiap node disebut topologi...",
+            opsi: ["Ring", "Bus", "Star", "Linear"],
+            benar: 2
           },
           {
-            title: '4. Topologi Jaringan',
-            body: 'Menggambarkan tata letak fisik maupun logis hubungan antarperangkat, seperti topologi Star (terpusat pada switch/hub), Bus, Ring, Mesh, dan Tree. Topologi Star paling umum digunakan pada jaringan lokal modern.'
+            tanya: "Perangkat yang bertugas meneruskan paket data antar jaringan berbeda (misalnya dari LAN ke internet) adalah...",
+            opsi: ["Switch", "Hub", "Router", "Kabel UTP"],
+            benar: 2
           },
           {
-            title: '5. Perangkat Jaringan: Router, Switch, Access Point, dan Modem',
-            body: 'Switch menghubungkan banyak perangkat dalam satu LAN menggunakan MAC address; Router menghubungkan jaringan berbeda (LAN ke jaringan lain/internet) dan menentukan jalur paket; Access Point menyediakan koneksi Wi-Fi; Modem mengubah sinyal analog/digital dari ISP.'
-          }
-        ],
-        diagramNote: 'Diagram alur umum: Modem/ISP -> Router -> Switch -> PC/Client & Access Point.',
-        summary: 'Jaringan komputer memudahkan pertukaran data dan berbagi perangkat. Kenali perbedaan fungsi Switch (antarperangkat di LAN) dan Router (antarjaringan/routing), serta sesuaikan topologi dengan kebutuhan keandalan.',
-        quiz: [
-          {
-            q: 'Perangkat manakah yang bertugas menghubungkan dua jaringan yang berbeda dan menentukan jalur pengiriman paket data?',
-            options: ['Switch', 'Router', 'Kabel UTP', 'Konektor RJ45'],
-            answer: 1,
-            explain: 'Router bekerja menghubungkan jaringan berbeda (misalnya LAN ke WAN/Internet) dan melakukan routing paket data.'
-          },
-          {
-            q: 'Jaringan yang mencakup satu ruangan laboratorium komputer atau satu gedung sekolah disebut...',
-            options: ['WAN', 'MAN', 'LAN', 'PAN'],
-            answer: 2,
-            explain: 'LAN (Local Area Network) mencakup area lokal terbatas seperti satu gedung atau kampus/sekolah.'
-          },
-          {
-            q: 'Keunggulan utama topologi Star pada jaringan lokal adalah...',
-            options: [
-              'Tidak memerlukan perangkat penghubung tengah',
-              'Jika satu kabel klien terputus, node lain tetap dapat terhubung',
-              'Hanya menggunakan satu kabel utama memanjang',
-              'Tidak membutuhkan kabel sama sekali'
-            ],
-            answer: 1,
-            explain: 'Pada topologi Star, gangguan pada satu jalur kabel klien tidak memutus komunikasi perangkat lainnya.'
+            tanya: "Manfaat utama membangun jaringan komputer adalah...",
+            opsi: ["Memboroskan kabel", "Berbagi data dan sumber daya", "Mematikan komputer", "Menghapus memori"],
+            benar: 1
           }
         ]
       },
       {
-        id: 'm2',
-        code: 'MODUL 02',
-        title: 'Pengenalan Komponen Komputer',
-        shortDesc: 'Mengenal komponen inti PC/server mulai dari motherboard, CPU, RAM, penyimpanan, hingga NIC.',
-        objectives: [
-          'Mengidentifikasi fungsi utama motherboard, processor, RAM, media penyimpanan, PSU, GPU, dan NIC.',
-          'Menjelaskan peran penyimpanan volatile (RAM) dan non-volatile (HDD/SSD).',
-          'Menghubungkan peran komponen hardware dengan kinerja sistem dan jaringan.'
+        bab: "Materi 2",
+        judul: "Pengenalan Komponen Komputer",
+        desc: "Mengenal hardware utama (CPU, RAM, Motherboard, PSU, Storage) dan tebak gambar.",
+        ringkasan: "<strong>Komponen Komputer (Hardware)</strong> bekerja sama menjalankan proses input, pemrosesan, penyimpanan, dan output data.",
+        poin: [
+          "<strong>Processor (CPU):</strong> Melakukan eksekusi instruksi dan operasi aritmatika/logika.",
+          "<strong>RAM (Random Access Memory):</strong> Menyimpan data sementara saat aplikasi aktif; bersifat volatile (hilang saat mati).",
+          "<strong>Motherboard & PSU:</strong> Motherboard menghubungkan semua komponen, sedangkan Power Supply menyuplai daya listrik."
         ],
-        topics: [
+        tipsBunbyte: "RAM itu ibarat meja kerja: makin luas mejanya, makin banyak buku (aplikasi) yang bisa dibuka sekaligus tanpa lemot!",
+        kuis: [
           {
-            title: '1. Motherboard',
-            body: 'Papan sirkuit utama yang menghubungkan dan menyalurkan komunikasi daya serta data antar-komponen seperti CPU, RAM, kartu ekspansi, dan port I/O.'
+            tanya: "Komponen yang sering disebut sebagai otak pemroses utama komputer adalah...",
+            opsi: ["RAM", "Processor (CPU)", "Monitor", "Keyboard"],
+            benar: 1
           },
           {
-            title: '2. Processor (CPU)',
-            body: 'Central Processing Unit merupakan otak pemroses instruksi dan perhitungan utama komputer (ALU, Control Unit, Register).'
+            tanya: "Sifat penyimpanan RAM adalah...",
+            opsi: ["Permanen tanpa listrik", "Sementara (volatile)", "Hanya untuk cetak", "Untuk koneksi Wi-Fi"],
+            benar: 1
           },
           {
-            title: '3. RAM (Random Access Memory)',
-            body: 'Memori kerja sementara berkecepatan tinggi yang menyimpan data dan aplikasi yang sedang aktif dijalankan. Bersifat volatile (data hilang saat daya mati).'
+            tanya: "Papan sirkuit utama tempat menancapnya CPU, RAM, dan kartu ekspansi disebut...",
+            opsi: ["Motherboard", "Casing", "Mousepad", "Flashdisk"],
+            benar: 0
           },
           {
-            title: '4. HDD dan SSD',
-            body: 'Media penyimpanan permanen (non-volatile) untuk sistem operasi, aplikasi, dan file. HDD menggunakan piringan magnetik mekanis, sedangkan SSD menggunakan memori flash semikonduktor yang jauh lebih cepat dan tahan guncangan.'
+            tanya: "Fungsi utama Power Supply Unit (PSU) pada PC adalah...",
+            opsi: ["Menampilkan gambar", "Menyuplai daya listrik stabil", "Menyimpan file film", "Mengetik dokumen"],
+            benar: 1
           },
           {
-            title: '5. Power Supply (PSU)',
-            body: 'Mengonversi arus listrik AC dari stopkontak menjadi tegangan DC yang stabil (+3.3V, +5V, +12V) untuk seluruh komponen internal PC.'
-          },
-          {
-            title: '6. VGA / GPU',
-            body: 'Video Graphics Adapter / Graphics Processing Unit mengolah dan menampilkan keluaran grafis ke monitor serta membantu komputasi paralel/grafis.'
-          },
-          {
-            title: '7. NIC atau LAN Card',
-            body: 'Network Interface Card menyediakan antarmuka fisik/nirkabel agar komputer dapat terhubung ke jaringan lokal (memiliki MAC address unik).'
-          }
-        ],
-        diagramNote: 'Klik setiap blok komponen pada Computer Component Explorer untuk melihat spesifikasi ringkas dan contoh penggunaan.',
-        summary: 'Kinerja dan keandalan komputer bergantung pada keseimbangan komponen: CPU memproses instruksi, RAM menampung data aktif, SSD/HDD menyimpan data permanen, PSU menyuplai daya stabil, dan NIC menghubungkan ke jaringan.',
-        quiz: [
-          {
-            q: 'Komponen penyimpanan manakah yang menyimpan data sementara saat program berjalan dan kosong saat komputer dimatikan?',
-            options: ['SSD', 'HDD', 'RAM', 'Motherboard'],
-            answer: 2,
-            explain: 'RAM bersifat volatile sehingga data kerja sementara di dalamnya hilang ketika aliran listrik terputus.'
-          },
-          {
-            q: 'Komponen yang berfungsi memberi antarmuka jaringan beserta identitas MAC address pada komputer adalah...',
-            options: ['PSU', 'NIC / LAN Card', 'VGA / GPU', 'Heatsink'],
-            answer: 1,
-            explain: 'NIC (Network Interface Card) menghubungkan perangkat ke jaringan dan memiliki MAC address.'
-          },
-          {
-            q: 'Keunggulan utama SSD dibanding HDD konvensional adalah...',
-            options: [
-              'Menggunakan piringan magnetik berputar',
-              'Kecepatan baca/tulis lebih tinggi dan tidak memiliki bagian bergerak',
-              'Menggantikan fungsi PSU',
-              'Hanya berfungsi sebagai memori grafis'
-            ],
-            answer: 1,
-            explain: 'SSD berbasis flash memory tidak memiliki komponen mekanis berputar sehingga lebih cepat dan tahan guncangan.'
+            tanya: "Contoh media penyimpanan permanen (non-volatile) pada komputer adalah...",
+            opsi: ["Register CPU", "Cache L1", "SSD / HDD", "RAM DDR4"],
+            benar: 2
           }
         ]
       },
       {
-        id: 'm3',
-        code: 'MODUL 03',
-        title: 'Kabel Jaringan dan Pengujian LAN',
-        shortDesc: 'Standar kabel UTP Cat5e/Cat6, konektor RJ45, urutan T568A/T568B, Straight/Crossover, dan LAN tester.',
-        objectives: [
-          'Memahami karakteristik kabel UTP kategori Cat5e dan Cat6 serta konektor RJ45.',
-          'Menyusun urutan warna pin 1–8 sesuai standar T568A dan T568B.',
-          'Membedakan kabel Straight-through dan Crossover serta membaca hasil pengujian LAN Cable Tester.'
+        bab: "Materi 3",
+        judul: "Kabel LAN",
+        desc: "Standar T568A/T568B, Straight vs Crossover, dan simulasi crimping + LAN Tester.",
+        ringkasan: "<strong>Kabel LAN (UTP)</strong> menghubungkan perangkat jaringan dengan konektor RJ-45 menggunakan standar urutan warna tertentu.",
+        poin: [
+          "<strong>Straight-Through (T568B – T568B):</strong> Untuk perangkat berbeda seperti PC ke Switch atau Switch ke Router.",
+          "<strong>Crossover (T568A – T568B):</strong> Untuk perangkat sejenis seperti PC ke PC.",
+          "<strong>Urutan T568B:</strong> Putih-Oranye, Oranye, Putih-Hijau, Biru, Putih-Biru, Hijau, Putih-Coklat, Coklat."
         ],
-        topics: [
+        tipsBunbyte: "Pin 1–2 selalu keluarga Oranye dan Pin 7–8 selalu keluarga Coklat pada T568B. Jangan sampai tertukar ya!",
+        kuis: [
           {
-            title: '1. Pengertian Kabel UTP',
-            body: 'Unshielded Twisted Pair terdiri atas 4 pasang (8 utas) kabel tembaga yang dipilin berpasangan untuk mengurangi interferensi elektromagnetik (EMI) dan crosstalk tanpa lapisan pelindung logam luar.'
+            tanya: "Kabel UTP jenis Straight digunakan untuk menghubungkan...",
+            opsi: ["PC ke Switch", "PC ke PC", "Console ke Router", "Kabel ke Antena"],
+            benar: 0
           },
           {
-            title: '2. Kategori Kabel Cat5e dan Cat6',
-            body: 'Cat5e mendukung kecepatan hingga 1 Gbps (1000 Mbps) pada frekuensi 100 MHz; Cat6 mendukung hingga 10 Gbps pada jarak pendek (hingga 55 m) pada frekuensi 250 MHz dengan separator/pelilitan lebih ketat.'
+            tanya: "Pada standar T568B, warna kabel pada Pin nomor 1 adalah...",
+            opsi: ["Putih-Hijau", "Biru", "Putih-Oranye", "Coklat"],
+            benar: 2
           },
           {
-            title: '3. Konektor RJ45',
-            body: 'Konektor modular 8-pin (8P8C) yang dipasangkan pada ujung kabel twisted pair untuk menghubungkan perangkat ke port Ethernet.'
+            tanya: "Pada standar T568B, warna kabel pada Pin nomor 2 adalah...",
+            opsi: ["Oranye", "Hijau", "Putih-Biru", "Putih-Coklat"],
+            benar: 0
           },
           {
-            title: '4. Susunan Warna T568A dan T568B',
-            body: 'T568B (paling umum di Indonesia): 1. Putih-Oranye, 2. Oranye, 3. Putih-Hijau, 4. Biru, 5. Putih-Biru, 6. Hijau, 7. Putih-Cokelat, 8. Cokelat. T568A menukar pasangan Oranye dan Hijau (1. Putih-Hijau, 2. Hijau, 3. Putih-Oranye, 6. Oranye).'
+            tanya: "Alat untuk menguji koneksi pin 1 sampai 8 pada kabel LAN disebut...",
+            opsi: ["LAN Tester", "Tang Potong", "Obeng", "Multimeter"],
+            benar: 0
           },
           {
-            title: '5. Kabel Straight dan Crossover',
-            body: 'Kabel Straight menggunakan standar yang sama di kedua ujung (misalnya T568B–T568B) untuk perangkat berbeda (PC ke Switch). Kabel Crossover menyilangkan jalur TX/RX (misalnya T568A di satu ujung dan T568B di ujung lain) untuk perangkat sejenis pada standar lama.'
-          },
-          {
-            title: '6. Fungsi LAN Cable Tester',
-            body: 'Alat uji kontinuitas dan urutan pin 1–8 pada kabel jaringan. Lampu indikator menyala berurutan menandakan koneksi baik (PASS), sedangkan lampu mati/tertukar/tidak sesuai menandakan gangguan (FAIL).'
-          }
-        ],
-        diagramNote: 'Gunakan UTP Cable Wiring Simulator & LAN Cable Tester untuk menyusun pin 1–8 dan menguji hasil PASS/FAIL.',
-        summary: 'Kualitas crimping dan ketepatan urutan warna T568A/T568B menentukan keandalan transmisi Ethernet. Selalu lakukan pengujian menggunakan LAN cable tester sebelum kabel dipasang pada jaringan aktif.',
-        quiz: [
-          {
-            q: 'Pada standar T568B, urutan warna untuk pin 1 dan pin 2 adalah...',
-            options: [
-              '1. Putih-Hijau, 2. Hijau',
-              '1. Putih-Oranye, 2. Oranye',
-              '1. Biru, 2. Putih-Biru',
-              '1. Putih-Cokelat, 2. Cokelat'
-            ],
-            answer: 1,
-            explain: 'Standar T568B dimulai dengan 1: Putih-Oranye dan 2: Oranye.'
-          },
-          {
-            q: 'Kabel Straight umumnya digunakan untuk menghubungkan...',
-            options: [
-              'Komputer (PC) ke Switch',
-              'Hanya kabel fiber optik',
-              'Antena radio FM',
-              'Port HDMI ke USB'
-            ],
-            answer: 0,
-            explain: 'Kabel Straight menghubungkan perangkat yang berbeda fungsi pada port standarnya, seperti PC ke Switch.'
-          },
-          {
-            q: 'Jika pada LAN cable tester salah satu pin terputus atau salah urutan, status pengujian adalah...',
-            options: ['PASS', 'FAIL', 'DHCP OK', 'SUBNET VALID'],
-            answer: 1,
-            explain: 'Ketidaksesuaian kontinuitas atau urutan pin menghasilkan status FAIL pada LAN tester.'
+            tanya: "Batas panjang standar kabel UTP agar sinyal tidak banyak melemah adalah sekitar...",
+            opsi: ["10 meter", "100 meter", "1000 meter", "5 meter"],
+            benar: 1
           }
         ]
       },
       {
-        id: 'm4',
-        code: 'MODUL 04',
-        title: 'OSI Layer dan Protokol Jaringan',
-        shortDesc: 'Mempelajari 7 lapisan model OSI (Physical hingga Application) beserta protokol dan aliran data.',
-        objectives: [
-          'Mengurutkan 7 lapisan OSI Layer dari Layer 1 (Physical) hingga Layer 7 (Application).',
-          'Menjelaskan fungsi setiap layer serta contoh protokol jaringan yang bekerja di dalamnya.',
-          'Mengamati simulasi perjalanan data (encapsulation/de-encapsulation) melewati lapisan OSI.'
+        bab: "Materi 4",
+        judul: "OSI Layer dan Protokol Jaringan",
+        desc: "7 lapisan model OSI (Physical sampai Application), protokol jaringan, dan game OSI Pancake.",
+        ringkasan: "<strong>Model OSI (Open Systems Interconnection)</strong> membagi komunikasi jaringan menjadi 7 lapisan agar standar antar perangkat saling kompatibel.",
+        poin: [
+          "<strong>Layer 1–4:</strong> 1. Physical (kabel/sinyal), 2. Data Link (MAC address/switch), 3. Network (IP address/router), 4. Transport (TCP/UDP).",
+          "<strong>Layer 5–7:</strong> 5. Session, 6. Presentation (enkripsi/format), 7. Application (HTTP, DNS, FTP).",
+          "<strong>Protokol Populer:</strong> HTTP/HTTPS (web), DNS (nama domain ke IP), DHCP (IP otomatis), dan SSH (remote aman)."
         ],
-        topics: [
+        tipsBunbyte: "Di game OSI Pancake, susun lapisan dari bawah (Layer 1 Physical) sampai atas (Layer 7 Application) seperti menumpuk pancake!",
+        kuis: [
           {
-            title: '1. Pengertian OSI Layer',
-            body: 'Open Systems Interconnection (OSI) adalah model referensi 7 lapisan yang membantu memahami bagaimana data dikirim dan diterima melalui jaringan komputer secara terstandar.'
+            tanya: "Model referensi OSI terdiri dari berapa lapisan?",
+            opsi: ["4 lapisan", "5 lapisan", "7 lapisan", "8 lapisan"],
+            benar: 2
           },
           {
-            title: '2. Layer 1 — Physical Layer',
-            body: 'Mengatur transmisi bit mentah (0 dan 1) melalui media fisik seperti kabel tembaga, fiber optik, sinyal listrik, atau gelombang radio.'
+            tanya: "IP Address dan routing berada pada OSI Layer ke-...",
+            opsi: ["Layer 1 (Physical)", "Layer 2 (Data Link)", "Layer 3 (Network)", "Layer 7 (Application)"],
+            benar: 2
           },
           {
-            title: '3. Layer 2 — Data Link Layer',
-            body: 'Mengatur pengalamatan fisik (MAC Address), framing, error detection, dan akses media lokal (Ethernet, Switch, Wi-Fi/802.11).'
+            tanya: "MAC Address dan Switch bekerja pada lapisan...",
+            opsi: ["Data Link (Layer 2)", "Session (Layer 5)", "Presentation (Layer 6)", "Application (Layer 7)"],
+            benar: 0
           },
           {
-            title: '4. Layer 3 — Network Layer',
-            body: 'Mengatur pengalamatan logis (IP Address) dan pemilihan rute (routing) antarjaringan (IP, ICMP, OSPF, Router).'
+            tanya: "Protokol yang menerjemahkan nama domain menjadi alamat IP adalah...",
+            opsi: ["DHCP", "DNS", "ARP", "ICMP"],
+            benar: 1
           },
           {
-            title: '5. Layer 4 — Transport Layer',
-            body: 'Mengatur pengiriman data end-to-end, segmentasi, keandalan, dan kontrol aliran data (TCP yang andal/connection-oriented dan UDP yang cepat/connectionless).'
-          },
-          {
-            title: '6. Layer 5 — Session Layer',
-            body: 'Membuka, mengelola, dan menutup sesi komunikasi antar-aplikasi (NetBIOS, RPC, PPTP).'
-          },
-          {
-            title: '7. Layer 6 — Presentation Layer',
-            body: 'Menangani format data, translasi, enkripsi/dekripsi, dan kompresi data (SSL/TLS, JPEG, ASCII).'
-          },
-          {
-            title: '8. Layer 7 — Application Layer & Protokol',
-            body: 'Menyediakan layanan jaringan langsung ke aplikasi pengguna: HTTP/HTTPS (web), DNS (resolusi nama domain), DHCP (pemberian IP otomatis), FTP (transfer file), SMTP/IMAP (email), SSH (akses remote aman).'
-          }
-        ],
-        diagramNote: 'Urutan dari bawah ke atas: 1. Physical -> 2. Data Link -> 3. Network -> 4. Transport -> 5. Session -> 6. Presentation -> 7. Application.',
-        summary: 'Model OSI membagi proses komunikasi jaringan menjadi 7 lapisan terstruktur. Memahami setiap layer mempermudah troubleshooting jaringan—apakah masalah berada di kabel (Layer 1), MAC/Switch (Layer 2), IP/Routing (Layer 3), atau aplikasi/port (Layer 4–7).',
-        quiz: [
-          {
-            q: 'IP Address dan proses routing antarjaringan berada pada OSI Layer ke-berapa?',
-            options: ['Layer 2 (Data Link)', 'Layer 3 (Network)', 'Layer 4 (Transport)', 'Layer 7 (Application)'],
-            answer: 1,
-            explain: 'Layer 3 (Network Layer) menangani IP Address dan penentuan jalur routing.'
-          },
-          {
-            q: 'Protokol TCP dan UDP bekerja pada lapisan...',
-            options: ['Physical Layer', 'Transport Layer', 'Session Layer', 'Presentation Layer'],
-            answer: 1,
-            explain: 'TCP dan UDP adalah protokol utama pada Layer 4 (Transport Layer).'
-          },
-          {
-            q: 'Protokol HTTP/HTTPS dan DNS paling dekat dengan interaksi pengguna pada...',
-            options: ['Application Layer', 'Data Link Layer', 'Network Layer', 'Physical Layer'],
-            answer: 0,
-            explain: 'HTTP/HTTPS dan DNS beroperasi di Application Layer (Layer 7).'
+            tanya: "Protokol TCP dan UDP berada pada lapisan...",
+            opsi: ["Physical", "Data Link", "Transport", "Application"],
+            benar: 2
           }
         ]
       },
       {
-        id: 'm5',
-        code: 'MODUL 05',
-        title: 'IP Address dan Subnetting Dasar',
-        shortDesc: 'IPv4/IPv6, kelas IP, subnet mask, default gateway, DNS, network/host ID, serta praktik konfigurasi & ping.',
-        objectives: [
-          'Memahami struktur IP Address (IPv4 & IPv6), kelas IP classful, subnet mask, default gateway, dan DNS.',
-          'Membedakan Network ID dan Host ID serta melakukan perhitungan subnetting dasar.',
-          'Mengonfigurasi parameter IP pada PC dan Router virtual serta menguji konektivitas dengan ping.'
+        bab: "Materi 5",
+        judul: "IP Address dan Subnetting",
+        desc: "Struktur IPv4, kelas IP privat, prefix /24, Network ID, Broadcast, dan host valid.",
+        ringkasan: "<strong>IP Address (IPv4)</strong> adalah alamat logis 32-bit yang ditulis dalam 4 oktet desimal (contoh: <code>192.168.1.1</code>), sedangkan <strong>Subnetting</strong> membagi jaringan menjadi bagian yang lebih kecil.",
+        poin: [
+          "<strong>IP Privat Kelas C:</strong> Rentang <code>192.168.0.0 – 192.168.255.255</code>, sering dipakai di jaringan lokal.",
+          "<strong>Prefix /24:</strong> Subnet mask <code>255.255.255.0</code> dengan 254 host valid (<code>2^8 - 2 = 254</code>).",
+          "<strong>Alamat Khusus:</strong> IP pertama biasanya Network ID, IP terakhir adalah Broadcast ID, dan IP gateway sering memakai <code>.1</code> atau <code>.254</code>."
         ],
-        topics: [
+        tipsBunbyte: "Rumus jumlah host valid: 2^(jumlah bit host) - 2. Untuk /24 ada 8 bit host: 256 - 2 = 254 host!",
+        kuis: [
           {
-            title: '1. Pengertian IP Address',
-            body: 'Internet Protocol Address adalah alamat logis unik yang diberikan kepada setiap perangkat di jaringan agar dapat saling dikenali dan bertukar paket data.'
+            tanya: "Subnet mask untuk prefix /24 dalam notasi desimal bertitik adalah...",
+            opsi: ["255.255.0.0", "255.255.255.0", "255.0.0.0", "255.255.255.192"],
+            benar: 1
           },
           {
-            title: '2. IPv4 dan IPv6',
-            body: 'IPv4 menggunakan alamat 32-bit yang ditulis dalam 4 oktet desimal (contoh: 192.168.1.10). IPv6 menggunakan alamat 128-bit heksadesimal untuk menyediakan ruang alamat yang sangat luas.'
+            tanya: "Jumlah host valid maksimal pada blok jaringan /24 adalah...",
+            opsi: ["256", "255", "254", "126"],
+            benar: 2
           },
           {
-            title: '3. Kelas IP Address (Konsep Classful)',
-            body: 'Kelas A (1.0.0.0–126.255.255.255, default /8), Kelas B (128.0.0.0–191.255.255.255, default /16), dan Kelas C (192.0.0.0–223.255.255.255, default /24).'
+            tanya: "Alamat IP 192.168.10.50 termasuk kategori...",
+            opsi: ["IP Privat Kelas C", "IP Loopback", "IP Multicast", "IP Kelas A"],
+            benar: 0
           },
           {
-            title: '4. Subnet Mask',
-            body: 'Angka 32-bit yang memisahkan bagian Network ID dan Host ID pada alamat IPv4 (contoh: 255.255.255.0 atau /24).'
+            tanya: "Alamat khusus pada suatu blok subnet yang digunakan untuk mengirim pesan ke seluruh host di jaringan tersebut disebut...",
+            opsi: ["Default Gateway", "Broadcast Address", "Subnet Mask", "DNS Server"],
+            benar: 1
           },
           {
-            title: '5. Default Gateway',
-            body: 'Alamat IP perangkat (biasanya interface Router di jaringan lokal) yang menjadi pintu keluar menuju jaringan lain atau internet.'
-          },
-          {
-            title: '6. DNS (Domain Name System)',
-            body: 'Layanan yang menerjemahkan nama domain yang mudah diingat manusia (seperti smk.sch.id) menjadi alamat IP numerik.'
-          },
-          {
-            title: '7. Network ID dan Host ID & Subnetting Dasar',
-            body: 'Network ID menandai identitas jaringan itu sendiri (alamat pertama blok), sedangkan Host ID menandai perangkat tertentu di dalam jaringan tersebut. Subnetting membagi satu blok jaringan menjadi beberapa sub-jaringan yang lebih kecil dan terkelola.'
-          }
-        ],
-        diagramNote: 'Pastikan PC dan Router berada pada subnet yang sama dan Default Gateway PC mengarah ke IP Router.',
-        summary: 'Agar dua perangkat dapat berkomunikasi langsung di LAN, keduanya harus berada pada Network ID yang sama sesuai Subnet Mask. Untuk menjangkau jaringan luar, PC memerlukan Default Gateway yang valid serta DNS untuk resolusi nama.',
-        quiz: [
-          {
-            q: 'Apa fungsi Default Gateway pada konfigurasi IP sebuah komputer klien?',
-            options: [
-              'Mengganti kabel jaringan menjadi nirkabel',
-              'Menjadi jalur keluar paket menuju jaringan lain di luar subnet lokal',
-              'Menghapus cache browser secara otomatis',
-              'Menentukan kecepatan kipas prosesor'
-            ],
-            answer: 1,
-            explain: 'Default Gateway adalah alamat (umumnya Router) yang meneruskan lalu lintas data ke jaringan lain.'
-          },
-          {
-            q: 'Pada jaringan 192.168.10.0 dengan Subnet Mask 255.255.255.0 (/24), manakah yang merupakan Network ID?',
-            options: ['192.168.10.0', '192.168.10.255', '192.168.10.1', '255.255.255.0'],
-            answer: 0,
-            explain: 'Pada blok /24 (192.168.10.0 – 192.168.10.255), alamat .0 adalah Network ID dan .255 adalah Broadcast.'
-          },
-          {
-            q: 'Layanan yang berfungsi menerjemahkan nama domain menjadi alamat IP disebut...',
-            options: ['DHCP', 'DNS', 'ARP', 'FTP'],
-            answer: 1,
-            explain: 'DNS (Domain Name System) menerjemahkan nama domain menjadi alamat IP.'
+            tanya: "Alamat loopback standar untuk menguji stack TCP/IP di perangkat sendiri adalah...",
+            opsi: ["127.0.0.1", "10.0.0.1", "172.16.0.1", "8.8.8.8"],
+            benar: 0
           }
         ]
       }
     ];
 
-    const COMPONENT_SPECS = {
-      mobo: {
-        name: 'Motherboard',
-        role: 'Papan Sirkuit Utama & Penghubung Komponen',
-        desc: 'Menghubungkan CPU, RAM, penyimpanan, kartu ekspansi, serta port input/output dan mendistribusikan jalur data/daya.',
-        usage: 'Dipasang di dalam casing sebagai fondasi perakitan PC workstation, lab komputer, maupun server.'
-      },
-      cpu: {
-        name: 'Processor (CPU)',
-        role: 'Unit Pemroses Instruksi Utama',
-        desc: 'Mengeksekusi instruksi program, operasi aritmetika/logika, dan mengoordinasikan alur kerja sistem.',
-        usage: 'Digunakan untuk menjalankan sistem operasi, aplikasi perkantoran, virtualisasi, dan layanan server.'
-      },
-      ram: {
-        name: 'RAM (Random Access Memory)',
-        role: 'Memori Kerja Sementara Berkecepatan Tinggi',
-        desc: 'Menyimpan data dan instruksi aplikasi yang sedang aktif agar dapat diakses cepat oleh CPU.',
-        usage: 'Menentukan kelancaran multitasking, membuka banyak tab/aplikasi, atau menjalankan mesin virtual.'
-      },
-      storage: {
-        name: 'HDD & SSD',
-        role: 'Penyimpanan Data Permanen (Non-Volatile)',
-        desc: 'Menyimpan OS, software, dan file secara permanen. SSD memakai chip memori flash; HDD memakai piringan magnetik.',
-        usage: 'SSD untuk boot OS dan aplikasi cepat; HDD sering dipakai untuk penyimpanan arsip/backup berkapasitas besar.'
-      },
-      psu: {
-        name: 'Power Supply (PSU)',
-        role: 'Penyedia Daya Listrik DC Stabil',
-        desc: 'Mengubah listrik AC menjadi tegangan DC terukur untuk motherboard, drive, dan kartu grafis.',
-        usage: 'Menjaga kestabilan daya sistem agar perangkat terhindar dari mati mendadak atau kerusakan tegangan.'
-      },
-      gpu: {
-        name: 'VGA / GPU',
-        role: 'Pengolah & Keluaran Grafis',
-        desc: 'Merender tampilan visual ke monitor serta mempercepat beban kerja grafis dan komputasi paralel.',
-        usage: 'Menampilkan antarmuka visual, desain grafis, penyuntingan video, dan simulasi visual.'
-      },
-      nic: {
-        name: 'NIC / LAN Card',
-        role: 'Antarmuka Jaringan Ethernet / Wi-Fi',
-        desc: 'Menghubungkan perangkat ke jaringan kabel/nirkabel dan menyediakan identitas fisik MAC address.',
-        usage: 'Menghubungkan PC/server ke switch, router, atau jaringan lokal sekolah dan internet.'
-      }
-    };
+    let babAktif = 0;
+    let indexSoal = 0;
+    let skorSementara = 0;
+    let sudahMenjawab = false;
+    // 5 lencana kuis + 2 lencana game/praktik (Tebak Komponen & OSI Pancake)
+    let lencanaTerbuka = [false, false, false, false, false, false, false];
 
-    const WIRE_COLORS = {
-      'Putih-Oranye': '#ffedd5',
-      'Oranye': '#f97316',
-      'Putih-Hijau': '#dcfce7',
-      'Hijau': '#16a34a',
-      'Biru': '#2563eb',
-      'Putih-Biru': '#dbeafe',
-      'Putih-Cokelat': '#f5ebe0',
-      'Cokelat': '#78350f'
-    };
-
-    const ALL_WIRE_NAMES = Object.keys(WIRE_COLORS);
-    const T568B_ORDER = ['Putih-Oranye', 'Oranye', 'Putih-Hijau', 'Biru', 'Putih-Biru', 'Hijau', 'Putih-Cokelat', 'Cokelat'];
-    const T568A_ORDER = ['Putih-Hijau', 'Hijau', 'Putih-Oranye', 'Biru', 'Putih-Biru', 'Oranye', 'Putih-Cokelat', 'Cokelat'];
-
-    const OSI_LAYERS = [
-      { num: 7, name: 'Application Layer', proto: 'HTTP, HTTPS, DNS, FTP, SMTP, SSH', desc: 'Menyediakan antarmuka layanan jaringan langsung bagi aplikasi pengguna.' },
-      { num: 6, name: 'Presentation Layer', proto: 'SSL/TLS, JPEG, ASCII, MPEG', desc: 'Menangani format representasi data, enkripsi/dekripsi, dan kompresi.' },
-      { num: 5, name: 'Session Layer', proto: 'NetBIOS, RPC, PPTP', desc: 'Membuka, memelihara, dan mengakhiri sesi komunikasi antarperangkat.' },
-      { num: 4, name: 'Transport Layer', proto: 'TCP, UDP', desc: 'Mengatur segmentasi data, pengiriman end-to-end, keandalan, dan port.' },
-      { num: 3, name: 'Network Layer', proto: 'IPv4, IPv6, ICMP, OSPF', desc: 'Menentukan alamat logis (IP) dan jalur routing antarjaringan.' },
-      { num: 2, name: 'Data Link Layer', proto: 'Ethernet (802.3), Wi-Fi (802.11), ARP', desc: 'Mengatur framing, MAC address, dan pengiriman antar-node dalam satu link.' },
-      { num: 1, name: 'Physical Layer', proto: 'UTP, Fiber Optic, RJ45, Sinyal RF', desc: 'Mengirimkan bit sinyal fisik (tegangan, cahaya, atau gelombang radio) melalui media.' }
+    const dialogHeroList = [
+      '"Hiii! Siap belajar di TKJ Learning Platform?"',
+      '"Ada game Tebak Komponen, Simulasi Kabel LAN, dan OSI Pancake! 🐰"',
+      '"Let\'s explore the world of technology!"'
     ];
+    let heroDialogIdx = 0;
 
-    /* =========================================================================
-       STATE & PERSISTENCE (Preserves & hooks into existing admin/data systems)
-       ========================================================================= */
-    const STORAGE_KEY = 'tkj_learning_platform_state_v1';
-
-    function getDefaultState() {
-      const modulesProgress = {};
-      MODULES.forEach((m) => {
-        modulesProgress[m.id] = {
-          status: 'Belum dimulai',
-          theoryViewed: false,
-          labCompleted: false,
-          quizScore: null,
-          quizTotal: m.quiz.length
-        };
-      });
-      return {
-        studentName: 'Siswa TKJ',
-        activePage: 'beranda',
-        activeModuleId: 'm1',
-        activeModuleTab: 'pengantar',
-        activeLabId: 'm1',
-        modules: modulesProgress
-      };
+    function gantiDialogHero() {
+      heroDialogIdx = (heroDialogIdx + 1) % dialogHeroList.length;
+      document.getElementById('heroBubble').textContent = dialogHeroList[heroDialogIdx];
     }
 
-    let state = loadState();
+    const dialogCornerList = [
+      '"Hiii! Siap belajar TKJ hari ini?"',
+      '"Coba susun 7 lapis OSI Pancake dari bawah ke atas ya! 🥞"',
+      '"Semangat latihan kuis 5 soal tiap bab! 🍵"'
+    ];
+    let cornerDialogIdx = 0;
 
-    function loadState() {
-      const def = getDefaultState();
-      try {
-        const legacySaved = localStorage.getItem('tkj_progress') || localStorage.getItem('tkj_user_progress');
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (raw) {
-          const parsed = JSON.parse(raw);
-          return {
-            ...def,
-            ...parsed,
-            modules: { ...def.modules, ...(parsed.modules || {}) }
-          };
-        }
-        if (legacySaved) {
-          const parsedLegacy = JSON.parse(legacySaved);
-          if (parsedLegacy && parsedLegacy.modules) {
-            return { ...def, modules: { ...def.modules, ...parsedLegacy.modules } };
-          }
-        }
-      } catch (e) {
-        console.warn('Gagal memuat state:', e);
+    function sapaCornerBuddy() {
+      cornerDialogIdx = (cornerDialogIdx + 1) % dialogCornerList.length;
+      document.getElementById('cornerBubble').textContent = dialogCornerList[cornerDialogIdx];
+    }
+
+    function renderDaftarBab() {
+      const grid = document.getElementById('chaptersGrid');
+      grid.innerHTML = '';
+      daftarBab.forEach((item, idx) => {
+        const card = document.createElement('div');
+        card.className = 'chapter-card' + (idx === babAktif ? ' active' : '');
+        card.onclick = () => pilihBab(idx, true);
+        card.innerHTML = `
+          <div>
+            <span class="bab-tag">${item.bab}</span>
+            <h3>${item.judul}</h3>
+            <p>${item.desc}</p>
+          </div>
+          <span class="chapter-link">Baca Materi →</span>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function pilihBab(idx, autoScroll = false) {
+      babAktif = idx;
+      renderDaftarBab();
+      renderMateri();
+      renderAktivitasBab();
+      mulaiKuisBab(false);
+      if (autoScroll) {
+        document.getElementById('readerPanel').scrollIntoView({ behavior: 'smooth' });
       }
-      return def;
     }
 
-    function saveState() {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-        localStorage.setItem('tkj_progress', JSON.stringify(state.modules));
-        if (window.TKJ_LEGACY_HOOKS && typeof window.TKJ_LEGACY_HOOKS.onStateChange === 'function') {
-          window.TKJ_LEGACY_HOOKS.onStateChange(state);
-        }
-      } catch (e) {
-        console.warn('Gagal menyimpan state:', e);
-      }
-      updateHeaderProgress();
+    function gantiBab(arah) {
+      const next = (babAktif + arah + daftarBab.length) % daftarBab.length;
+      pilihBab(next, false);
     }
 
-    function computeOverallProgress() {
-      let scoreSum = 0;
-      MODULES.forEach((m) => {
-        const p = state.modules[m.id];
-        if (p.status === 'Selesai') {
-          scoreSum += 100;
-        } else if (p.status === 'Sedang dipelajari') {
-          let partial = 25;
-          if (p.theoryViewed) partial += 25;
-          if (p.labCompleted) partial += 25;
-          scoreSum += partial;
-        }
-      });
-      return Math.round(scoreSum / MODULES.length);
-    }
+    function renderMateri() {
+      const data = daftarBab[babAktif];
+      document.getElementById('readerBadge').textContent = `${data.bab.toUpperCase()} • MATERI & TIPS`;
+      document.getElementById('readerTitle').textContent = data.judul;
+      document.getElementById('readerSummary').innerHTML = data.ringkasan;
 
-    function computeAverageQuizScore() {
-      const attempted = MODULES.map((m) => state.modules[m.id]).filter((p) => p.quizScore !== null);
-      if (attempted.length === 0) return null;
-      const pcts = attempted.map((p) => (p.quizScore / p.quizTotal) * 100);
-      return Math.round(pcts.reduce((a, b) => a + b, 0) / pcts.length);
-    }
-
-    function updateHeaderProgress() {
-      const pct = computeOverallProgress();
-      const pill = document.getElementById('headerProgressPill');
-      if (pill) pill.textContent = `Progres: ${pct}%`;
-    }
-
-    /* =========================================================================
-       NAVIGATION & RENDER ROUTER
-       ========================================================================= */
-    function navigateTo(page, moduleId = null, tab = null) {
-      state.activePage = page;
-      if (moduleId) state.activeModuleId = moduleId;
-      if (tab) state.activeModuleTab = tab;
-      saveState();
-
-      document.querySelectorAll('.nav-btn').forEach((btn) => {
-        btn.classList.toggle('active', btn.dataset.nav === page);
+      const ul = document.getElementById('readerPoints');
+      ul.innerHTML = '';
+      data.poin.forEach(p => {
+        const li = document.createElement('li');
+        li.innerHTML = p;
+        ul.appendChild(li);
       });
 
-      renderApp();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function toggleMobileMenu(forceState = null) {
-      const drawer = document.getElementById('mobileDrawer');
-      if (!drawer) return;
-      if (typeof forceState === 'boolean') {
-        drawer.classList.toggle('open', forceState);
+      const galeriWrap = document.getElementById('komponenGalleryWrap');
+      const galeriGrid = document.getElementById('hwGalleryGrid');
+      if (babAktif === 1) {
+        galeriWrap.style.display = 'block';
+        galeriGrid.innerHTML = komponenData.map(k => `
+          <div class="hw-card">
+            ${k.svg}
+            <h4>${k.nama}</h4>
+            <p>${k.fungsi}</p>
+          </div>
+        `).join('');
       } else {
-        drawer.classList.toggle('open');
+        galeriWrap.style.display = 'none';
       }
+
+      document.getElementById('materiTipText').textContent = `"${data.tipsBunbyte}"`;
+      document.getElementById('materiMascotSlot').innerHTML = renderBunbyteSVG('happy', 86);
     }
 
-    function renderApp() {
-      const root = document.getElementById('appRoot');
-      if (!root) return;
-      updateHeaderProgress();
+    // --- AKTIVITAS / GAME / PRAKTIK TIAP BAB ---
+    function renderAktivitasBab() {
+      const badge = document.getElementById('interBadge');
+      const title = document.getElementById('interTitle');
+      const box = document.getElementById('interactiveContent');
 
-      if (state.activePage === 'beranda') {
-        root.innerHTML = renderBerandaPage();
-      } else if (state.activePage === 'materi') {
-        root.innerHTML = renderMateriPage();
-        initActiveModuleSimulation();
-      } else if (state.activePage === 'lab') {
-        root.innerHTML = renderPracticeLabPage();
-        initSimulation(state.activeLabId, 'lab');
-      } else if (state.activePage === 'evaluasi') {
-        root.innerHTML = renderEvaluasiPage();
-      } else if (state.activePage === 'progres') {
-        root.innerHTML = renderProgresPage();
-      }
-    }
-
-    /* =========================================================================
-       PAGE 1: BERANDA
-       ========================================================================= */
-    function renderBerandaPage() {
-      const pct = computeOverallProgress();
-      const avgQuiz = computeAverageQuizScore();
-
-      return `
-        <section class="hero">
-          <div class="hero-grid">
+      if (babAktif === 0) {
+        badge.textContent = 'MATERI 1 • TANPA PRAKTIK';
+        title.textContent = '📘 Pengenalan Jaringan Komputer (Fokus Materi & Kuis)';
+        box.innerHTML = `
+          <div class="materi-summary">
+            Materi <strong>Pengenalan Jaringan Komputer</strong> tidak memiliki praktik crimping/game khusus—kamu bisa langsung latihan <strong>Kuis 5 Soal</strong> di bagian bawah atau pindah ke materi lain!
+          </div>
+          <button class="btn-pink" onclick="mulaiKuisBab(true)">Mulai Kuis 5 Soal Materi 1 📝</button>
+        `;
+      } else if (babAktif === 1) {
+        badge.textContent = 'GAME INTERAKTIF • MATERI 2';
+        title.textContent = '🧩 Game Tebak Nama Komponen Komputer';
+        box.innerHTML = `
+          <div class="tebak-box">
+            <div class="tebak-img-frame" id="tebakImgArea"></div>
             <div>
-              <div class="hero-tag">PROGRAM KEAHLIAN TKJ • PLATFORM PEMBELAJARAN INTERAKTIF</div>
-              <h1>Belajar Jaringan &amp; Perangkat Keras <span>Lebih Terarah</span></h1>
-              <p>
-                <strong>TKJ Learning Platform</strong> membantu siswa SMK menguasai lima modul inti Teknik Komputer dan Jaringan melalui materi terstruktur, ilustrasi perangkat, simulasi praktik langsung, kuis evaluasi otomatis, dan pemantauan progres.
-              </p>
-              <div class="hero-actions">
-                <button class="btn-primary" onclick="navigateTo('materi', state.activeModuleId, 'pengantar')">Mulai Belajar</button>
-                <button class="btn-secondary-light" onclick="navigateTo('lab')">Buka Practice Lab</button>
-              </div>
+              <p style="font-weight:800; color:var(--pink-dark); margin-bottom:6px;" id="tebakProgress">Ronde 1 dari 4</p>
+              <h3 style="font-size:1.25rem; margin-bottom:12px;">Komponen apakah yang tampak pada gambar di samping?</h3>
+              <div class="options-list" id="tebakOptions"></div>
+              <div id="tebakFeedback" style="font-weight:800; margin-top:8px;"></div>
             </div>
-
-            <div class="ruti-hero-card">
-              ${renderRutiSVG('happy', 86)}
+          </div>
+        `;
+        mulaiGameTebakKomponen();
+      } else if (babAktif === 2) {
+        badge.textContent = 'PRAKTIK • MATERI 3';
+        title.textContent = '🔌 Simulasi Crimping Kabel LAN (RJ-45)';
+        box.innerHTML = `
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+            <button class="btn-matcha active-mode" id="btnModeStraight" onclick="ubahModeKabel('straight')">Straight (T568B)</button>
+            <button class="btn-matcha" id="btnModeCross" onclick="ubahModeKabel('cross')">Crossover (T568A)</button>
+          </div>
+          <div class="materi-summary" id="petunjukModeKabel">
+            <strong>Mode Straight (Standar T568B):</strong> Susun 8 warna kabel dari Pin 1 sampai Pin 8 untuk menghubungkan <strong>PC ke Switch/Router</strong>.
+          </div>
+          <div class="rj45-head">
+            <div class="rj45-label">Konektor RJ-45 • Pin 1 sampai Pin 8 (Klik pin untuk mencabut warna)</div>
+            <div class="utp-slots" id="utpSlots"></div>
+          </div>
+          <div class="wire-palette" id="wirePalette"></div>
+          <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+            <button class="btn-pink" onclick="crimpingDanTes()">Crimping & Tes LAN Tester ⚡</button>
+            <button class="btn-matcha" onclick="resetKabel()">Potong & Ulangi 🔄</button>
+          </div>
+          <div id="hasilSimulasi" style="text-align:center; font-weight:800; margin-top:14px; font-size:0.98rem;"></div>
+          <div class="lan-tester">
+            <div style="font-family:'Fredoka',sans-serif; font-size:1.05rem; color:var(--matcha-dark);">
+              📟 Indikator Lampu LAN Tester (Pin 1 – 8)
+            </div>
+            <div style="font-size:0.84rem; color:var(--text-dark); margin-top:3px;" id="testerSubtext">
+              Lampu hijau akan menyala berurutan jika hasil crimping benar!
+            </div>
+            <div class="led-row" id="ledRow"></div>
+          </div>
+        `;
+        initLedTester();
+        renderSimulasiKabel();
+      } else if (babAktif === 3) {
+        badge.textContent = 'GAME INTERAKTIF • MATERI 4';
+        title.textContent = '🥞 Game OSI Pancake Stack (Susun 7 Lapisan OSI)';
+        box.innerHTML = `
+          <div class="materi-summary">
+            Susun lapisan OSI di piring pancake dari <strong>paling bawah (Layer 1: Physical)</strong> sampai <strong>paling atas (Layer 7: Application)</strong>!
+          </div>
+          <div class="pancake-arena">
+            <div>
+              <h3 style="margin-bottom:8px; color:var(--pink-dark);">Pilih Lapisan Pancake:</h3>
+              <div class="pancake-pool" id="pancakePool"></div>
+            </div>
+            <div class="pancake-plate">
               <div>
-                <div style="font-weight:700;color:var(--navy);font-size:0.95rem;">RUTI (Router Biru)</div>
-                <div style="font-size:0.8rem;color:var(--text-muted);margin-top:2px;">
-                  "Halo ${escapeHtml(state.studentName)}! Yuk pahami konsep jaringan dan coba simulasinya langkah demi langkah."
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                  <strong style="color:var(--matcha-dark);">🍽️ Piring OSI Pancake</strong>
+                  <button class="btn-matcha" style="padding:5px 11px; font-size:0.8rem;" onclick="initPancakeGame()">Reset</button>
                 </div>
+                <div class="stack-list" id="pancakeStack"></div>
               </div>
-              <span class="badge badge-blue">Pendamping Belajar TKJ</span>
-            </div>
-          </div>
-        </section>
-
-        <div class="ruti-companion-bar">
-          <div style="flex-shrink:0;">${renderRutiSVG('explaining', 58)}</div>
-          <div>
-            <div class="ruti-speech-title">RUTI Memberi Petunjuk <span class="badge badge-blue">Tips Belajar</span></div>
-            <div class="ruti-speech-text">
-              Selesaikan tiap modul mulai dari pengantar, materi inti, simulasi praktik, hingga kuis evaluasi agar status modul berubah menjadi <strong>Selesai</strong>.
-            </div>
-          </div>
-        </div>
-
-        <div class="grid-4" style="margin-bottom:28px;">
-          <div class="card">
-            <div style="font-size:0.76rem;color:var(--text-light);font-weight:600;">PROGRES KESELURUHAN</div>
-            <div style="font-size:1.6rem;font-weight:700;color:var(--navy);margin:4px 0 8px;">${pct}%</div>
-            <div class="progress-track"><div class="progress-fill" style="width:${pct}%;"></div></div>
-          </div>
-          <div class="card">
-            <div style="font-size:0.76rem;color:var(--text-light);font-weight:600;">MODUL SELESAI</div>
-            <div style="font-size:1.6rem;font-weight:700;color:var(--navy);margin:4px 0;">
-              ${MODULES.filter((m) => state.modules[m.id].status === 'Selesai').length} / ${MODULES.length}
-            </div>
-            <div style="font-size:0.78rem;color:var(--text-muted);">Modul 01 – Modul 05</div>
-          </div>
-          <div class="card">
-            <div style="font-size:0.76rem;color:var(--text-light);font-weight:600;">RATA-RATA KUIS</div>
-            <div style="font-size:1.6rem;font-weight:700;color:var(--navy);margin:4px 0;">
-              ${avgQuiz !== null ? avgQuiz + '%' : '-'}
-            </div>
-            <div style="font-size:0.78rem;color:var(--text-muted);">Evaluasi otomatis per modul</div>
-          </div>
-          <div class="card">
-            <div style="font-size:0.76rem;color:var(--text-light);font-weight:600;">SIMULASI PRAKTIK</div>
-            <div style="font-size:1.6rem;font-weight:700;color:var(--royal);margin:4px 0;">5 Lab</div>
-            <div style="font-size:0.78rem;color:var(--text-muted);">Topologi, Komponen, UTP, OSI, IP</div>
-          </div>
-        </div>
-
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">KURIKULUM INTI TKJ</div>
-            <h2 class="section-title">Lima Modul Pembelajaran Terstruktur</h2>
-          </div>
-          <button class="btn-outline" onclick="navigateTo('materi')">Lihat Semua Modul</button>
-        </div>
-
-        <div class="grid-3">
-          ${MODULES.map((m) => renderModuleSummaryCard(m)).join('')}
-        </div>
-      `;
-    }
-
-    function renderModuleSummaryCard(m) {
-      const p = state.modules[m.id];
-      const badgeClass =
-        p.status === 'Selesai'
-          ? 'badge-completed'
-          : p.status === 'Sedang dipelajari'
-          ? 'badge-in-progress'
-          : 'badge-not-started';
-
-      return `
-        <div class="card module-card">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px;">
-              <span class="module-num">${m.code}</span>
-              <span class="badge ${badgeClass}">${p.status}</span>
-            </div>
-            <h3 style="font-size:1.05rem;margin-bottom:6px;">${m.title}</h3>
-            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px;">${m.shortDesc}</p>
-            <ul class="module-topics">
-              ${m.topics.slice(0, 3).map((t) => `<li>${t.title}</li>`).join('')}
-            </ul>
-          </div>
-          <div style="display:flex;gap:8px;padding-top:10px;border-top:1px solid var(--border);">
-            <button class="btn-royal" style="flex:1;" onclick="openModule('${m.id}', 'pengantar')">Buka Modul</button>
-            <button class="btn-outline" onclick="openModule('${m.id}', 'praktik')">Praktik</button>
-          </div>
-        </div>
-      `;
-    }
-
-    /* =========================================================================
-       PAGE 2: MATERI (7 Sub-sections per Module + Interactive Practice)
-       ========================================================================= */
-    function openModule(moduleId, tab = 'pengantar') {
-      state.activeModuleId = moduleId;
-      state.activeModuleTab = tab;
-      const p = state.modules[moduleId];
-      if (p.status === 'Belum dimulai') {
-        p.status = 'Sedang dipelajari';
-      }
-      if (tab === 'materi' || tab === 'pengantar') {
-        p.theoryViewed = true;
-      }
-      saveState();
-      navigateTo('materi', moduleId, tab);
-    }
-
-    function renderMateriPage() {
-      const mod = MODULES.find((m) => m.id === state.activeModuleId) || MODULES[0];
-      const p = state.modules[mod.id];
-      const tab = state.activeModuleTab || 'pengantar';
-
-      const tabs = [
-        { id: 'pengantar', label: '1. Pengantar' },
-        { id: 'tujuan', label: '2. Tujuan' },
-        { id: 'materi', label: '3. Materi Bertahap' },
-        { id: 'ilustrasi', label: '4. Ilustrasi' },
-        { id: 'praktik', label: '5. Praktik Interaktif' },
-        { id: 'kuis', label: '6. Kuis Evaluasi' },
-        { id: 'ringkasan', label: '7. Ringkasan' }
-      ];
-
-      return `
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
-          ${MODULES.map((m) => `
-            <button class="btn-outline ${m.id === mod.id ? 'active' : ''}" onclick="openModule('${m.id}', '${tab}')">
-              ${m.code}: ${m.title}
-            </button>
-          `).join('')}
-        </div>
-
-        <div class="card" style="margin-bottom:20px;">
-          <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:14px;">
-            <div>
-              <span class="module-num">${mod.code}</span>
-              <h1 style="font-size:1.5rem;margin-top:8px;">${mod.title}</h1>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px;">
-              <span class="badge ${p.status === 'Selesai' ? 'badge-completed' : p.status === 'Sedang dipelajari' ? 'badge-in-progress' : 'badge-not-started'}">${p.status}</span>
-              <button class="btn-outline" onclick="markModuleCompleted('${mod.id}')">Tandai Selesai</button>
-            </div>
-          </div>
-
-          <div class="subtabs">
-            ${tabs.map((t) => `
-              <button class="subtab-btn ${tab === t.id ? 'active' : ''}" onclick="openModule('${mod.id}', '${t.id}')">${t.label}</button>
-            `).join('')}
-          </div>
-
-          ${renderModuleSubSection(mod, tab)}
-        </div>
-      `;
-    }
-
-    function renderModuleSubSection(mod, tab) {
-      const p = state.modules[mod.id];
-
-      if (tab === 'pengantar') {
-        return `
-          <div class="ruti-companion-bar" style="margin-bottom:16px;">
-            <div>${renderRutiSVG('explaining', 52)}</div>
-            <div>
-              <div class="ruti-speech-title">RUTI — Pengantar ${mod.code}</div>
-              <div class="ruti-speech-text">${mod.shortDesc}</div>
-            </div>
-          </div>
-          <p style="font-size:0.94rem;color:var(--text-main);margin-bottom:14px;">
-            Pada <strong>${mod.code} (${mod.title})</strong>, kamu akan mempelajari konsep dasar yang sering digunakan pada praktik laboratorium TKJ dan asesmen kompetensi keahlian.
-          </p>
-          <button class="btn-royal" onclick="openModule('${mod.id}', 'tujuan')">Lanjut ke Tujuan Pembelajaran →</button>
-        `;
-      }
-
-      if (tab === 'tujuan') {
-        return `
-          <h3 style="margin-bottom:10px;">Tujuan Pembelajaran</h3>
-          <ul style="padding-left:20px;display:flex;flex-direction:column;gap:8px;font-size:0.92rem;color:var(--text-muted);margin-bottom:16px;">
-            ${mod.objectives.map((o) => `<li>${o}</li>`).join('')}
-          </ul>
-          <button class="btn-royal" onclick="openModule('${mod.id}', 'materi')">Mulai Baca Materi Bertahap →</button>
-        `;
-      }
-
-      if (tab === 'materi') {
-        return `
-          <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:18px;">
-            ${mod.topics.map((top) => `
-              <div class="sim-box">
-                <h4 style="font-size:0.96rem;margin-bottom:5px;color:var(--navy-mid);">${top.title}</h4>
-                <p style="font-size:0.88rem;color:var(--text-muted);">${top.body}</p>
-              </div>
-            `).join('')}
-          </div>
-          <button class="btn-royal" onclick="openModule('${mod.id}', 'praktik')">Coba Praktik Interaktif →</button>
-        `;
-      }
-
-      if (tab === 'ilustrasi') {
-        return `
-          <h3 style="margin-bottom:8px;">Ilustrasi &amp; Referensi Visual</h3>
-          <p style="font-size:0.88rem;color:var(--text-muted);margin-bottom:14px;">${mod.diagramNote}</p>
-          <div class="sim-box" style="margin-bottom:14px;">
-            ${renderModuleDiagramSVG(mod.id)}
-          </div>
-          <button class="btn-royal" onclick="openModule('${mod.id}', 'praktik')">Buka Simulasi Praktik →</button>
-        `;
-      }
-
-      if (tab === 'praktik') {
-        return `
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-            <h3>Praktik Interaktif — ${mod.code}</h3>
-            <span class="badge ${p.labCompleted ? 'badge-completed' : 'badge-blue'}">
-              ${p.labCompleted ? 'Praktik Sudah Dicoba' : 'Siap Diuji'}
-            </span>
-          </div>
-          <div id="simContainer_${mod.id}_mod"></div>
-        `;
-      }
-
-      if (tab === 'kuis') {
-        return renderQuizBlock(mod);
-      }
-
-      return `
-        <h3 style="margin-bottom:8px;">Ringkasan Materi</h3>
-        <div class="sim-box" style="margin-bottom:14px;">
-          <p style="font-size:0.9rem;color:var(--text-main);">${mod.summary}</p>
-        </div>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <button class="btn-royal" onclick="openModule('${mod.id}', 'kuis')">Kerjakan Kuis Evaluasi</button>
-          <button class="btn-outline" onclick="markModuleCompleted('${mod.id}')">Tandai Modul Selesai</button>
-        </div>
-      `;
-    }
-
-    function renderModuleDiagramSVG(modId) {
-      if (modId === 'm1') {
-        return `
-          <svg viewBox="0 0 640 150" width="100%" style="max-height:160px;" role="img" aria-label="Diagram Jaringan LAN ke Router dan Internet">
-            <rect x="20" y="45" width="120" height="56" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
-            <text x="80" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#0b2545">PC / Laptop</text>
-            <text x="80" y="88" text-anchor="middle" font-size="10" fill="#475569">Klien LAN</text>
-            <line x1="140" y1="73" x2="210" y2="73" stroke="#1d4ed8" stroke-width="2.5"/>
-            <rect x="210" y="45" width="130" height="56" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-            <text x="275" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#0b2545">Switch</text>
-            <text x="275" y="88" text-anchor="middle" font-size="10" fill="#475569">Penghubung LAN</text>
-            <line x1="340" y1="73" x2="405" y2="73" stroke="#1d4ed8" stroke-width="2.5"/>
-            <rect x="405" y="45" width="110" height="56" rx="8" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2"/>
-            <text x="460" y="70" text-anchor="middle" font-size="12" font-weight="700" fill="#0b2545">Router</text>
-            <text x="460" y="88" text-anchor="middle" font-size="10" fill="#475569">Gateway / Routing</text>
-            <line x1="515" y1="73" x2="555" y2="73" stroke="#06b6d4" stroke-width="2.5"/>
-            <circle cx="585" cy="73" r="30" fill="#0b2545"/>
-            <text x="585" y="77" text-anchor="middle" font-size="11" font-weight="700" fill="#fff">WAN/ISP</text>
-          </svg>
-        `;
-      }
-      if (modId === 'm3') {
-        return `
-          <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;font-size:0.82rem;">
-            <div><strong>T568B:</strong> 1.Pt-Oranye • 2.Oranye • 3.Pt-Hijau • 4.Biru • 5.Pt-Biru • 6.Hijau • 7.Pt-Cokelat • 8.Cokelat</div>
-            <div><strong>T568A:</strong> 1.Pt-Hijau • 2.Hijau • 3.Pt-Oranye • 4.Biru • 5.Pt-Biru • 6.Oranye • 7.Pt-Cokelat • 8.Cokelat</div>
-          </div>
-        `;
-      }
-      return `
-        <div style="font-size:0.85rem;color:var(--text-muted);">
-          Gunakan tab <strong>Praktik Interaktif</strong> atau menu <strong>Practice Lab</strong> untuk berinteraksi langsung dengan simulasi pada modul ini.
-        </div>
-      `;
-    }
-
-    function markModuleCompleted(modId) {
-      state.modules[modId].status = 'Selesai';
-      state.modules[modId].theoryViewed = true;
-      saveState();
-      renderApp();
-    }
-
-    /* =========================================================================
-       QUIZ ENGINE (Auto-grading + RUTI Feedback + Progress Update)
-       ========================================================================= */
-    function renderQuizBlock(mod) {
-      const p = state.modules[mod.id];
-      return `
-        <h3 style="margin-bottom:10px;">Kuis Evaluasi — ${mod.code}</h3>
-        <form id="quizForm_${mod.id}" onsubmit="submitModuleQuiz(event, '${mod.id}')">
-          <div style="display:flex;flex-direction:column;gap:16px;">
-            ${mod.quiz.map((item, idx) => `
-              <div class="sim-box">
-                <div style="font-weight:600;font-size:0.92rem;margin-bottom:10px;color:var(--navy);">
-                  ${idx + 1}. ${item.q}
-                </div>
-                <div style="display:flex;flex-direction:column;gap:7px;">
-                  ${item.options.map((opt, oIdx) => `
-                    <label class="quiz-option">
-                      <input type="radio" name="q_${mod.id}_${idx}" value="${oIdx}" required />
-                      <span>${opt}</span>
-                    </label>
-                  `).join('')}
-                </div>
-              </div>
-            `).join('')}
-          </div>
-          <div style="margin-top:16px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-            <button type="submit" class="btn-royal">Kirim &amp; Nilai Otomatis</button>
-            ${p.quizScore !== null ? `<span class="badge badge-blue">Nilai Terakhir: ${p.quizScore}/${p.quizTotal} (${Math.round((p.quizScore / p.quizTotal) * 100)}%)</span>` : ''}
-          </div>
-        </form>
-        <div id="quizFeedback_${mod.id}"></div>
-      `;
-    }
-
-    function submitModuleQuiz(event, modId) {
-      event.preventDefault();
-      const mod = MODULES.find((m) => m.id === modId);
-      let correct = 0;
-      const details = [];
-
-      mod.quiz.forEach((item, idx) => {
-        const chosen = document.querySelector(`input[name="q_${modId}_${idx}"]:checked`);
-        const val = chosen ? Number(chosen.value) : -1;
-        const isRight = val === item.answer;
-        if (isRight) correct++;
-        details.push(`
-          <div style="margin-top:6px;font-size:0.82rem;">
-            <strong>Soal ${idx + 1}:</strong> ${isRight ? '<span style="color:var(--success);font-weight:700;">Benar</span>' : '<span style="color:var(--danger);font-weight:700;">Kurang tepat</span>'} — ${item.explain}
-          </div>
-        `);
-      });
-
-      const pct = Math.round((correct / mod.quiz.length) * 100);
-      const passed = pct >= 67;
-      const p = state.modules[modId];
-      p.quizScore = correct;
-      p.quizTotal = mod.quiz.length;
-      if (passed) {
-        p.status = 'Selesai';
-      } else if (p.status === 'Belum dimulai') {
-        p.status = 'Sedang dipelajari';
-      }
-      saveState();
-
-      const fb = document.getElementById(`quizFeedback_${modId}`);
-      if (fb) {
-        fb.innerHTML = `
-          <div class="feedback-box ${passed ? 'feedback-pass' : 'feedback-fail'}">
-            <div style="display:flex;align-items:center;gap:12px;">
-              ${renderRutiSVG(passed ? 'cheering' : 'thinking', 48)}
               <div>
-                <div style="font-weight:700;font-size:0.95rem;">
-                  ${passed ? 'Hebat! Evaluasi Lulus' : 'Tetap Semangat! Coba Ulangi Lagi'} — Skor: ${correct}/${mod.quiz.length} (${pct}%)
-                </div>
-                <div style="font-size:0.84rem;">
-                  ${passed ? 'RUTI: Pemahamanmu sudah bagus dan status modul diperbarui menjadi Selesai.' : 'RUTI: Periksa kembali penjelasan tiap soal lalu coba kerjakan ulang.'}
-                </div>
+                <div id="pancakeStatus" style="font-weight:800; font-size:0.9rem; margin-bottom:6px; text-align:center;"></div>
+                <div class="plate-base"></div>
               </div>
             </div>
-            ${details.join('')}
           </div>
+        `;
+        initPancakeGame();
+      } else {
+        badge.textContent = 'MATERI 5 • FOKUS IP & SUBNETTING';
+        title.textContent = '🔢 IP Address & Subnetting (Fokus Materi & Kuis)';
+        box.innerHTML = `
+          <div class="materi-summary">
+            Latihan cepat rumus /24: total alamat = <code>256</code>, dikurangi Network & Broadcast = <code>254</code> IP host siap pakai. Siap uji pemahaman di <strong>Kuis 5 Soal</strong>?
+          </div>
+          <button class="btn-pink" onclick="mulaiKuisBab(true)">Mulai Kuis 5 Soal Materi 5 📝</button>
         `;
       }
     }
 
-    /* =========================================================================
-       PAGE 3: PRACTICE LAB (All 5 Interactive Simulators)
-       ========================================================================= */
-    function renderPracticeLabPage() {
-      const activeId = state.activeLabId || 'm1';
-      return `
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">LABORATORIUM VIRTUAL TKJ</div>
-            <h1 class="section-title">Practice Lab Interaktif</h1>
-          </div>
-        </div>
+    // --- GAME TEBAK KOMPONEN ---
+    let tebakIdx = 0;
+    let tebakSkor = 0;
 
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;">
-          ${MODULES.map((m) => `
-            <button class="btn-outline ${m.id === activeId ? 'active' : ''}" onclick="selectLab('${m.id}')">
-              ${m.code}: ${m.title}
-            </button>
-          `).join('')}
-        </div>
-
-        <div class="card">
-          <div id="simContainer_${activeId}_lab"></div>
-        </div>
-      `;
+    function mulaiGameTebakKomponen() {
+      tebakIdx = 0;
+      tebakSkor = 0;
+      renderSoalTebak();
     }
 
-    function selectLab(labId) {
-      state.activeLabId = labId;
-      saveState();
-      renderApp();
-    }
+    function renderSoalTebak() {
+      const imgArea = document.getElementById('tebakImgArea');
+      const optsArea = document.getElementById('tebakOptions');
+      const progEl = document.getElementById('tebakProgress');
+      const fbEl = document.getElementById('tebakFeedback');
+      if (!imgArea) return;
 
-    function initActiveModuleSimulation() {
-      if (state.activeModuleTab === 'praktik') {
-        initSimulation(state.activeModuleId, 'mod');
-      }
-    }
-
-    function initSimulation(modId, context) {
-      const containerId = `simContainer_${modId}_${context}`;
-      const el = document.getElementById(containerId);
-      if (!el) return;
-
-      const markLabDone = () => {
-        if (!state.modules[modId].labCompleted) {
-          state.modules[modId].labCompleted = true;
-          if (state.modules[modId].status === 'Belum dimulai') {
-            state.modules[modId].status = 'Sedang dipelajari';
-          }
-          saveState();
+      if (tebakIdx >= komponenData.length) {
+        imgArea.innerHTML = `<div style="font-size:2.6rem;">🎉</div><p style="font-weight:800; margin-top:6px;">Selesai!</p>`;
+        progEl.textContent = 'Game Selesai';
+        optsArea.innerHTML = `<p style="font-weight:800; margin-bottom:10px;">Skor Tebak Komponen kamu: ${tebakSkor} / ${komponenData.length}</p>`;
+        fbEl.innerHTML = `<button class="btn-pink" onclick="mulaiGameTebakKomponen()">Main Lagi 🔄</button>`;
+        if (tebakSkor >= 3) {
+          lencanaTerbuka[5] = true;
+          renderAchievements();
         }
-      };
-
-      if (modId === 'm1') setupTopologySimulator(el, markLabDone);
-      else if (modId === 'm2') setupComponentExplorer(el, markLabDone);
-      else if (modId === 'm3') setupCableTesterSimulator(el, markLabDone);
-      else if (modId === 'm4') setupOsiSimulator(el, markLabDone);
-      else if (modId === 'm5') setupIpConfigLab(el, markLabDone);
-    }
-
-    /* --- SIMULATOR 1: NETWORK TOPOLOGY SIMULATOR --- */
-    function setupTopologySimulator(container, onInteract) {
-      const nodes = [
-        { id: 'r1', type: 'Router', label: 'Router-GW', x: 50, y: 24 },
-        { id: 's1', type: 'Switch', label: 'Switch-L1', x: 50, y: 58 },
-        { id: 'pc1', type: 'Komputer', label: 'PC-01', x: 24, y: 84 },
-        { id: 'pc2', type: 'Komputer', label: 'PC-02', x: 76, y: 84 }
-      ];
-      let links = [
-        { from: 'r1', to: 's1' },
-        { from: 's1', to: 'pc1' },
-        { from: 's1', to: 'pc2' }
-      ];
-      let selectedId = null;
-      let counter = 3;
-
-      container.innerHTML = `
-        <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:12px;">
-          Tambah perangkat (Komputer, Switch, Router), klik dua perangkat berurutan untuk menghubungkan/memutus kabel virtual, atau klik perangkat untuk menggeser posisinya.
-        </p>
-        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
-          <button class="btn-royal" id="addPcBtn">+ Tambah Komputer</button>
-          <button class="btn-outline" id="addSwBtn">+ Tambah Switch</button>
-          <button class="btn-outline" id="addRtBtn">+ Tambah Router</button>
-          <button class="btn-outline" id="resetTopoBtn">Reset Topologi</button>
-        </div>
-        <div class="canvas-stage" id="topoStage">
-          <svg id="topoLines" width="100%" height="100%" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></svg>
-        </div>
-        <div id="topoStatus" class="feedback-box feedback-info">
-          Perangkat aktif: <strong>4</strong> • Kabel terhubung: <strong>3</strong>. Klik 1 perangkat lalu klik perangkat lain untuk menghubungkan kabel.
-        </div>
-      `;
-
-      const stage = container.querySelector('#topoStage');
-      const svg = container.querySelector('#topoLines');
-      const statusEl = container.querySelector('#topoStatus');
-
-      function draw() {
-        const w = stage.clientWidth || 600;
-        const h = stage.clientHeight || 290;
-        svg.innerHTML = links.map((l) => {
-          const a = nodes.find((n) => n.id === l.from);
-          const b = nodes.find((n) => n.id === l.to);
-          if (!a || !b) return '';
-          return `<line x1="${(a.x / 100) * w}" y1="${(a.y / 100) * h}" x2="${(b.x / 100) * w}" y2="${(b.y / 100) * h}" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="4 2"/>`;
-        }).join('');
-
-        stage.querySelectorAll('.node-chip').forEach((el) => el.remove());
-        nodes.forEach((n) => {
-          const chip = document.createElement('div');
-          chip.className = `node-chip ${selectedId === n.id ? 'selected' : ''}`;
-          chip.style.left = `${n.x}%`;
-          chip.style.top = `${n.y}%`;
-          chip.innerHTML = `${n.label}<small>${n.type}</small>`;
-          chip.onclick = (e) => {
-            e.stopPropagation();
-            onInteract();
-            if (!selectedId) {
-              selectedId = n.id;
-              draw();
-              statusEl.innerHTML = `Dipilih: <strong>${n.label}</strong>. Klik perangkat lain untuk menyambungkan/memutus kabel.`;
-            } else if (selectedId === n.id) {
-              n.x = Math.min(88, Math.max(12, n.x + (n.x < 50 ? 6 : -6)));
-              selectedId = null;
-              draw();
-            } else {
-              const idx = links.findIndex(
-                (l) => (l.from === selectedId && l.to === n.id) || (l.from === n.id && l.to === selectedId)
-              );
-              if (idx >= 0) {
-                links.splice(idx, 1);
-                statusEl.innerHTML = `Kabel antara <strong>${selectedId}</strong> dan <strong>${n.id}</strong> dilepas.`;
-              } else {
-                links.push({ from: selectedId, to: n.id });
-                statusEl.innerHTML = `Kabel virtual menghubungkan <strong>${selectedId}</strong> ↔ <strong>${n.id}</strong>.`;
-              }
-              selectedId = null;
-              draw();
-            }
-          };
-          stage.appendChild(chip);
-        });
+        return;
       }
 
-      container.querySelector('#addPcBtn').onclick = () => {
-        onInteract();
-        counter++;
-        nodes.push({ id: `pc${counter}`, type: 'Komputer', label: `PC-0${counter}`, x: 20 + ((counter * 17) % 65), y: 76 });
-        draw();
-      };
-      container.querySelector('#addSwBtn').onclick = () => {
-        onInteract();
-        counter++;
-        nodes.push({ id: `sw${counter}`, type: 'Switch', label: `SW-0${counter}`, x: 30 + ((counter * 15) % 45), y: 52 });
-        draw();
-      };
-      container.querySelector('#addRtBtn').onclick = () => {
-        onInteract();
-        counter++;
-        nodes.push({ id: `rt${counter}`, type: 'Router', label: `RT-0${counter}`, x: 35 + ((counter * 14) % 35), y: 22 });
-        draw();
-      };
-      container.querySelector('#resetTopoBtn').onclick = () => {
-        selectedId = null;
-        nodes.splice(0, nodes.length,
-          { id: 'r1', type: 'Router', label: 'Router-GW', x: 50, y: 24 },
-          { id: 's1', type: 'Switch', label: 'Switch-L1', x: 50, y: 58 },
-          { id: 'pc1', type: 'Komputer', label: 'PC-01', x: 24, y: 84 },
-          { id: 'pc2', type: 'Komputer', label: 'PC-02', x: 76, y: 84 }
-        );
-        links = [
-          { from: 'r1', to: 's1' },
-          { from: 's1', to: 'pc1' },
-          { from: 's1', to: 'pc2' }
-        ];
-        draw();
-        statusEl.innerHTML = 'Topologi dikembalikan ke konfigurasi awal.';
-      };
+      const target = komponenData[tebakIdx];
+      progEl.textContent = `Ronde ${tebakIdx + 1} dari ${komponenData.length}`;
+      imgArea.innerHTML = `<div style="padding:10px;">${target.svg.replace('width="90" height="70"', 'width="145" height="115"')}</div>`;
+      fbEl.textContent = '';
 
-      draw();
-      window.addEventListener('resize', draw);
-    }
-
-    /* --- SIMULATOR 2: COMPUTER COMPONENT EXPLORER --- */
-    function setupComponentExplorer(container, onInteract) {
-      let activeKey = 'mobo';
-
-      container.innerHTML = `
-        <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:12px;">
-          Klik salah satu komponen komputer di bawah ini untuk melihat detail nama, fungsi, penjelasan, dan contoh penggunaannya.
-        </p>
-        <div class="grid-2" style="align-items:start;">
-          <div class="mobo-board">
-            ${Object.entries(COMPONENT_SPECS).map(([key, item]) => `
-              <button type="button" class="comp-hotspot ${key === activeKey ? 'active' : ''}" data-comp="${key}">
-                <strong>${item.name}</strong>
-                <span>${item.role}</span>
-              </button>
-            `).join('')}
-          </div>
-          <div class="sim-box" id="compDetailPanel"></div>
-        </div>
-      `;
-
-      function renderDetail(key) {
-        activeKey = key;
-        const spec = COMPONENT_SPECS[key];
-        container.querySelectorAll('.comp-hotspot').forEach((btn) => {
-          btn.classList.toggle('active', btn.dataset.comp === key);
-        });
-        container.querySelector('#compDetailPanel').innerHTML = `
-          <span class="badge badge-blue" style="margin-bottom:8px;">KOMPONEN TERPILIH</span>
-          <h4 style="font-size:1.1rem;margin-bottom:4px;">${spec.name}</h4>
-          <div style="font-size:0.82rem;font-weight:600;color:var(--royal);margin-bottom:10px;">Fungsi: ${spec.role}</div>
-          <p style="font-size:0.88rem;color:var(--text-main);margin-bottom:10px;">${spec.desc}</p>
-          <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius-sm);padding:10px;font-size:0.84rem;color:var(--text-muted);">
-            <strong style="color:var(--navy);">Contoh Penggunaan:</strong> ${spec.usage}
-          </div>
-        `;
-      }
-
-      container.querySelectorAll('.comp-hotspot').forEach((btn) => {
+      const pilihanAcak = [...komponenData].sort(() => Math.random() - 0.5);
+      optsArea.innerHTML = '';
+      pilihanAcak.forEach(item => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.textContent = item.nama;
         btn.onclick = () => {
-          onInteract();
-          renderDetail(btn.dataset.comp);
-        };
-      });
-
-      renderDetail(activeKey);
-    }
-
-    /* --- SIMULATOR 3: UTP WIRING & LAN CABLE TESTER --- */
-    function setupCableTesterSimulator(container, onInteract) {
-      let standard = 'T568B';
-      let cableType = 'Straight';
-      let sideA = [...T568B_ORDER];
-      let sideB = [...T568B_ORDER];
-
-      function getExpectedB() {
-        const baseA = standard === 'T568B' ? [...T568B_ORDER] : [...T568A_ORDER];
-        if (cableType === 'Straight') return baseA;
-        const cross = [...baseA];
-        [cross[0], cross[2]] = [cross[2], cross[0]];
-        [cross[1], cross[5]] = [cross[5], cross[1]];
-        return cross;
-      }
-
-      container.innerHTML = `
-        <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:14px;">
-          <div>
-            <label style="font-size:0.78rem;font-weight:600;margin-right:6px;">Standar:</label>
-            <select id="utpStdSelect" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border-strong);">
-              <option value="T568B">T568B</option>
-              <option value="T568A">T568A</option>
-            </select>
-          </div>
-          <div>
-            <label style="font-size:0.78rem;font-weight:600;margin-right:6px;">Jenis Kabel:</label>
-            <select id="utpTypeSelect" style="padding:6px 10px;border-radius:8px;border:1px solid var(--border-strong);">
-              <option value="Straight">Straight</option>
-              <option value="Crossover">Crossover</option>
-            </select>
-          </div>
-          <button class="btn-outline" id="autoFillBtn">Isi Sesuai Standar</button>
-          <button class="btn-royal" id="runLanTestBtn">TEST Kabel (LAN Tester)</button>
-        </div>
-
-        <div class="grid-2" style="margin-bottom:12px;">
-          <div class="rj45-connector">
-            <div style="font-weight:700;font-size:0.88rem;color:var(--navy);">Konektor RJ45 — Ujung A (Pin 1–8)</div>
-            <div class="pin-row" id="pinsA"></div>
-          </div>
-          <div class="rj45-connector">
-            <div style="font-weight:700;font-size:0.88rem;color:var(--navy);">Konektor RJ45 — Ujung B (Pin 1–8)</div>
-            <div class="pin-row" id="pinsB"></div>
-          </div>
-        </div>
-
-        <div class="sim-box">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
-            <strong style="font-size:0.9rem;color:var(--navy);">LAN Cable Tester — Indikator Pin 1 sampai 8</strong>
-            <span class="badge badge-blue" id="testerBadge">Siap Diuji</span>
-          </div>
-          <div class="tester-leds" id="testerLeds">
-            ${Array.from({ length: 8 }, (_, i) => `
-              <div class="led-unit">
-                <div class="led-bulb" id="led_${i}"></div>
-                <span>Pin ${i + 1}</span>
-              </div>
-            `).join('')}
-          </div>
-          <div id="testerResultBox"></div>
-        </div>
-      `;
-
-      function renderConnectorPins(targetId, arr, sideKey) {
-        const row = container.querySelector(`#${targetId}`);
-        row.innerHTML = arr.map((colorName, idx) => `
-          <div class="pin-slot">
-            <div style="font-weight:700;margin-bottom:3px;">${idx + 1}</div>
-            <div class="wire-swatch" style="background:${WIRE_COLORS[colorName] || '#e2e8f0'};"></div>
-            <select data-side="${sideKey}" data-idx="${idx}" style="width:100%;font-size:0.66rem;padding:2px;border:1px solid var(--border-strong);border-radius:4px;">
-              ${ALL_WIRE_NAMES.map((c) => `<option value="${c}" ${c === colorName ? 'selected' : ''}>${c}</option>`).join('')}
-            </select>
-          </div>
-        `).join('');
-
-        row.querySelectorAll('select').forEach((sel) => {
-          sel.onchange = () => {
-            onInteract();
-            const i = Number(sel.dataset.idx);
-            if (sel.dataset.side === 'A') sideA[i] = sel.value;
-            else sideB[i] = sel.value;
-            renderConnectorPins('pinsA', sideA, 'A');
-            renderConnectorPins('pinsB', sideB, 'B');
-          };
-        });
-      }
-
-      function applyPreset() {
-        standard = container.querySelector('#utpStdSelect').value;
-        cableType = container.querySelector('#utpTypeSelect').value;
-        sideA = standard === 'T568B' ? [...T568B_ORDER] : [...T568A_ORDER];
-        sideB = getExpectedB();
-        renderConnectorPins('pinsA', sideA, 'A');
-        renderConnectorPins('pinsB', sideB, 'B');
-      }
-
-      container.querySelector('#utpStdSelect').onchange = () => { onInteract(); applyPreset(); };
-      container.querySelector('#utpTypeSelect').onchange = () => { onInteract(); applyPreset(); };
-      container.querySelector('#autoFillBtn').onclick = () => {
-        onInteract();
-        applyPreset();
-        container.querySelector('#testerResultBox').innerHTML = `
-          <div class="feedback-box feedback-info">Urutan pin diatur otomatis sesuai <strong>${standard} (${cableType})</strong>. Tekan <strong>TEST Kabel</strong> untuk menguji.</div>
-        `;
-      };
-
-      container.querySelector('#runLanTestBtn').onclick = () => {
-        onInteract();
-        standard = container.querySelector('#utpStdSelect').value;
-        cableType = container.querySelector('#utpTypeSelect').value;
-        const expectedA = standard === 'T568B' ? T568B_ORDER : T568A_ORDER;
-        const expectedB = getExpectedB();
-
-        const mismatches = [];
-        for (let i = 0; i < 8; i++) {
-          const okPin = sideA[i] === expectedA[i] && sideB[i] === expectedB[i];
-          const bulb = container.querySelector(`#led_${i}`);
-          bulb.classList.remove('on-green', 'on-red');
-          setTimeout(() => {
-            bulb.classList.add(okPin ? 'on-green' : 'on-red');
-          }, i * 70);
-          if (!okPin) {
-            mismatches.push(`Pin ${i + 1} (A: ${sideA[i]} [harus ${expectedA[i]}], B: ${sideB[i]} [harus ${expectedB[i]}])`);
+          optsArea.querySelectorAll('button').forEach(b => b.disabled = true);
+          if (item.id === target.id) {
+            btn.classList.add('correct');
+            tebakSkor++;
+            fbEl.style.color = '#4E7A4B';
+            fbEl.textContent = `✅ Benar! Itu ${target.nama} — ${target.fungsi}`;
+          } else {
+            btn.classList.add('wrong');
+            fbEl.style.color = '#E0578A';
+            fbEl.textContent = `❌ Kurang tepat. Itu adalah ${target.nama}.`;
           }
-        }
-
-        const badge = container.querySelector('#testerBadge');
-        const resBox = container.querySelector('#testerResultBox');
-        if (mismatches.length === 0) {
-          badge.className = 'badge badge-completed';
-          badge.textContent = 'PASS';
-          resBox.innerHTML = `
-            <div class="feedback-box feedback-pass">
-              <strong>PASS — Kabel Lolos Uji!</strong> Seluruh 8 pin sesuai standar <strong>${standard}</strong> dengan tipe <strong>${cableType}</strong>.
-            </div>
-          `;
-        } else {
-          badge.className = 'badge badge-not-started';
-          badge.style.background = 'var(--danger-bg)';
-          badge.style.color = 'var(--danger)';
-          badge.textContent = 'FAIL';
-          resBox.innerHTML = `
-            <div class="feedback-box feedback-fail">
-              <strong>FAIL — Terdapat Ketidaksesuaian Pin:</strong>
-              <ul style="margin-top:6px;padding-left:18px;font-size:0.82rem;">
-                ${mismatches.map((m) => `<li>${m}</li>`).join('')}
-              </ul>
-            </div>
-          `;
-        }
-      };
-
-      renderConnectorPins('pinsA', sideA, 'A');
-      renderConnectorPins('pinsB', sideB, 'B');
-    }
-
-    /* --- SIMULATOR 4: OSI LAYER SIMULATOR --- */
-    function setupOsiSimulator(container, onInteract) {
-      let selectedLayer = OSI_LAYERS[0];
-      let orderList = [...OSI_LAYERS].sort(() => Math.random() - 0.5);
-
-      container.innerHTML = `
-        <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:12px;">
-          Klik lapisan OSI untuk melihat fungsi dan protokolnya, jalankan simulasi perjalanan paket data, atau susun urutan Layer 7 hingga Layer 1.
-        </p>
-        <div class="grid-2" style="align-items:start;">
-          <div>
-            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-              <strong style="font-size:0.88rem;color:var(--navy);">7 Lapisan OSI (Klik untuk Detail)</strong>
-              <button class="btn-royal" id="simPacketBtn">Simulasi Jalan Data</button>
-            </div>
-            <div class="osi-stack" id="osiStackList">
-              ${OSI_LAYERS.map((l) => `
-                <button type="button" class="osi-layer-bar ${l.num === selectedLayer.num ? 'active' : ''}" id="osiBar_${l.num}" onclick="void(0)">
-                  <span><strong>Layer ${l.num}</strong> — ${l.name}</span>
-                  <span class="badge badge-blue">${l.proto.split(',')[0]}</span>
-                </button>
-              `).join('')}
-            </div>
-            <div class="sim-box" id="osiInfoPanel" style="margin-top:12px;"></div>
-          </div>
-
-          <div class="sim-box">
-            <strong style="font-size:0.9rem;color:var(--navy);display:block;margin-bottom:6px;">
-              Susun Urutan Layer (Dari Atas: Layer 7 ke Bawah: Layer 1)
-            </strong>
-            <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:10px;">
-              Gunakan tombol naik/turun untuk menyusun urutan dari Layer 7 (Application) di posisi 1 sampai Layer 1 (Physical) di posisi 7.
-            </p>
-            <div id="osiOrderList" style="display:flex;flex-direction:column;gap:6px;margin-bottom:12px;"></div>
-            <button class="btn-outline" id="checkOsiOrderBtn">Periksa Urutan</button>
-            <div id="osiOrderResult"></div>
-          </div>
-        </div>
-      `;
-
-      function showLayerInfo(layer) {
-        selectedLayer = layer;
-        container.querySelectorAll('.osi-layer-bar').forEach((el) => el.classList.remove('active'));
-        const activeBar = container.querySelector(`#osiBar_${layer.num}`);
-        if (activeBar) activeBar.classList.add('active');
-        container.querySelector('#osiInfoPanel').innerHTML = `
-          <div style="font-weight:700;color:var(--navy);">Layer ${layer.num}: ${layer.name}</div>
-          <div style="font-size:0.8rem;color:var(--royal);margin:3px 0 6px;">Contoh Protokol/Media: ${layer.proto}</div>
-          <div style="font-size:0.85rem;color:var(--text-muted);">${layer.desc}</div>
-        `;
-      }
-
-      OSI_LAYERS.forEach((l) => {
-        container.querySelector(`#osiBar_${l.num}`).onclick = () => {
-          onInteract();
-          showLayerInfo(l);
-        };
-      });
-
-      container.querySelector('#simPacketBtn').onclick = () => {
-        onInteract();
-        const topDown = [...OSI_LAYERS].sort((a, b) => b.num - a.num);
-        topDown.forEach((l, idx) => {
           setTimeout(() => {
-            container.querySelectorAll('.osi-layer-bar').forEach((b) => b.classList.remove('packet-active'));
-            const bar = container.querySelector(`#osiBar_${l.num}`);
-            if (bar) bar.classList.add('packet-active');
-            showLayerInfo(l);
-          }, idx * 420);
-        });
-        setTimeout(() => {
-          container.querySelectorAll('.osi-layer-bar').forEach((b) => b.classList.remove('packet-active'));
-        }, topDown.length * 420 + 500);
-      };
-
-      function renderOrderBox() {
-        const box = container.querySelector('#osiOrderList');
-        box.innerHTML = orderList.map((item, idx) => `
-          <div style="display:flex;align-items:center;justify-content:space-between;background:#fff;border:1px solid var(--border);border-radius:8px;padding:7px 10px;font-size:0.82rem;">
-            <span><strong>${idx + 1}.</strong> ${item.name}</span>
-            <span style="display:flex;gap:4px;">
-              <button type="button" class="btn-outline" style="padding:2px 8px;" ${idx === 0 ? 'disabled' : ''} data-move="${idx}" data-dir="-1">↑</button>
-              <button type="button" class="btn-outline" style="padding:2px 8px;" ${idx === orderList.length - 1 ? 'disabled' : ''} data-move="${idx}" data-dir="1">↓</button>
-            </span>
-          </div>
-        `).join('');
-
-        box.querySelectorAll('button[data-move]').forEach((b) => {
-          b.onclick = () => {
-            onInteract();
-            const i = Number(b.dataset.move);
-            const d = Number(b.dataset.dir);
-            const target = i + d;
-            if (target >= 0 && target < orderList.length) {
-              [orderList[i], orderList[target]] = [orderList[target], orderList[i]];
-              renderOrderBox();
-            }
-          };
-        });
-      }
-
-      container.querySelector('#checkOsiOrderBtn').onclick = () => {
-        onInteract();
-        const expected = [...OSI_LAYERS].sort((a, b) => b.num - a.num).map((x) => x.num);
-        const current = orderList.map((x) => x.num);
-        const isCorrect = expected.every((v, i) => v === current[i]);
-        container.querySelector('#osiOrderResult').innerHTML = `
-          <div class="feedback-box ${isCorrect ? 'feedback-pass' : 'feedback-fail'}">
-            ${isCorrect
-              ? '<strong>Tepat!</strong> Urutan dari Layer 7 (Application) ke Layer 1 (Physical) sudah benar.'
-              : '<strong>Belum Tepat.</strong> Susun mulai dari Layer 7 (Application) di paling atas hingga Layer 1 (Physical) di paling bawah.'}
-          </div>
-        `;
-      };
-
-      showLayerInfo(selectedLayer);
-      renderOrderBox();
-    }
-
-    /* --- SIMULATOR 5: IP CONFIGURATION LAB --- */
-    function setupIpConfigLab(container, onInteract) {
-      let configured = {
-        pcIp: '192.168.10.10',
-        mask: '255.255.255.0',
-        gw: '192.168.10.1',
-        dns: '8.8.8.8',
-        routerIp: '192.168.10.1'
-      };
-
-      container.innerHTML = `
-        <p style="font-size:0.86rem;color:var(--text-muted);margin-bottom:12px;">
-          Atur IP Address, Subnet Mask, Default Gateway, dan DNS untuk PC &amp; Router virtual, lalu klik <strong>Terapkan Konfigurasi</strong> dan uji koneksi dengan <strong>Ping</strong>.
-        </p>
-        <div class="grid-2">
-          <div class="sim-box">
-            <h4 style="margin-bottom:10px;">Konfigurasi Perangkat</h4>
-            <div class="field-group">
-              <label>PC IP Address</label>
-              <input type="text" id="pcIpInput" value="${configured.pcIp}" />
-            </div>
-            <div class="field-group">
-              <label>Subnet Mask</label>
-              <input type="text" id="maskInput" value="${configured.mask}" />
-            </div>
-            <div class="field-group">
-              <label>Default Gateway (PC)</label>
-              <input type="text" id="gwInput" value="${configured.gw}" />
-            </div>
-            <div class="field-group">
-              <label>Router LAN IP</label>
-              <input type="text" id="routerIpInput" value="${configured.routerIp}" />
-            </div>
-            <div class="field-group">
-              <label>DNS Server</label>
-              <input type="text" id="dnsInput" value="${configured.dns}" />
-            </div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;">
-              <button class="btn-royal" id="applyIpBtn">Terapkan Konfigurasi</button>
-              <button class="btn-outline" id="pingGwBtn">Ping Gateway</button>
-              <button class="btn-outline" id="pingDnsBtn">Ping DNS (8.8.8.8)</button>
-            </div>
-          </div>
-
-          <div class="sim-box">
-            <h4 style="margin-bottom:10px;">Status Jaringan &amp; Hasil Simulasi Ping</h4>
-            <div id="ipTopologySummary" style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:12px;font-size:0.84rem;margin-bottom:12px;"></div>
-            <div id="ipLabFeedback" class="feedback-box feedback-info">
-              Klik <strong>Terapkan Konfigurasi</strong> untuk memvalidasi subnet dan gateway.
-            </div>
-          </div>
-        </div>
-      `;
-
-      function isValidIpv4(ip) {
-        const parts = ip.trim().split('.');
-        if (parts.length !== 4) return false;
-        return parts.every((p) => /^\d+$/.test(p) && Number(p) >= 0 && Number(p) <= 255);
-      }
-
-      function getSubnetPrefix24(ip) {
-        const parts = ip.trim().split('.');
-        return parts.length === 4 ? `${parts[0]}.${parts[1]}.${parts[2]}` : '';
-      }
-
-      function refreshSummary() {
-        container.querySelector('#ipTopologySummary').innerHTML = `
-          <div><strong>PC-01:</strong> ${configured.pcIp} / ${configured.mask}</div>
-          <div><strong>Default Gateway:</strong> ${configured.gw}</div>
-          <div><strong>Router Interface:</strong> ${configured.routerIp}</div>
-          <div><strong>DNS:</strong> ${configured.dns}</div>
-        `;
-      }
-
-      function validateConfig() {
-        const pcIp = container.querySelector('#pcIpInput').value.trim();
-        const mask = container.querySelector('#maskInput').value.trim();
-        const gw = container.querySelector('#gwInput').value.trim();
-        const routerIp = container.querySelector('#routerIpInput').value.trim();
-        const dns = container.querySelector('#dnsInput').value.trim();
-
-        if (![pcIp, mask, gw, routerIp, dns].every(isValidIpv4)) {
-          return { ok: false, msg: 'Format IPv4 tidak valid. Pastikan setiap oktet bernilai 0–255.' };
-        }
-        if (mask !== '255.255.255.0') {
-          return { ok: false, msg: 'Gunakan Subnet Mask 255.255.255.0 untuk latihan subnetting /24 ini.' };
-        }
-        if (getSubnetPrefix24(pcIp) !== getSubnetPrefix24(routerIp)) {
-          return {
-            ok: false,
-            msg: `PC (${pcIp}) dan Router (${routerIp}) berada pada subnet yang berbeda.`
-          };
-        }
-        if (gw !== routerIp) {
-          return {
-            ok: false,
-            msg: `Default Gateway PC (${gw}) tidak sesuai dengan Router LAN IP (${routerIp}).`
-          };
-        }
-
-        configured = { pcIp, mask, gw, dns, routerIp };
-        refreshSummary();
-        return {
-          ok: true,
-          msg: `Konfigurasi valid! Network ID: ${getSubnetPrefix24(pcIp)}.0/24, Gateway: ${gw}, DNS: ${dns}.`
+            tebakIdx++;
+            renderSoalTebak();
+          }, 1250);
         };
-      }
-
-      container.querySelector('#applyIpBtn').onclick = () => {
-        onInteract();
-        const res = validateConfig();
-        container.querySelector('#ipLabFeedback').className = `feedback-box ${res.ok ? 'feedback-pass' : 'feedback-fail'}`;
-        container.querySelector('#ipLabFeedback').innerHTML = `<strong>${res.ok ? 'Berhasil:' : 'Kesalahan Konfigurasi:'}</strong> ${res.msg}`;
-      };
-
-      container.querySelector('#pingGwBtn').onclick = () => {
-        onInteract();
-        const res = validateConfig();
-        const fb = container.querySelector('#ipLabFeedback');
-        if (res.ok) {
-          fb.className = 'feedback-box feedback-pass';
-          fb.innerHTML = `<strong>Reply from ${configured.gw}:</strong> bytes=32 time=1ms TTL=64 — Koneksi ke Default Gateway berhasil!`;
-        } else {
-          fb.className = 'feedback-box feedback-fail';
-          fb.innerHTML = `<strong>Request timed out.</strong> ${res.msg}`;
-        }
-      };
-
-      container.querySelector('#pingDnsBtn').onclick = () => {
-        onInteract();
-        const res = validateConfig();
-        const fb = container.querySelector('#ipLabFeedback');
-        if (res.ok) {
-          fb.className = 'feedback-box feedback-pass';
-          fb.innerHTML = `<strong>Reply from ${configured.dns}:</strong> bytes=32 time=14ms TTL=57 — Jalur Gateway &amp; DNS aktif!`;
-        } else {
-          fb.className = 'feedback-box feedback-fail';
-          fb.innerHTML = `<strong>Destination host unreachable.</strong> Perbaiki konfigurasi IP/Gateway terlebih dahulu: ${res.msg}`;
-        }
-      };
-
-      refreshSummary();
+        optsArea.appendChild(btn);
+      });
     }
 
-    /* =========================================================================
-       PAGE 4: EVALUASI
-       ========================================================================= */
-    function renderEvaluasiPage() {
-      return `
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">PENILAIAN OTOMATIS</div>
-            <h1 class="section-title">Evaluasi &amp; Kuis per Modul</h1>
+    // --- SIMULASI KABEL LAN ---
+    const standarT568B = [
+      { id: 'po', nama: 'Putih Oranye', cls: 'c-putih-oranye' },
+      { id: 'o',  nama: 'Oranye',       cls: 'c-oranye' },
+      { id: 'ph', nama: 'Putih Hijau',  cls: 'c-putih-hijau' },
+      { id: 'b',  nama: 'Biru',         cls: 'c-biru' },
+      { id: 'pb', nama: 'Putih Biru',   cls: 'c-putih-biru' },
+      { id: 'h',  nama: 'Hijau',        cls: 'c-hijau' },
+      { id: 'pc', nama: 'Putih Coklat', cls: 'c-putih-coklat' },
+      { id: 'c',  nama: 'Coklat',       cls: 'c-coklat' }
+    ];
+
+    const standarT568A = [
+      { id: 'ph', nama: 'Putih Hijau',  cls: 'c-putih-hijau' },
+      { id: 'h',  nama: 'Hijau',        cls: 'c-hijau' },
+      { id: 'po', nama: 'Putih Oranye', cls: 'c-putih-oranye' },
+      { id: 'b',  nama: 'Biru',         cls: 'c-biru' },
+      { id: 'pb', nama: 'Putih Biru',   cls: 'c-putih-biru' },
+      { id: 'o',  nama: 'Oranye',       cls: 'c-oranye' },
+      { id: 'pc', nama: 'Putih Coklat', cls: 'c-putih-coklat' },
+      { id: 'c',  nama: 'Coklat',       cls: 'c-coklat' }
+    ];
+
+    let modeKabel = 'straight';
+    let slotTerisi = Array(8).fill(null);
+    let ledInterval = null;
+
+    function ubahModeKabel(mode) {
+      modeKabel = mode;
+      document.getElementById('btnModeStraight').classList.toggle('active-mode', mode === 'straight');
+      document.getElementById('btnModeCross').classList.toggle('active-mode', mode === 'cross');
+      const info = document.getElementById('petunjukModeKabel');
+      if (mode === 'straight') {
+        info.innerHTML = '<strong>Mode Straight (Standar T568B):</strong> Susun 8 warna kabel dari Pin 1 sampai Pin 8 untuk menghubungkan <strong>PC ke Switch/Router</strong>.';
+      } else {
+        info.innerHTML = '<strong>Mode Crossover (Standar T568A):</strong> Susun ujung kedua memakai <strong>T568A</strong> (Putih-Hijau di Pin 1) untuk menghubungkan <strong>PC ke PC</strong>.';
+      }
+      resetKabel();
+    }
+
+    function renderSimulasiKabel() {
+      const slotsEl = document.getElementById('utpSlots');
+      const paletteEl = document.getElementById('wirePalette');
+      if (!slotsEl || !paletteEl) return;
+      slotsEl.innerHTML = '';
+      paletteEl.innerHTML = '';
+
+      for (let i = 0; i < 8; i++) {
+        const item = slotTerisi[i];
+        const slotDiv = document.createElement('div');
+        slotDiv.className = 'slot';
+        slotDiv.onclick = () => {
+          if (slotTerisi[i]) {
+            slotTerisi[i] = null;
+            document.getElementById('hasilSimulasi').textContent = '';
+            matikanSemuaLed();
+            renderSimulasiKabel();
+          }
+        };
+        slotDiv.innerHTML = `
+          <span>Pin ${i + 1}</span>
+          <div class="wire-bar ${item ? item.cls : ''}" style="${!item ? 'background:#FAF3E8' : ''}"></div>
+          <span>${item ? item.nama : 'Kosong'}</span>
+        `;
+        slotsEl.appendChild(slotDiv);
+      }
+
+      const acak = [...standarT568B].sort((a, b) => a.nama.localeCompare(b.nama));
+      acak.forEach(kabel => {
+        const dipakai = slotTerisi.some(s => s && s.id === kabel.id);
+        const btn = document.createElement('button');
+        btn.className = 'wire-btn';
+        btn.disabled = dipakai;
+        btn.innerHTML = `<span class="dot-color ${kabel.cls}"></span> ${kabel.nama}`;
+        btn.onclick = () => {
+          const kosongIdx = slotTerisi.findIndex(s => s === null);
+          if (kosongIdx !== -1) {
+            slotTerisi[kosongIdx] = kabel;
+            renderSimulasiKabel();
+          }
+        };
+        paletteEl.appendChild(btn);
+      });
+    }
+
+    function initLedTester() {
+      const row = document.getElementById('ledRow');
+      if (!row) return;
+      row.innerHTML = '';
+      for (let i = 1; i <= 8; i++) {
+        const item = document.createElement('div');
+        item.className = 'led-item';
+        item.innerHTML = `<div class="led-bulb" id="led-${i}"></div><span>${i}</span>`;
+        row.appendChild(item);
+      }
+    }
+
+    function matikanSemuaLed() {
+      if (ledInterval) clearInterval(ledInterval);
+      for (let i = 1; i <= 8; i++) {
+        const el = document.getElementById(`led-${i}`);
+        if (el) el.classList.remove('on');
+      }
+    }
+
+    function jalankanAnimasiLed(urutanPin) {
+      matikanSemuaLed();
+      let step = 0;
+      ledInterval = setInterval(() => {
+        for (let i = 1; i <= 8; i++) {
+          const led = document.getElementById(`led-${i}`);
+          if (led) led.classList.remove('on');
+        }
+        const pinAktif = urutanPin[step];
+        const aktifEl = document.getElementById(`led-${pinAktif}`);
+        if (aktifEl) aktifEl.classList.add('on');
+        step = (step + 1) % urutanPin.length;
+      }, 420);
+    }
+
+    function crimpingDanTes() {
+      const hasilEl = document.getElementById('hasilSimulasi');
+      const testerText = document.getElementById('testerSubtext');
+      if (slotTerisi.includes(null)) {
+        hasilEl.style.color = '#E0578A';
+        hasilEl.textContent = '⚠️ Isi semua 8 pin konektor RJ-45 terlebih dahulu ya!';
+        return;
+      }
+
+      const target = modeKabel === 'straight' ? standarT568B : standarT568A;
+      const benar = slotTerisi.every((item, idx) => item.id === target[idx].id);
+
+      if (benar) {
+        hasilEl.style.color = '#4E7A4B';
+        if (modeKabel === 'straight') {
+          hasilEl.textContent = '🎉 Yay! Kabel Straight (T568B) ter-crimping sempurna! Lampu LAN Tester menyala 1–8.';
+          testerText.textContent = 'Status LAN Tester: PASS (1-2-3-4-5-6-7-8 menyala berurutan)';
+          jalankanAnimasiLed([1, 2, 3, 4, 5, 6, 7, 8]);
+        } else {
+          hasilEl.textContent = '🎉 Yay! Kabel Crossover (T568A) ter-crimping sempurna! Lampu menyilang 3-6-1-4-5-2-7-8.';
+          testerText.textContent = 'Status LAN Tester: PASS Crossover (Pin 1↔3 dan 2↔6 bertukar)';
+          jalankanAnimasiLed([3, 6, 1, 4, 5, 2, 7, 8]);
+        }
+        luncurkanKonfeti();
+      } else {
+        hasilEl.style.color = '#E0578A';
+        hasilEl.textContent = '❌ Ups! Urutan warna belum sesuai standar ' + (modeKabel === 'straight' ? 'T568B' : 'T568A') + '. Klik pin yang salah untuk mengganti!';
+        testerText.textContent = 'Status LAN Tester: ERROR / Urutan pin tertukar';
+        matikanSemuaLed();
+      }
+    }
+
+    function resetKabel() {
+      slotTerisi = Array(8).fill(null);
+      const h = document.getElementById('hasilSimulasi');
+      const t = document.getElementById('testerSubtext');
+      if (h) h.textContent = '';
+      if (t) t.textContent = 'Lampu hijau akan menyala berurutan jika hasil crimping benar!';
+      matikanSemuaLed();
+      renderSimulasiKabel();
+    }
+
+    // --- GAME OSI PANCAKE STACK ---
+    const urutanOsiBenar = [
+      "1. Physical",
+      "2. Data Link",
+      "3. Network",
+      "4. Transport",
+      "5. Session",
+      "6. Presentation",
+      "7. Application"
+    ];
+    let tumpukanPancake = [];
+
+    function initPancakeGame() {
+      tumpukanPancake = [];
+      const pool = document.getElementById('pancakePool');
+      const stack = document.getElementById('pancakeStack');
+      const status = document.getElementById('pancakeStatus');
+      if (!pool || !stack) return;
+
+      stack.innerHTML = '';
+      status.style.color = '#4A3B42';
+      status.textContent = 'Mulai dari lapisan paling bawah: 1. Physical';
+
+      const acak = [...urutanOsiBenar].sort(() => Math.random() - 0.5);
+      pool.innerHTML = '';
+      acak.forEach(layer => {
+        const btn = document.createElement('button');
+        btn.className = 'pancake-choice';
+        btn.textContent = `🥞 ${layer}`;
+        btn.onclick = () => tambahPancake(layer, btn);
+        pool.appendChild(btn);
+      });
+    }
+
+    function tambahPancake(layer, btn) {
+      const idxSekarang = tumpukanPancake.length;
+      const status = document.getElementById('pancakeStatus');
+      const stack = document.getElementById('pancakeStack');
+
+      if (layer === urutanOsiBenar[idxSekarang]) {
+        btn.disabled = true;
+        tumpukanPancake.push(layer);
+
+        const disc = document.createElement('div');
+        disc.className = 'pancake-layer' + (layer.startsWith('7.') ? ' top-syrup' : '');
+        disc.textContent = layer.startsWith('7.') ? `🍓 ${layer} (Top Topping)` : `🥞 ${layer}`;
+        stack.appendChild(disc);
+
+        if (tumpukanPancake.length === urutanOsiBenar.length) {
+          status.style.color = '#4E7A4B';
+          status.textContent = '🎉 Yummy! 7 lapisan OSI Pancake tersusun sempurna dari bawah ke atas!';
+          lencanaTerbuka[6] = true;
+          renderAchievements();
+          luncurkanKonfeti();
+        } else {
+          status.style.color = '#4E7A4B';
+          status.textContent = `✅ Pas! Lanjut ke lapisan berikutnya (${tumpukanPancake.length + 1}/7)...`;
+        }
+      } else {
+        status.style.color = '#E0578A';
+        status.textContent = `❌ Belum pas! Saat ini giliran lapisan ke-${idxSekarang + 1} (${urutanOsiBenar[idxSekarang]}).`;
+      }
+    }
+
+    // --- KUIS 5 SOAL ---
+    function mulaiKuisBab(scrollKeKuis = true) {
+      indexSoal = 0;
+      skorSementara = 0;
+      resetTampilanKuisHTML();
+      tampilkanSoal();
+      if (scrollKeKuis) {
+        document.getElementById('kuis-section').scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
+    function resetTampilanKuisHTML() {
+      document.getElementById('quizContainer').innerHTML = `
+        <div>
+          <div class="quiz-question" id="quizQuestionText"></div>
+          <div class="options-list" id="quizOptions"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button class="btn-pink" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
           </div>
         </div>
-
-        <div class="grid-2">
-          ${MODULES.map((m) => {
-            const p = state.modules[m.id];
-            const scoreLabel = p.quizScore !== null ? `${p.quizScore}/${p.quizTotal} (${Math.round((p.quizScore / p.quizTotal) * 100)}%)` : 'Belum dikerjakan';
-            return `
-              <div class="card">
-                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-                  <span class="module-num">${m.code}</span>
-                  <span class="badge badge-blue">Skor: ${scoreLabel}</span>
-                </div>
-                <h3 style="font-size:1.05rem;margin-bottom:6px;">${m.title}</h3>
-                <p style="font-size:0.84rem;color:var(--text-muted);margin-bottom:14px;">${m.quiz.length} soal pilihan ganda dengan pembahasan otomatis.</p>
-                <button class="btn-royal" onclick="openModule('${m.id}', 'kuis')">Mulai Kuis ${m.code}</button>
-              </div>
-            `;
-          }).join('')}
+        <div class="mascot-stage">
+          <div class="speech-bubble" id="quizBubble">"Let's explore the world of technology!"</div>
+          <div id="quizMascotSlot"></div>
         </div>
       `;
     }
 
-    /* =========================================================================
-       PAGE 5: PROGRES BELAJAR & DASHBOARD SISWA
-       ========================================================================= */
-    function renderProgresPage() {
-      const pct = computeOverallProgress();
-      const avgQuiz = computeAverageQuizScore();
-      const completedCount = MODULES.filter((m) => state.modules[m.id].status === 'Selesai').length;
+    function tampilkanSoal() {
+      sudahMenjawab = false;
+      const babData = daftarBab[babAktif];
+      const totalSoal = babData.kuis.length;
+      document.getElementById('quizBadge').textContent = `KUIS 5 SOAL • ${babData.bab.toUpperCase()}`;
 
-      const achievements = [
-        { title: 'Langkah Pertama', desc: 'Memulai salah satu modul TKJ', unlocked: MODULES.some((m) => state.modules[m.id].status !== 'Belum dimulai') },
-        { title: 'Praktikan Aktif', desc: 'Mencoba minimal 1 simulasi praktik', unlocked: MODULES.some((m) => state.modules[m.id].labCompleted) },
-        { title: 'Penakluk Kuis', desc: 'Menyelesaikan minimal 1 kuis modul', unlocked: MODULES.some((m) => state.modules[m.id].quizScore !== null) },
-        { title: 'Network Explorer', desc: 'Menyelesaikan seluruh 5 modul TKJ', unlocked: completedCount === MODULES.length }
+      if (indexSoal >= totalSoal) {
+        const nilai = Math.round((skorSementara / totalSoal) * 100);
+        const lulus = nilai >= 80;
+        document.getElementById('quizCounter').textContent = 'Hasil Akhir';
+
+        const ekspresiHasil = lulus ? 'celebrate' : 'oops';
+        const ucapanHasil = lulus
+          ? '"Hebat! Nilai kuis kamu mantap!"'
+          : '"Ups! Jangan menyerah, coba lagi ya!"';
+
+        if (lulus) {
+          lencanaTerbuka[babAktif] = true;
+          renderAchievements();
+          luncurkanKonfeti();
+        }
+
+        document.getElementById('quizContainer').innerHTML = `
+          <div>
+            <h3 style="font-size:1.5rem; color:var(--pink-dark); margin-bottom:10px;">
+              ${lulus ? '🎉 Keren! Lencana Materi Terbuka!' : '💪 Yuk Coba Lagi!'}
+            </h3>
+            <p style="font-size:1.06rem; font-weight:800; margin-bottom:8px;">
+              Skor ${babData.bab}: ${skorSementara} dari ${totalSoal} Benar (Nilai: ${nilai})
+            </p>
+            <p style="color:var(--text-muted); margin-bottom:18px;">
+              ${lulus ? 'Lencana prestasi untuk materi ini sudah terbuka di bagian Achievement!' : 'Baca ulang ringkasan materi & tips BUNBYTE lalu ulangi kuis 5 soal ini.'}
+            </p>
+            <button class="btn-pink" onclick="mulaiKuisBab(false)">Ulangi Kuis 5 Soal 🔄</button>
+          </div>
+          <div class="mascot-stage">
+            <div class="speech-bubble">${ucapanHasil}</div>
+            <div class="bunbyte-float">${renderBunbyteSVG(ekspresiHasil, 155)}</div>
+          </div>
+        `;
+        return;
+      }
+
+      const soalObj = babData.kuis[indexSoal];
+      document.getElementById('quizCounter').textContent = `Soal ${indexSoal + 1} dari ${totalSoal}`;
+      document.getElementById('quizQuestionText').textContent = `${indexSoal + 1}. ${soalObj.tanya}`;
+      document.getElementById('btnNextSoal').style.display = 'none';
+      document.getElementById('quizBubble').textContent = '"Let\'s explore the world of technology!"';
+      document.getElementById('quizMascotSlot').innerHTML = renderBunbyteSVG('normal', 145);
+
+      const optsEl = document.getElementById('quizOptions');
+      optsEl.innerHTML = '';
+      soalObj.opsi.forEach((teks, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'opt-btn';
+        btn.textContent = teks;
+        btn.onclick = () => pilihOpsiKuis(btn, i, soalObj.benar);
+        optsEl.appendChild(btn);
+      });
+    }
+
+    function pilihOpsiKuis(btn, idxPilih, idxBenar) {
+      if (sudahMenjawab) return;
+      sudahMenjawab = true;
+
+      const semuaBtn = document.querySelectorAll('.opt-btn');
+      if (idxPilih === idxBenar) {
+        btn.classList.add('correct');
+        skorSementara++;
+        document.getElementById('quizBubble').textContent = '"Yay! Jawaban kamu benar!"';
+        document.getElementById('quizMascotSlot').innerHTML = renderBunbyteSVG('happy', 145);
+      } else {
+        btn.classList.add('wrong');
+        semuaBtn[idxBenar].classList.add('correct');
+        document.getElementById('quizBubble').textContent = '"Ups! Jangan menyerah, coba lagi ya!"';
+        document.getElementById('quizMascotSlot').innerHTML = renderBunbyteSVG('oops', 145);
+      }
+      document.getElementById('btnNextSoal').style.display = 'inline-block';
+    }
+
+    function lanjutSoal() {
+      indexSoal++;
+      tampilkanSoal();
+    }
+
+    // --- ACHIEVEMENT ---
+    function renderAchievements() {
+      const daftarBadge = [
+        { icon: "🌐", title: "Penjelajah Jaringan", desc: "Nilai kuis Materi 1 ≥ 80" },
+        { icon: "🖥️", title: "Ahli Hardware", desc: "Nilai kuis Materi 2 ≥ 80" },
+        { icon: "🔌", title: "Master Kabel LAN", desc: "Nilai kuis Materi 3 ≥ 80" },
+        { icon: "📡", title: "Navigator OSI", desc: "Nilai kuis Materi 4 ≥ 80" },
+        { icon: "🔢", title: "Jago Subnetting", desc: "Nilai kuis Materi 5 ≥ 80" },
+        { icon: "🧩", title: "Penebak Komponen", desc: "Skor ≥ 3 di Game Tebak Gambar" },
+        { icon: "🥞", title: "Chef OSI Pancake", desc: "Selesaikan susunan 7 OSI Pancake" }
       ];
 
-      return `
-        <div class="section-header">
-          <div>
-            <div class="section-kicker">DASHBOARD SISWA</div>
-            <h1 class="section-title">Progres Belajar &amp; Capaian</h1>
-          </div>
-          <button class="btn-outline" onclick="openAdminModal()">Backup / Kelola Data</button>
-        </div>
+      const grid = document.getElementById('badgesGrid');
+      grid.innerHTML = '';
+      let jumlahTerbuka = 0;
 
-        <div class="card" style="margin-bottom:20px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:10px;">
-            <div>
-              <h3 style="font-size:1.08rem;">${escapeHtml(state.studentName)}</h3>
-              <div style="font-size:0.84rem;color:var(--text-muted);">
-                Penyelesaian Keseluruhan: <strong>${pct}%</strong> • Rata-rata Kuis: <strong>${avgQuiz !== null ? avgQuiz + '%' : 'Belum ada nilai'}</strong>
-              </div>
-            </div>
-            <span class="badge badge-blue">${completedCount} dari ${MODULES.length} Modul Selesai</span>
-          </div>
-          <div class="progress-track"><div class="progress-fill" style="width:${pct}%;"></div></div>
-        </div>
+      daftarBadge.forEach((b, idx) => {
+        const aktif = lencanaTerbuka[idx];
+        if (aktif) jumlahTerbuka++;
+        const card = document.createElement('div');
+        card.className = 'badge-item' + (aktif ? ' unlocked' : '');
+        card.innerHTML = `
+          <div class="badge-icon">${aktif ? b.icon : '🔒'}</div>
+          <h3 style="font-size:1.02rem; margin-bottom:4px;">${b.title}</h3>
+          <p style="font-size:0.8rem; color:var(--text-muted);">${b.desc}</p>
+        `;
+        grid.appendChild(card);
+      });
 
-        <div class="card" style="margin-bottom:20px;overflow-x:auto;">
-          <h3 style="margin-bottom:12px;">Status per Modul</h3>
-          <table style="width:100%;border-collapse:collapse;font-size:0.86rem;">
-            <thead>
-              <tr style="border-bottom:2px solid var(--border);text-align:left;color:var(--navy);">
-                <th style="padding:10px 8px;">Modul</th>
-                <th style="padding:10px 8px;">Status</th>
-                <th style="padding:10px 8px;">Praktik</th>
-                <th style="padding:10px 8px;">Nilai Kuis</th>
-                <th style="padding:10px 8px;">Aksi</th>
-              </tr>
-            </thead>
-            <tbody>
-              ${MODULES.map((m) => {
-                const p = state.modules[m.id];
-                const bClass = p.status === 'Selesai' ? 'badge-completed' : p.status === 'Sedang dipelajari' ? 'badge-in-progress' : 'badge-not-started';
-                return `
-                  <tr style="border-bottom:1px solid var(--border);">
-                    <td style="padding:10px 8px;"><strong>${m.code}</strong> — ${m.title}</td>
-                    <td style="padding:10px 8px;"><span class="badge ${bClass}">${p.status}</span></td>
-                    <td style="padding:10px 8px;">${p.labCompleted ? 'Sudah dicoba' : 'Belum'}</td>
-                    <td style="padding:10px 8px;">${p.quizScore !== null ? `${p.quizScore}/${p.quizTotal}` : '-'}</td>
-                    <td style="padding:10px 8px;"><button class="btn-outline" onclick="openModule('${m.id}', 'materi')">Buka</button></td>
-                  </tr>
-                `;
-              }).join('')}
-            </tbody>
-          </table>
-        </div>
-
-        <h3 style="margin-bottom:12px;">Penghargaan Belajar (Achievements)</h3>
-        <div class="grid-4">
-          ${achievements.map((a) => `
-            <div class="card" style="opacity:${a.unlocked ? '1' : '0.6'};">
-              <span class="badge ${a.unlocked ? 'badge-completed' : 'badge-not-started'}" style="margin-bottom:8px;">
-                ${a.unlocked ? 'TERBUKA' : 'TERKUNCI'}
-              </span>
-              <h4 style="font-size:0.96rem;margin-bottom:4px;">${a.title}</h4>
-              <p style="font-size:0.8rem;color:var(--text-muted);">${a.desc}</p>
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
-
-    /* =========================================================================
-       ADMIN MODAL, BACKUP/IMPORT & UTILS
-       ========================================================================= */
-    function openAdminModal() {
-      const inp = document.getElementById('studentNameInput');
-      if (inp) inp.value = state.studentName || '';
-      const msg = document.getElementById('adminStatusMsg');
-      if (msg) msg.style.display = 'none';
-      if (window.TKJ_LEGACY_HOOKS && typeof window.TKJ_LEGACY_HOOKS.renderAdminPanel === 'function') {
-        window.TKJ_LEGACY_HOOKS.renderAdminPanel(document.getElementById('legacyCustomSlot'));
-      }
-      document.getElementById('adminModal').classList.add('open');
-    }
-
-    function closeAdminModal() {
-      document.getElementById('adminModal').classList.remove('open');
-    }
-
-    function updateStudentName(val) {
-      state.studentName = (val || '').trim() || 'Siswa TKJ';
-      saveState();
-      if (state.activePage === 'beranda' || state.activePage === 'progres') {
-        renderApp();
+      const achieveMascot = document.getElementById('achieveMascotSlot');
+      const achieveSpeech = document.getElementById('achieveSpeech');
+      if (jumlahTerbuka > 0) {
+        achieveMascot.innerHTML = renderBunbyteSVG('celebrate', 90);
+        achieveSpeech.textContent = `"Hebat! Kamu sudah membuka ${jumlahTerbuka} dari ${daftarBadge.length} lencana di TKJ Learning Platform!"`;
+      } else {
+        achieveMascot.innerHTML = renderBunbyteSVG('normal', 90);
+        achieveSpeech.textContent = '"Hiii! Siap belajar TKJ hari ini? Kerjakan kuis 5 soal dan game/praktik untuk membuka lencana!"';
       }
     }
 
-    function exportProgressJSON() {
-      const blob = new Blob([JSON.stringify(state, null, 2)], { type: 'application/json' });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = 'tkj-learning-progress.json';
-      a.click();
-      URL.revokeObjectURL(url);
-      showAdminMessage('Backup progres berhasil diunduh (.json).');
+    function scrollKe(id, btn) {
+      if (btn) {
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      }
+      const el = document.getElementById(id);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
     }
 
-    function importProgressJSON(event) {
-      const file = event.target.files && event.target.files[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = () => {
-        try {
-          const parsed = JSON.parse(String(reader.result));
-          if (parsed && parsed.modules) {
-            state = { ...getDefaultState(), ...parsed, modules: { ...getDefaultState().modules, ...parsed.modules } };
-            saveState();
-            renderApp();
-            showAdminMessage('Data progres berhasil diimpor.');
-          } else {
-            showAdminMessage('Format file JSON tidak sesuai.');
-          }
-        } catch (err) {
-          showAdminMessage('Gagal membaca file JSON.');
-        }
-      };
-      reader.readAsText(file);
+    function luncurkanKonfeti() {
+      const colors = ['#FF8FB7', '#88B884', '#FFD6E5', '#FDE047'];
+      for (let i = 0; i < 36; i++) {
+        const c = document.createElement('div');
+        c.className = 'confetti';
+        c.style.left = Math.random() * 100 + 'vw';
+        c.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        c.style.animationDuration = (Math.random() * 1.5 + 1.8) + 's';
+        document.body.appendChild(c);
+        setTimeout(() => c.remove(), 3500);
+      }
     }
 
-    function resetAllProgress() {
-      state = getDefaultState();
-      saveState();
-      renderApp();
-      showAdminMessage('Seluruh progres belajar telah direset ke kondisi awal.');
-    }
-
-    function showAdminMessage(text) {
-      const msg = document.getElementById('adminStatusMsg');
-      if (!msg) return;
-      msg.textContent = text;
-      msg.style.display = 'block';
-    }
-
-    function escapeHtml(str) {
-      return String(str || '')
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;');
-    }
-
-    // Initial Boot
-    renderApp();
+    // Inisialisasi
+    document.getElementById('heroMascotSlot').innerHTML = renderBunbyteSVG('normal', 165);
+    document.getElementById('cornerMascotSlot').innerHTML = renderBunbyteSVG('normal', 56);
+    renderDaftarBab();
+    renderMateri();
+    renderAktivitasBab();
+    tampilkanSoal();
+    renderAchievements();
   </script>
 </body>
 </html>
