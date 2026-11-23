@@ -10,18 +10,40 @@
 
   <style>
     :root {
+      /* Default: Mode Cewek (Pink, Hijau Matcha, Cream) */
       --bg-cream: #FFFDF9;
       --cream-soft: #FAF3E8;
-      --pink-baby: #FFD6E5;
-      --pink-main: #FF8FB7;
-      --pink-dark: #E0578A;
+      --accent-soft: #FFD6E5;
+      --accent-main: #FF8FB7;
+      --accent-dark: #E0578A;
+      --accent-tint-bg: #FFF7FA;
+      --accent-shadow: rgba(224, 87, 138, 0.12);
+      --accent-glow: rgba(255, 143, 183, 0.16);
+      --accent-shadow-btn: rgba(224, 87, 138, 0.24);
       --matcha-light: #E4F2E1;
       --matcha-main: #88B884;
       --matcha-dark: #4E7A4B;
       --white: #FFFFFF;
       --text-dark: #4A3B42;
       --text-muted: #7C6A72;
-      --shadow-soft: 0 12px 28px rgba(224, 87, 138, 0.12);
+    }
+
+    /* Mode Cowok (Biru & Cream) */
+    body.theme-cowo {
+      --bg-cream: #FFFDF8;
+      --cream-soft: #F6F1E7;
+      --accent-soft: #DBEAFE;
+      --accent-main: #3B82F6;
+      --accent-dark: #1D4ED8;
+      --accent-tint-bg: #F3F8FF;
+      --accent-shadow: rgba(29, 78, 216, 0.12);
+      --accent-glow: rgba(59, 130, 246, 0.16);
+      --accent-shadow-btn: rgba(29, 78, 216, 0.24);
+      --matcha-light: #E0F2FE;
+      --matcha-main: #0284C7;
+      --matcha-dark: #0369A1;
+      --text-dark: #2B3A4A;
+      --text-muted: #5C6F82;
     }
 
     * {
@@ -32,11 +54,12 @@
 
     body {
       font-family: 'Nunito', sans-serif;
-      background: linear-gradient(180deg, var(--pink-baby) 0%, var(--bg-cream) 22%, var(--cream-soft) 100%);
+      background: linear-gradient(180deg, var(--accent-soft) 0%, var(--bg-cream) 22%, var(--cream-soft) 100%);
       color: var(--text-dark);
       min-height: 100vh;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      transition: background 0.3s ease, color 0.25s ease;
     }
 
     h1, h2, h3, .brand-title {
@@ -50,7 +73,7 @@
       z-index: 45;
       background: rgba(255, 253, 249, 0.92);
       backdrop-filter: blur(12px);
-      border-bottom: 3px solid var(--pink-baby);
+      border-bottom: 3px solid var(--accent-soft);
     }
 
     .nav-wrap {
@@ -65,9 +88,9 @@
     }
 
     .brand-title {
-      font-size: 1.28rem;
+      font-size: 1.25rem;
       font-weight: 700;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
       text-decoration: none;
       display: flex;
       align-items: center;
@@ -103,8 +126,38 @@
     }
 
     .nav-btn:hover, .nav-btn.active {
-      background: var(--pink-baby);
-      color: var(--pink-dark);
+      background: var(--accent-soft);
+      color: var(--accent-dark);
+    }
+
+    /* Switcher Cewek / Cowok */
+    .gender-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--cream-soft);
+      border: 2px solid var(--accent-soft);
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+
+    .gender-btn {
+      border: none;
+      background: transparent;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.82rem;
+      padding: 5px 11px;
+      border-radius: 999px;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .gender-btn.active {
+      background: var(--accent-main);
+      color: var(--white);
+      box-shadow: 0 2px 6px var(--accent-shadow);
     }
 
     /* Main Container */
@@ -117,10 +170,10 @@
     /* Hero */
     .hero-card {
       background: var(--white);
-      border: 3px solid var(--pink-baby);
+      border: 3px solid var(--accent-soft);
       border-radius: 32px;
       padding: 34px;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 12px 28px var(--accent-shadow);
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
@@ -142,7 +195,7 @@
     .hero-card h1 {
       font-size: 2.3rem;
       line-height: 1.18;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
       margin-bottom: 12px;
     }
 
@@ -153,8 +206,8 @@
       margin-bottom: 20px;
     }
 
-    .btn-pink {
-      background: var(--pink-main);
+    .btn-accent {
+      background: var(--accent-main);
       color: var(--white);
       font-family: 'Fredoka', sans-serif;
       font-size: 0.98rem;
@@ -162,18 +215,18 @@
       border: none;
       border-radius: 16px;
       cursor: pointer;
-      box-shadow: 0 4px 0 var(--pink-dark);
+      box-shadow: 0 4px 0 var(--accent-dark);
       transition: all 0.15s ease;
     }
 
-    .btn-pink:hover {
-      background: var(--pink-dark);
+    .btn-accent:hover {
+      background: var(--accent-dark);
       transform: translateY(-2px);
     }
 
-    .btn-pink:active {
+    .btn-accent:active {
       transform: translateY(3px);
-      box-shadow: 0 2px 0 var(--pink-dark);
+      box-shadow: 0 2px 0 var(--accent-dark);
     }
 
     .btn-matcha {
@@ -202,7 +255,7 @@
 
     .speech-bubble {
       background: var(--cream-soft);
-      border: 2.5px solid var(--pink-main);
+      border: 2.5px solid var(--accent-main);
       border-radius: 20px;
       padding: 11px 16px;
       font-weight: 800;
@@ -210,7 +263,7 @@
       color: var(--text-dark);
       margin-bottom: 12px;
       position: relative;
-      box-shadow: 0 6px 16px rgba(255, 143, 183, 0.16);
+      box-shadow: 0 6px 16px var(--accent-glow);
       max-width: 280px;
     }
 
@@ -222,7 +275,7 @@
       transform: translateX(-50%);
       border-width: 11px 10px 0;
       border-style: solid;
-      border-color: var(--pink-main) transparent transparent;
+      border-color: var(--accent-main) transparent transparent;
     }
 
     .bunbyte-float {
@@ -242,7 +295,7 @@
 
     .sec-head h2 {
       font-size: 1.88rem;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
       margin-bottom: 6px;
     }
 
@@ -261,7 +314,7 @@
 
     .chapter-card {
       background: var(--white);
-      border: 2.5px solid var(--pink-baby);
+      border: 2.5px solid var(--accent-soft);
       border-radius: 24px;
       padding: 18px;
       cursor: pointer;
@@ -274,13 +327,13 @@
 
     .chapter-card:hover {
       transform: translateY(-4px);
-      border-color: var(--pink-main);
+      border-color: var(--accent-main);
     }
 
     .chapter-card.active {
-      background: #FFF7FA;
-      border-color: var(--pink-dark);
-      box-shadow: 0 10px 24px rgba(224, 87, 138, 0.16);
+      background: var(--accent-tint-bg);
+      border-color: var(--accent-dark);
+      box-shadow: 0 10px 24px var(--accent-shadow);
     }
 
     .bab-tag {
@@ -311,16 +364,16 @@
     .chapter-link {
       font-size: 0.82rem;
       font-weight: 800;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
     }
 
     /* Panel Utama */
     .panel-box {
       background: var(--white);
-      border: 3px solid var(--pink-baby);
+      border: 3px solid var(--accent-soft);
       border-radius: 28px;
       padding: 28px;
-      box-shadow: var(--shadow-soft);
+      box-shadow: 0 12px 28px var(--accent-shadow);
       margin-bottom: 34px;
     }
 
@@ -331,13 +384,13 @@
       flex-wrap: wrap;
       gap: 12px;
       padding-bottom: 15px;
-      border-bottom: 2px dashed var(--pink-baby);
+      border-bottom: 2px dashed var(--accent-soft);
       margin-bottom: 20px;
     }
 
     .panel-box h2 {
       font-size: 1.68rem;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
       margin-bottom: 12px;
     }
 
@@ -377,7 +430,7 @@
 
     .hw-card {
       background: var(--bg-cream);
-      border: 2px solid var(--pink-baby);
+      border: 2px solid var(--accent-soft);
       border-radius: 18px;
       padding: 12px;
       text-align: center;
@@ -385,7 +438,7 @@
 
     .hw-card h4 {
       font-family: 'Fredoka', sans-serif;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
       font-size: 0.96rem;
       margin: 6px 0 3px;
     }
@@ -428,7 +481,7 @@
       gap: 22px;
       align-items: center;
       background: var(--bg-cream);
-      border: 2.5px solid var(--pink-baby);
+      border: 2.5px solid var(--accent-soft);
       border-radius: 22px;
       padding: 20px;
       margin-top: 14px;
@@ -436,7 +489,7 @@
 
     .tebak-img-frame {
       background: var(--white);
-      border: 2px dashed var(--pink-main);
+      border: 2px dashed var(--accent-main);
       border-radius: 18px;
       padding: 16px;
       text-align: center;
@@ -459,7 +512,7 @@
 
     .pancake-choice {
       background: var(--cream-soft);
-      border: 2px solid var(--pink-main);
+      border: 2px solid var(--accent-main);
       border-radius: 15px;
       padding: 10px 14px;
       font-weight: 800;
@@ -471,7 +524,7 @@
     }
 
     .pancake-choice:hover:not(:disabled) {
-      background: var(--pink-baby);
+      background: var(--accent-soft);
       transform: translateX(3px);
     }
 
@@ -511,9 +564,9 @@
     }
 
     .pancake-layer.top-syrup {
-      background: linear-gradient(180deg, #FF8FB7 0%, #E0578A 100%);
+      background: linear-gradient(180deg, var(--accent-main) 0%, var(--accent-dark) 100%);
       color: #FFFFFF;
-      border-color: #9D174D;
+      border-color: var(--text-dark);
     }
 
     .plate-base {
@@ -527,7 +580,7 @@
     /* Simulasi Kabel LAN */
     .rj45-head {
       background: var(--cream-soft);
-      border: 2.5px solid var(--pink-main);
+      border: 2.5px solid var(--accent-main);
       border-radius: 22px;
       padding: 18px 14px 14px;
       margin: 16px 0;
@@ -537,7 +590,7 @@
       text-align: center;
       font-size: 0.84rem;
       font-weight: 800;
-      color: var(--pink-dark);
+      color: var(--accent-dark);
       margin-bottom: 12px;
     }
 
@@ -549,7 +602,7 @@
 
     .slot {
       background: var(--white);
-      border: 2px solid var(--pink-baby);
+      border: 2px solid var(--accent-soft);
       border-radius: 14px;
       height: 100px;
       display: flex;
@@ -588,7 +641,7 @@
       align-items: center;
       gap: 7px;
       background: var(--bg-cream);
-      border: 2px solid var(--pink-baby);
+      border: 2px solid var(--accent-soft);
       padding: 7px 13px;
       border-radius: 14px;
       font-family: 'Nunito', sans-serif;
@@ -600,8 +653,8 @@
     }
 
     .wire-btn:hover:not(:disabled) {
-      background: #FFF2F7;
-      border-color: var(--pink-main);
+      background: var(--accent-tint-bg);
+      border-color: var(--accent-main);
       transform: scale(1.04);
     }
 
@@ -691,7 +744,7 @@
 
     .opt-btn {
       background: var(--bg-cream);
-      border: 2.5px solid var(--pink-baby);
+      border: 2.5px solid var(--accent-soft);
       border-radius: 15px;
       padding: 12px 16px;
       text-align: left;
@@ -704,8 +757,8 @@
     }
 
     .opt-btn:hover:not(:disabled) {
-      background: #FFF2F7;
-      border-color: var(--pink-main);
+      background: var(--accent-tint-bg);
+      border-color: var(--accent-main);
     }
 
     .opt-btn.correct {
@@ -716,7 +769,7 @@
 
     .opt-btn.wrong {
       background: #FFE4EC;
-      border-color: var(--pink-dark);
+      border-color: var(--accent-dark);
       color: #9F1239;
     }
 
@@ -730,7 +783,7 @@
 
     .badge-item {
       background: var(--cream-soft);
-      border: 2px dashed var(--pink-main);
+      border: 2px dashed var(--accent-main);
       border-radius: 20px;
       padding: 16px;
       text-align: center;
@@ -780,14 +833,14 @@
     .corner-avatar {
       pointer-events: auto;
       background: var(--white);
-      border: 3px solid var(--pink-main);
+      border: 3px solid var(--accent-main);
       border-radius: 50%;
       width: 72px;
       height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 24px rgba(224, 87, 138, 0.24);
+      box-shadow: 0 10px 24px var(--accent-shadow-btn);
       cursor: pointer;
       transition: transform 0.2s;
     }
@@ -830,7 +883,7 @@
     <div class="nav-wrap">
       <a href="#" class="brand-title" onclick="scrollKe('hero')">
         <span>🐰 TKJ LEARNING PLATFORM</span>
-        <span class="brand-pill">with BUNBYTE</span>
+        <span class="brand-pill" id="modeBadgeNav">Mode Cewek</span>
       </a>
       <div class="nav-links">
         <button class="nav-btn active" onclick="scrollKe('hero', this)">Home</button>
@@ -839,6 +892,10 @@
         <button class="nav-btn" onclick="scrollKe('kuis-section', this)">Kuis (5 Soal)</button>
         <button class="nav-btn" onclick="scrollKe('achievement-section', this)">Achievement</button>
       </div>
+      <div class="gender-switch" role="group" aria-label="Pilih mode tema cewek atau cowok">
+        <button class="gender-btn active" id="btnModeCewe" onclick="setGenderTheme('cewe')">♀ Cewek</button>
+        <button class="gender-btn" id="btnModeCowo" onclick="setGenderTheme('cowo')">♂ Cowok</button>
+      </div>
     </div>
   </header>
 
@@ -846,13 +903,13 @@
     <!-- Hero -->
     <section class="hero-card" id="hero">
       <div>
-        <span class="hero-tag">🍵 Pink • Cream • Putih • Matcha</span>
+        <span class="hero-tag" id="heroPaletteTag">🌸 Pink • Hijau Matcha • Cream</span>
         <h1>Belajar TKJ Seru & Terstruktur Bareng BUNBYTE!</h1>
         <p>
           Selamat datang di <strong>TKJ LEARNING PLATFORM</strong>! Kuasai 5 materi inti TKJ—mulai dari Jaringan Komputer, Komponen Komputer, Kabel LAN, OSI Layer, hingga IP Address & Subnetting—lengkap dengan mini-game, simulasi crimping, dan kuis 5 soal tiap bab!
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:inherit;">
-          <button class="btn-pink" onclick="scrollKe('materi-section')">Mulai Belajar 🚀</button>
+          <button class="btn-accent" onclick="scrollKe('materi-section')">Mulai Belajar 🚀</button>
           <button class="btn-matcha" onclick="gantiDialogHero()">Sapa BUNBYTE 💬</button>
         </div>
       </div>
@@ -888,7 +945,7 @@
 
         <!-- Galeri gambar komponen khusus Materi 2 -->
         <div id="komponenGalleryWrap" style="display:none;">
-          <h3 style="color:var(--pink-dark); margin-bottom:6px;">🖼️ Galeri Ilustrasi Komponen Komputer</h3>
+          <h3 style="color:var(--accent-dark); margin-bottom:6px;">🖼️ Galeri Ilustrasi Komponen Komputer</h3>
           <div class="hw-gallery" id="hwGalleryGrid"></div>
         </div>
 
@@ -902,7 +959,7 @@
 
         <div style="margin-top:20px; display:flex; gap:10px; justify-content:flex-end; flex-wrap:wrap;">
           <button class="btn-matcha" id="btnKeAktivitas" onclick="scrollKe('interactive-section')">Buka Praktik / Game 🎮</button>
-          <button class="btn-pink" onclick="mulaiKuisBab(true)">Kerjakan Kuis 5 Soal 📝</button>
+          <button class="btn-accent" onclick="mulaiKuisBab(true)">Kerjakan Kuis 5 Soal 📝</button>
         </div>
       </div>
     </section>
@@ -930,7 +987,7 @@
     <section class="panel-box" id="kuis-section">
       <div class="panel-top">
         <span class="hero-tag" style="margin:0;" id="quizBadge">KUIS 5 SOAL • MATERI 1</span>
-        <span style="font-weight:800; color:var(--pink-dark);" id="quizCounter">Soal 1 dari 5</span>
+        <span style="font-weight:800; color:var(--accent-dark);" id="quizCounter">Soal 1 dari 5</span>
       </div>
 
       <div class="quiz-layout" id="quizContainer">
@@ -938,7 +995,7 @@
           <div class="quiz-question" id="quizQuestionText">Memuat pertanyaan...</div>
           <div class="options-list" id="quizOptions"></div>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <button class="btn-pink" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
+            <button class="btn-accent" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
           </div>
         </div>
 
@@ -956,10 +1013,10 @@
         <p>Selesaikan kuis 5 soal tiap bab (nilai ≥ 80) dan selesaikan game/praktik untuk membuka semua lencana!</p>
       </div>
 
-      <div class="bunbyte-tip-bar" style="background:#FFF5F9; border-color:var(--pink-main); margin-bottom:18px;">
+      <div class="bunbyte-tip-bar" style="background:var(--accent-tint-bg); border-color:var(--accent-main); margin-bottom:18px;">
         <div id="achieveMascotSlot" style="flex-shrink:0;"></div>
         <div>
-          <strong style="color:var(--pink-dark);">🐰 Pesan Spesial BUNBYTE:</strong>
+          <strong style="color:var(--accent-dark);">🐰 Pesan Spesial BUNBYTE:</strong>
           <span id="achieveSpeech">"Hiii! Siap belajar TKJ hari ini? Ayo taklukkan 5 materi dan game serunya!"</span>
         </div>
       </div>
@@ -975,8 +1032,45 @@
   </div>
 
   <script>
+    let currentGender = 'cewe';
+
+    function setGenderTheme(gender) {
+      currentGender = gender;
+      const isCowo = gender === 'cowo';
+      document.body.classList.toggle('theme-cowo', isCowo);
+      document.getElementById('btnModeCewe').classList.toggle('active', !isCowo);
+      document.getElementById('btnModeCowo').classList.toggle('active', isCowo);
+      document.getElementById('modeBadgeNav').textContent = isCowo ? 'Mode Cowok • Biru Cream' : 'Mode Cewek • Pink Matcha';
+      document.getElementById('heroPaletteTag').textContent = isCowo
+        ? '💙 Biru • Cream • Mode Cowok'
+        : '🌸 Pink • Hijau Matcha • Cream • Mode Cewek';
+      document.getElementById('heroBubble').textContent = isCowo
+        ? '"Halo! Mode Cowok biru-cream aktif! Siap gas belajar TKJ?"'
+        : '"Hiii! Mode Cewek pink-matcha-cream aktif! Siap belajar?"';
+
+      refreshAllMascots();
+    }
+
+    function refreshAllMascots() {
+      const heroSlot = document.getElementById('heroMascotSlot');
+      const cornerSlot = document.getElementById('cornerMascotSlot');
+      if (heroSlot) heroSlot.innerHTML = renderBunbyteSVG('normal', 165);
+      if (cornerSlot) cornerSlot.innerHTML = renderBunbyteSVG('normal', 56);
+      renderMateri();
+      renderAchievements();
+      const qSlot = document.getElementById('quizMascotSlot');
+      if (qSlot) qSlot.innerHTML = renderBunbyteSVG('normal', 145);
+    }
+
     // --- MASKOT BUNBYTE ---
     function renderBunbyteSVG(expression = 'normal', size = 145) {
+      const isCowo = currentGender === 'cowo';
+      const hoodieFill = isCowo ? '#DBEAFE' : '#FFD6E5';
+      const earAccent = isCowo ? '#BFDBFE' : '#FFD6E5';
+      const cheekFill = isCowo ? '#60A5FA' : '#FF8FB7';
+      const noseFill = isCowo ? '#3B82F6' : '#FF8FB7';
+      const mouthAccent = isCowo ? '#93C5FD' : '#FF8FB7';
+
       let eyesSVG = '';
       let mouthSVG = '';
       let extraDecor = '';
@@ -986,14 +1080,14 @@
           <path d="M68 92 Q75 83 82 92" stroke="#4A3B42" stroke-width="3.5" stroke-linecap="round" fill="none"/>
           <path d="M118 92 Q125 83 132 92" stroke="#4A3B42" stroke-width="3.5" stroke-linecap="round" fill="none"/>
         `;
-        mouthSVG = `<path d="M93 102 Q100 112 107 102 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5" stroke-linejoin="round"/>`;
+        mouthSVG = `<path d="M93 102 Q100 112 107 102 Z" fill="${mouthAccent}" stroke="#4A3B42" stroke-width="2.5" stroke-linejoin="round"/>`;
         extraDecor = `<text x="152" y="65" font-size="18">✨</text>`;
       } else if (expression === 'oops') {
         eyesSVG = `
           <path d="M69 86 L80 91 L69 96" stroke="#4A3B42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <path d="M131 86 L120 91 L131 96" stroke="#4A3B42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         `;
-        mouthSVG = `<circle cx="100" cy="105" r="4.5" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.3"/>`;
+        mouthSVG = `<circle cx="100" cy="105" r="4.5" fill="${mouthAccent}" stroke="#4A3B42" stroke-width="2.3"/>`;
         extraDecor = `<text x="150" y="68" font-size="16">💧</text>`;
       } else if (expression === 'celebrate') {
         eyesSVG = `
@@ -1004,7 +1098,7 @@
           <circle cx="127" cy="88" r="2.4" fill="#FFFFFF"/>
           <circle cx="122" cy="92" r="1.3" fill="#FFFFFF"/>
         `;
-        mouthSVG = `<path d="M91 101 Q100 114 109 101 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5"/>`;
+        mouthSVG = `<path d="M91 101 Q100 114 109 101 Z" fill="${mouthAccent}" stroke="#4A3B42" stroke-width="2.5"/>`;
         extraDecor = `<text x="26" y="62" font-size="18">🎉</text><text x="154" y="62" font-size="18">⭐</text>`;
       } else {
         eyesSVG = `
@@ -1019,11 +1113,11 @@
       return `
         <svg width="${size}" height="${size}" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect x="64" y="14" width="22" height="54" rx="11" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
-          <rect x="70" y="22" width="10" height="38" rx="5" fill="#FFD6E5"/>
+          <rect x="70" y="22" width="10" height="38" rx="5" fill="${earAccent}"/>
           <rect x="114" y="14" width="22" height="54" rx="11" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
-          <rect x="120" y="22" width="10" height="38" rx="5" fill="#FFD6E5"/>
+          <rect x="120" y="22" width="10" height="38" rx="5" fill="${earAccent}"/>
           <path d="M52 84 C52 46, 148 46, 148 84" stroke="#88B884" stroke-width="7" stroke-linecap="round"/>
-          <path d="M54 134 C54 118, 146 118, 146 134 L154 176 C154 184, 46 184, 46 176 Z" fill="#FFD6E5" stroke="#4A3B42" stroke-width="3"/>
+          <path d="M54 134 C54 118, 146 118, 146 134 L154 176 C154 184, 46 184, 46 176 Z" fill="${hoodieFill}" stroke="#4A3B42" stroke-width="3"/>
           <line x1="88" y1="126" x2="88" y2="142" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round"/>
           <line x1="112" y1="126" x2="112" y2="142" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round"/>
           <rect x="77" y="128" width="46" height="14" rx="7" fill="#E4F2E1" stroke="#88B884" stroke-width="1.5"/>
@@ -1031,9 +1125,9 @@
           <ellipse cx="100" cy="90" rx="46" ry="38" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
           <rect x="44" y="74" width="14" height="30" rx="7" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
           <rect x="142" y="74" width="14" height="30" rx="7" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
-          <ellipse cx="64" cy="100" rx="7.5" ry="4.5" fill="#FF8FB7" opacity="0.55"/>
-          <ellipse cx="136" cy="100" rx="7.5" ry="4.5" fill="#FF8FB7" opacity="0.55"/>
-          <ellipse cx="100" cy="96" rx="3.5" ry="2.5" fill="#FF8FB7"/>
+          <ellipse cx="64" cy="100" rx="7.5" ry="4.5" fill="${cheekFill}" opacity="0.55"/>
+          <ellipse cx="136" cy="100" rx="7.5" ry="4.5" fill="${cheekFill}" opacity="0.55"/>
+          <ellipse cx="100" cy="96" rx="3.5" ry="2.5" fill="${noseFill}"/>
           ${eyesSVG}
           ${mouthSVG}
           <rect x="64" y="145" width="72" height="42" rx="8" fill="#FAF3E8" stroke="#4A3B42" stroke-width="3"/>
@@ -1081,7 +1175,7 @@
         fungsi: 'Mengubah arus listrik AC menjadi DC stabil untuk komponen PC.',
         svg: `<svg width="90" height="70" viewBox="0 0 90 70">
           <rect x="14" y="14" width="62" height="42" rx="7" fill="#FAF3E8" stroke="#4A3B42" stroke-width="2.5"/>
-          <circle cx="36" cy="35" r="13" fill="#FFD6E5" stroke="#E0578A" stroke-width="2"/>
+          <circle cx="36" cy="35" r="13" fill="#DBEAFE" stroke="#2563EB" stroke-width="2"/>
           <circle cx="36" cy="35" r="5" fill="#88B884"/>
           <rect x="56" y="22" width="13" height="8" rx="2" fill="#4A3B42"/>
           <rect x="56" y="36" width="13" height="10" rx="2" fill="#88B884"/>
@@ -1094,7 +1188,7 @@
         svg: `<svg width="90" height="70" viewBox="0 0 90 70">
           <rect x="16" y="10" width="58" height="50" rx="6" fill="#E4F2E1" stroke="#4E7A4B" stroke-width="2.5"/>
           <rect x="24" y="18" width="20" height="20" rx="3" fill="#FFFFFF" stroke="#4A3B42" stroke-width="2"/>
-          <rect x="50" y="18" width="16" height="32" rx="2" fill="#FFD6E5" stroke="#E0578A" stroke-width="1.8"/>
+          <rect x="50" y="18" width="16" height="32" rx="2" fill="#DBEAFE" stroke="#2563EB" stroke-width="1.8"/>
           <line x1="24" y1="46" x2="44" y2="46" stroke="#4A3B42" stroke-width="2"/>
         </svg>`
       }
@@ -1303,7 +1397,6 @@
     let indexSoal = 0;
     let skorSementara = 0;
     let sudahMenjawab = false;
-    // 5 lencana kuis + 2 lencana game/praktik (Tebak Komponen & OSI Pancake)
     let lencanaTerbuka = [false, false, false, false, false, false, false];
 
     const dialogHeroList = [
@@ -1411,7 +1504,7 @@
           <div class="materi-summary">
             Materi <strong>Pengenalan Jaringan Komputer</strong> tidak memiliki praktik crimping/game khusus—kamu bisa langsung latihan <strong>Kuis 5 Soal</strong> di bagian bawah atau pindah ke materi lain!
           </div>
-          <button class="btn-pink" onclick="mulaiKuisBab(true)">Mulai Kuis 5 Soal Materi 1 📝</button>
+          <button class="btn-accent" onclick="mulaiKuisBab(true)">Mulai Kuis 5 Soal Materi 1 📝</button>
         `;
       } else if (babAktif === 1) {
         badge.textContent = 'GAME INTERAKTIF • MATERI 2';
@@ -1420,7 +1513,7 @@
           <div class="tebak-box">
             <div class="tebak-img-frame" id="tebakImgArea"></div>
             <div>
-              <p style="font-weight:800; color:var(--pink-dark); margin-bottom:6px;" id="tebakProgress">Ronde 1 dari 4</p>
+              <p style="font-weight:800; color:var(--accent-dark); margin-bottom:6px;" id="tebakProgress">Ronde 1 dari 4</p>
               <h3 style="font-size:1.25rem; margin-bottom:12px;">Komponen apakah yang tampak pada gambar di samping?</h3>
               <div class="options-list" id="tebakOptions"></div>
               <div id="tebakFeedback" style="font-weight:800; margin-top:8px;"></div>
@@ -1445,7 +1538,7 @@
           </div>
           <div class="wire-palette" id="wirePalette"></div>
           <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
-            <button class="btn-pink" onclick="crimpingDanTes()">Crimping & Tes LAN Tester ⚡</button>
+            <button class="btn-accent" onclick="crimpingDanTes()">Crimping & Tes LAN Tester ⚡</button>
             <button class="btn-matcha" onclick="resetKabel()">Potong & Ulangi 🔄</button>
           </div>
           <div id="hasilSimulasi" style="text-align:center; font-weight:800; margin-top:14px; font-size:0.98rem;"></div>
@@ -1470,7 +1563,7 @@
           </div>
           <div class="pancake-arena">
             <div>
-              <h3 style="margin-bottom:8px; color:var(--pink-dark);">Pilih Lapisan Pancake:</h3>
+              <h3 style="margin-bottom:8px; color:var(--accent-dark);">Pilih Lapisan Pancake:</h3>
               <div class="pancake-pool" id="pancakePool"></div>
             </div>
             <div class="pancake-plate">
@@ -1496,7 +1589,7 @@
           <div class="materi-summary">
             Latihan cepat rumus /24: total alamat = <code>256</code>, dikurangi Network & Broadcast = <code>254</code> IP host siap pakai. Siap uji pemahaman di <strong>Kuis 5 Soal</strong>?
           </div>
-          <button class="btn-pink" onclick="mulaiKuisBab(true)">Mulai Kuis 5 Soal Materi 5 📝</button>
+          <button class="btn-accent" onclick="mulaiKuisBab(true)">Mulai Kuis 5 Soal Materi 5 📝</button>
         `;
       }
     }
@@ -1522,7 +1615,7 @@
         imgArea.innerHTML = `<div style="font-size:2.6rem;">🎉</div><p style="font-weight:800; margin-top:6px;">Selesai!</p>`;
         progEl.textContent = 'Game Selesai';
         optsArea.innerHTML = `<p style="font-weight:800; margin-bottom:10px;">Skor Tebak Komponen kamu: ${tebakSkor} / ${komponenData.length}</p>`;
-        fbEl.innerHTML = `<button class="btn-pink" onclick="mulaiGameTebakKomponen()">Main Lagi 🔄</button>`;
+        fbEl.innerHTML = `<button class="btn-accent" onclick="mulaiGameTebakKomponen()">Main Lagi 🔄</button>`;
         if (tebakSkor >= 3) {
           lencanaTerbuka[5] = true;
           renderAchievements();
@@ -1550,7 +1643,7 @@
             fbEl.textContent = `✅ Benar! Itu ${target.nama} — ${target.fungsi}`;
           } else {
             btn.classList.add('wrong');
-            fbEl.style.color = '#E0578A';
+            fbEl.style.color = 'var(--accent-dark)';
             fbEl.textContent = `❌ Kurang tepat. Itu adalah ${target.nama}.`;
           }
           setTimeout(() => {
@@ -1686,7 +1779,7 @@
       const hasilEl = document.getElementById('hasilSimulasi');
       const testerText = document.getElementById('testerSubtext');
       if (slotTerisi.includes(null)) {
-        hasilEl.style.color = '#E0578A';
+        hasilEl.style.color = 'var(--accent-dark)';
         hasilEl.textContent = '⚠️ Isi semua 8 pin konektor RJ-45 terlebih dahulu ya!';
         return;
       }
@@ -1707,7 +1800,7 @@
         }
         luncurkanKonfeti();
       } else {
-        hasilEl.style.color = '#E0578A';
+        hasilEl.style.color = 'var(--accent-dark)';
         hasilEl.textContent = '❌ Ups! Urutan warna belum sesuai standar ' + (modeKabel === 'straight' ? 'T568B' : 'T568A') + '. Klik pin yang salah untuk mengganti!';
         testerText.textContent = 'Status LAN Tester: ERROR / Urutan pin tertukar';
         matikanSemuaLed();
@@ -1744,7 +1837,7 @@
       if (!pool || !stack) return;
 
       stack.innerHTML = '';
-      status.style.color = '#4A3B42';
+      status.style.color = 'var(--text-dark)';
       status.textContent = 'Mulai dari lapisan paling bawah: 1. Physical';
 
       const acak = [...urutanOsiBenar].sort(() => Math.random() - 0.5);
@@ -1783,7 +1876,7 @@
           status.textContent = `✅ Pas! Lanjut ke lapisan berikutnya (${tumpukanPancake.length + 1}/7)...`;
         }
       } else {
-        status.style.color = '#E0578A';
+        status.style.color = 'var(--accent-dark)';
         status.textContent = `❌ Belum pas! Saat ini giliran lapisan ke-${idxSekarang + 1} (${urutanOsiBenar[idxSekarang]}).`;
       }
     }
@@ -1805,7 +1898,7 @@
           <div class="quiz-question" id="quizQuestionText"></div>
           <div class="options-list" id="quizOptions"></div>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <button class="btn-pink" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
+            <button class="btn-accent" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
           </div>
         </div>
         <div class="mascot-stage">
@@ -1839,7 +1932,7 @@
 
         document.getElementById('quizContainer').innerHTML = `
           <div>
-            <h3 style="font-size:1.5rem; color:var(--pink-dark); margin-bottom:10px;">
+            <h3 style="font-size:1.5rem; color:var(--accent-dark); margin-bottom:10px;">
               ${lulus ? '🎉 Keren! Lencana Materi Terbuka!' : '💪 Yuk Coba Lagi!'}
             </h3>
             <p style="font-size:1.06rem; font-weight:800; margin-bottom:8px;">
@@ -1848,7 +1941,7 @@
             <p style="color:var(--text-muted); margin-bottom:18px;">
               ${lulus ? 'Lencana prestasi untuk materi ini sudah terbuka di bagian Achievement!' : 'Baca ulang ringkasan materi & tips BUNBYTE lalu ulangi kuis 5 soal ini.'}
             </p>
-            <button class="btn-pink" onclick="mulaiKuisBab(false)">Ulangi Kuis 5 Soal 🔄</button>
+            <button class="btn-accent" onclick="mulaiKuisBab(false)">Ulangi Kuis 5 Soal 🔄</button>
           </div>
           <div class="mascot-stage">
             <div class="speech-bubble">${ucapanHasil}</div>
@@ -1950,7 +2043,9 @@
     }
 
     function luncurkanKonfeti() {
-      const colors = ['#FF8FB7', '#88B884', '#FFD6E5', '#FDE047'];
+      const colors = currentGender === 'cowo'
+        ? ['#3B82F6', '#0284C7', '#DBEAFE', '#FDE047']
+        : ['#FF8FB7', '#88B884', '#FFD6E5', '#FDE047'];
       for (let i = 0; i < 36; i++) {
         const c = document.createElement('div');
         c.className = 'confetti';
