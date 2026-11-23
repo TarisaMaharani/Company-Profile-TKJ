@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TKJ PLAYGROUND — Belajar Jaringan Bareng BUNBYTE 🐰</title>
+  <title>TKJ PLAYGROUND — Belajar Jaringan, Crimping & CLI Bareng BUNBYTE 🐰</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
@@ -32,7 +32,7 @@
 
     body {
       font-family: 'Nunito', sans-serif;
-      background: linear-gradient(180deg, var(--pink-baby) 0%, var(--bg-cream) 28%, var(--cream-soft) 100%);
+      background: linear-gradient(180deg, var(--pink-baby) 0%, var(--bg-cream) 24%, var(--cream-soft) 100%);
       color: var(--text-dark);
       min-height: 100vh;
       overflow-x: hidden;
@@ -47,25 +47,25 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 40;
-      background: rgba(255, 253, 249, 0.9);
+      z-index: 45;
+      background: rgba(255, 253, 249, 0.92);
       backdrop-filter: blur(12px);
       border-bottom: 3px solid var(--pink-baby);
     }
 
     .nav-wrap {
-      max-width: 1060px;
+      max-width: 1080px;
       margin: 0 auto;
       padding: 12px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .brand-title {
-      font-size: 1.35rem;
+      font-size: 1.32rem;
       font-weight: 700;
       color: var(--pink-dark);
       text-decoration: none;
@@ -85,7 +85,7 @@
 
     .nav-links {
       display: flex;
-      gap: 6px;
+      gap: 4px;
       flex-wrap: wrap;
     }
 
@@ -94,9 +94,9 @@
       border: none;
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: var(--text-dark);
-      padding: 8px 14px;
+      padding: 7px 12px;
       border-radius: 999px;
       cursor: pointer;
       transition: all 0.2s ease;
@@ -109,23 +109,23 @@
 
     /* Main Container */
     main {
-      max-width: 1060px;
+      max-width: 1080px;
       margin: 0 auto;
-      padding: 28px 18px 110px;
+      padding: 26px 18px 115px;
     }
 
-    /* 1. HERO SECTION + BUNBYTE PENYAMBUT */
+    /* 1. HERO SECTION: BUNBYTE PENYAMBUT */
     .hero-card {
       background: var(--white);
       border: 3px solid var(--pink-baby);
       border-radius: 32px;
-      padding: 36px;
+      padding: 34px;
       box-shadow: var(--shadow-soft);
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       align-items: center;
-      gap: 28px;
-      margin-bottom: 42px;
+      gap: 26px;
+      margin-bottom: 40px;
     }
 
     .hero-tag {
@@ -133,36 +133,36 @@
       background: var(--matcha-light);
       color: var(--matcha-dark);
       font-weight: 800;
-      font-size: 0.84rem;
-      padding: 6px 14px;
+      font-size: 0.82rem;
+      padding: 5px 14px;
       border-radius: 999px;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .hero-card h1 {
-      font-size: 2.45rem;
+      font-size: 2.38rem;
       line-height: 1.18;
       color: var(--pink-dark);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .hero-card p {
-      font-size: 1.03rem;
-      line-height: 1.65;
+      font-size: 1.01rem;
+      line-height: 1.62;
       color: var(--text-muted);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .btn-pink {
       background: var(--pink-main);
       color: var(--white);
       font-family: 'Fredoka', sans-serif;
-      font-size: 1.02rem;
-      padding: 12px 24px;
+      font-size: 1rem;
+      padding: 11px 22px;
       border: none;
-      border-radius: 18px;
+      border-radius: 16px;
       cursor: pointer;
-      box-shadow: 0 5px 0 var(--pink-dark);
+      box-shadow: 0 4px 0 var(--pink-dark);
       transition: all 0.15s ease;
     }
 
@@ -180,20 +180,20 @@
       background: var(--matcha-light);
       color: var(--matcha-dark);
       font-family: 'Fredoka', sans-serif;
-      font-size: 0.96rem;
-      padding: 10px 18px;
+      font-size: 0.94rem;
+      padding: 10px 16px;
       border: 2px solid var(--matcha-main);
-      border-radius: 16px;
+      border-radius: 15px;
       cursor: pointer;
       transition: all 0.15s ease;
     }
 
-    .btn-matcha:hover {
+    .btn-matcha:hover, .btn-matcha.active-mode {
       background: var(--matcha-main);
       color: var(--white);
     }
 
-    /* Wadah Maskot + Speech Bubble */
+    /* Maskot & Speech Bubble */
     .mascot-stage {
       display: flex;
       flex-direction: column;
@@ -204,14 +204,14 @@
     .speech-bubble {
       background: var(--cream-soft);
       border: 2.5px solid var(--pink-main);
-      border-radius: 22px;
-      padding: 12px 18px;
+      border-radius: 20px;
+      padding: 11px 16px;
       font-weight: 800;
-      font-size: 0.94rem;
+      font-size: 0.92rem;
       color: var(--text-dark);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
       position: relative;
-      box-shadow: 0 6px 16px rgba(255, 143, 183, 0.18);
+      box-shadow: 0 6px 16px rgba(255, 143, 183, 0.16);
       max-width: 280px;
     }
 
@@ -233,17 +233,17 @@
 
     @keyframes floatBunny {
       0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-9px); }
+      50% { transform: translateY(-8px); }
     }
 
     /* Section Header */
     .sec-head {
       text-align: center;
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .sec-head h2 {
-      font-size: 1.95rem;
+      font-size: 1.9rem;
       color: var(--pink-dark);
       margin-bottom: 6px;
     }
@@ -253,19 +253,19 @@
       font-weight: 600;
     }
 
-    /* Grid Pilihan Bab */
+    /* Grid 4 Bab Materi */
     .chapters-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(235px, 1fr));
-      gap: 18px;
-      margin-bottom: 36px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 16px;
+      margin-bottom: 34px;
     }
 
     .chapter-card {
       background: var(--white);
       border: 2.5px solid var(--pink-baby);
       border-radius: 24px;
-      padding: 22px;
+      padding: 20px;
       cursor: pointer;
       transition: all 0.22s ease;
       display: flex;
@@ -298,32 +298,32 @@
     }
 
     .chapter-card h3 {
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       color: var(--text-dark);
       margin-bottom: 8px;
     }
 
     .chapter-card p {
-      font-size: 0.9rem;
+      font-size: 0.89rem;
       color: var(--text-muted);
       line-height: 1.5;
       margin-bottom: 14px;
     }
 
     .chapter-link {
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 800;
       color: var(--pink-dark);
     }
 
-    /* Panel Utama (Materi, Kuis, Hasil, Achievement) */
+    /* Panel Utama */
     .panel-box {
       background: var(--white);
       border: 3px solid var(--pink-baby);
-      border-radius: 30px;
-      padding: 32px;
+      border-radius: 28px;
+      padding: 30px;
       box-shadow: var(--shadow-soft);
-      margin-bottom: 36px;
+      margin-bottom: 34px;
     }
 
     .panel-top {
@@ -332,36 +332,44 @@
       align-items: center;
       flex-wrap: wrap;
       gap: 12px;
-      padding-bottom: 16px;
+      padding-bottom: 15px;
       border-bottom: 2px dashed var(--pink-baby);
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
 
     .panel-box h2 {
-      font-size: 1.75rem;
+      font-size: 1.72rem;
       color: var(--pink-dark);
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .materi-summary {
       background: var(--cream-soft);
       border-left: 5px solid var(--matcha-main);
-      padding: 16px 20px;
+      padding: 15px 18px;
       border-radius: 14px;
-      line-height: 1.68;
-      margin-bottom: 18px;
+      line-height: 1.65;
+      margin-bottom: 16px;
     }
 
     .materi-points {
-      margin: 0 0 24px 20px;
-      line-height: 1.75;
+      margin: 0 0 22px 20px;
+      line-height: 1.72;
     }
 
     .materi-points li {
-      margin-bottom: 8px;
+      margin-bottom: 7px;
     }
 
-    /* Kotak Tips BUNBYTE di Halaman Materi */
+    code {
+      background: var(--matcha-light);
+      color: var(--matcha-dark);
+      padding: 2px 6px;
+      border-radius: 6px;
+      font-weight: 800;
+    }
+
+    /* Tips BUNBYTE di Halaman Materi */
     .bunbyte-tip-bar {
       display: flex;
       align-items: center;
@@ -369,7 +377,7 @@
       background: var(--matcha-light);
       border: 2px solid var(--matcha-main);
       border-radius: 22px;
-      padding: 14px 20px;
+      padding: 14px 18px;
       margin-top: 10px;
     }
 
@@ -382,12 +390,12 @@
     }
 
     .bunbyte-tip-bar span {
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       color: var(--text-dark);
-      font-weight: 600;
+      font-weight: 700;
     }
 
-    /* Halaman Kuis & Hasil Kuis */
+    /* Halaman Kuis */
     .quiz-layout {
       display: grid;
       grid-template-columns: 1.3fr 0.7fr;
@@ -396,27 +404,27 @@
     }
 
     .quiz-question {
-      font-size: 1.22rem;
+      font-size: 1.18rem;
       font-weight: 800;
-      margin-bottom: 16px;
+      margin-bottom: 15px;
       color: var(--text-dark);
     }
 
     .options-list {
       display: grid;
       gap: 10px;
-      margin-bottom: 16px;
+      margin-bottom: 15px;
     }
 
     .opt-btn {
       background: var(--bg-cream);
       border: 2.5px solid var(--pink-baby);
-      border-radius: 16px;
-      padding: 13px 18px;
+      border-radius: 15px;
+      padding: 12px 16px;
       text-align: left;
       font-family: 'Nunito', sans-serif;
       font-weight: 800;
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       color: var(--text-dark);
       cursor: pointer;
       transition: all 0.2s;
@@ -439,12 +447,240 @@
       color: #9F1239;
     }
 
+    /* Lab Praktik 1: Simulasi Kabel LAN */
+    .rj45-head {
+      background: var(--cream-soft);
+      border: 2.5px solid var(--pink-main);
+      border-radius: 22px;
+      padding: 18px 14px 14px;
+      margin: 16px 0;
+    }
+
+    .rj45-label {
+      text-align: center;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--pink-dark);
+      margin-bottom: 12px;
+    }
+
+    .utp-slots {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+    }
+
+    .slot {
+      background: var(--white);
+      border: 2px solid var(--pink-baby);
+      border-radius: 14px;
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 4px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .slot:hover {
+      transform: translateY(-3px);
+    }
+
+    .wire-bar {
+      width: 20px;
+      height: 44px;
+      border-radius: 6px;
+      border: 1px solid rgba(74, 59, 66, 0.25);
+    }
+
+    .wire-palette {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 15px 0 18px;
+    }
+
+    .wire-btn {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--bg-cream);
+      border: 2px solid var(--pink-baby);
+      padding: 7px 13px;
+      border-radius: 14px;
+      font-family: 'Nunito', sans-serif;
+      font-weight: 800;
+      font-size: 0.84rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .wire-btn:hover:not(:disabled) {
+      background: #FFF2F7;
+      border-color: var(--pink-main);
+      transform: scale(1.04);
+    }
+
+    .wire-btn:disabled {
+      opacity: 0.4;
+      cursor: not-allowed;
+    }
+
+    .dot-color {
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 1px solid rgba(0, 0, 0, 0.25);
+    }
+
+    .c-putih-oranye { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #f97316 4px, #f97316 8px); }
+    .c-oranye       { background: #f97316; }
+    .c-putih-hijau  { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #22c55e 4px, #22c55e 8px); }
+    .c-biru         { background: #2563eb; }
+    .c-putih-biru   { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #2563eb 4px, #2563eb 8px); }
+    .c-hijau        { background: #22c55e; }
+    .c-putih-coklat { background: repeating-linear-gradient(45deg, #ffffff, #ffffff 4px, #78350f 4px, #78350f 8px); }
+    .c-coklat       { background: #78350f; }
+
+    .lan-tester {
+      background: var(--matcha-light);
+      border: 2.5px solid var(--matcha-main);
+      border-radius: 20px;
+      padding: 15px;
+      margin-top: 16px;
+      text-align: center;
+    }
+
+    .led-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .led-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--matcha-dark);
+    }
+
+    .led-bulb {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 2px solid var(--matcha-main);
+      transition: all 0.2s;
+    }
+
+    .led-bulb.on {
+      background: #22c55e;
+      box-shadow: 0 0 12px #22c55e;
+      border-color: var(--matcha-dark);
+    }
+
+    /* Lab Praktik 2: Mini Terminal Linux */
+    .terminal-box {
+      background: #3B3035;
+      color: #FFFDF9;
+      border-radius: 20px;
+      padding: 18px;
+      font-family: 'Courier New', Courier, monospace;
+      border: 3px solid var(--pink-main);
+      margin-top: 14px;
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-bottom: 12px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid rgba(255, 214, 229, 0.25);
+      font-family: 'Nunito', sans-serif;
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: var(--pink-baby);
+    }
+
+    .term-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .terminal-output {
+      min-height: 125px;
+      max-height: 210px;
+      overflow-y: auto;
+      font-size: 0.89rem;
+      line-height: 1.55;
+      margin-bottom: 12px;
+      white-space: pre-wrap;
+    }
+
+    .terminal-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 8px 12px;
+      border-radius: 12px;
+      border: 1.5px solid var(--pink-main);
+    }
+
+    .terminal-input-row input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--white);
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 0.94rem;
+      font-weight: 700;
+    }
+
+    .quick-cmds {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .cmd-chip {
+      background: var(--cream-soft);
+      color: var(--pink-dark);
+      border: 1.5px solid var(--pink-main);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .cmd-chip:hover {
+      background: var(--pink-baby);
+    }
+
     /* Halaman Achievement */
     .badges-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
-      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(195px, 1fr));
+      gap: 15px;
+      margin-top: 16px;
     }
 
     .badge-item {
@@ -453,7 +689,7 @@
       border-radius: 20px;
       padding: 18px;
       text-align: center;
-      opacity: 0.6;
+      opacity: 0.65;
       transition: all 0.25s;
     }
 
@@ -465,15 +701,15 @@
     }
 
     .badge-icon {
-      font-size: 2.2rem;
-      margin-bottom: 8px;
+      font-size: 2.1rem;
+      margin-bottom: 6px;
     }
 
-    /* 2. SUDUT HALAMAN (FLOATING CORNER BUDDY) */
+    /* 2. SUDUT HALAMAN: BUNBYTE TEMAN BELAJAR */
     .corner-buddy {
       position: fixed;
-      right: 18px;
-      bottom: 18px;
+      right: 16px;
+      bottom: 16px;
       z-index: 60;
       display: flex;
       flex-direction: column;
@@ -486,13 +722,13 @@
       background: var(--white);
       border: 2.5px solid var(--matcha-main);
       color: var(--text-dark);
-      font-size: 0.84rem;
+      font-size: 0.82rem;
       font-weight: 800;
-      padding: 9px 14px;
+      padding: 8px 13px;
       border-radius: 18px;
       margin-bottom: 8px;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-      max-width: 220px;
+      box-shadow: 0 8px 20px rgba(74, 59, 66, 0.12);
+      max-width: 215px;
       text-align: center;
     }
 
@@ -501,12 +737,12 @@
       background: var(--white);
       border: 3px solid var(--pink-main);
       border-radius: 50%;
-      width: 74px;
-      height: 74px;
+      width: 72px;
+      height: 72px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 24px rgba(224, 87, 138, 0.25);
+      box-shadow: 0 10px 24px rgba(224, 87, 138, 0.24);
       cursor: pointer;
       transition: transform 0.2s;
     }
@@ -515,7 +751,6 @@
       transform: scale(1.08);
     }
 
-    /* Konfeti */
     .confetti {
       position: fixed;
       width: 10px;
@@ -534,15 +769,12 @@
     }
 
     @media (max-width: 768px) {
-      .hero-card, .quiz-layout {
-        grid-template-columns: 1fr;
-      }
-      .hero-card { padding: 24px 20px; text-align: center; }
-      .hero-card h1 { font-size: 1.95rem; }
-      .panel-box { padding: 22px 18px; }
+      .hero-card, .quiz-layout { grid-template-columns: 1fr; }
+      .hero-card { padding: 24px 18px; text-align: center; }
+      .hero-card h1 { font-size: 1.92rem; }
+      .panel-box { padding: 22px 16px; }
+      .utp-slots { grid-template-columns: repeat(4, 1fr); }
       .bunbyte-tip-bar { flex-direction: column; text-align: center; }
-      .corner-buddy { right: 12px; bottom: 12px; }
-      .corner-avatar { width: 64px; height: 64px; }
     }
   </style>
 </head>
@@ -558,6 +790,8 @@
       <div class="nav-links">
         <button class="nav-btn active" onclick="scrollKe('hero', this)">Home</button>
         <button class="nav-btn" onclick="scrollKe('materi-section', this)">Materi</button>
+        <button class="nav-btn" onclick="scrollKe('lab-kabel', this)">Lab Kabel LAN</button>
+        <button class="nav-btn" onclick="scrollKe('lab-cli', this)">Lab Linux</button>
         <button class="nav-btn" onclick="scrollKe('kuis-section', this)">Kuis</button>
         <button class="nav-btn" onclick="scrollKe('achievement-section', this)">Achievement</button>
       </div>
@@ -568,12 +802,12 @@
     <!-- 1. HERO SECTION: BUNBYTE PENYAMBUT -->
     <section class="hero-card" id="hero">
       <div>
-        <span class="hero-tag">🍵 Pink • Cream • Matcha Edition</span>
+        <span class="hero-tag">🍵 Pink • Cream • Putih • Matcha</span>
         <h1>Belajar Dunia TKJ Seru Bareng BUNBYTE!</h1>
         <p>
-          Selamat datang di <strong>TKJ PLAYGROUND</strong>! Baca materi jaringan komputer, ikuti tips dari BUNBYTE, uji kemampuan di kuis interaktif, dan kumpulkan semua lencana prestasi!
+          Selamat datang di <strong>TKJ PLAYGROUND</strong>! Pelajari materi jaringan komputer khas anak SMK, ikuti tips belajar dari BUNBYTE, coba simulasi crimping kabel LAN & terminal Linux, lalu taklukkan kuisnya!
         </p>
-        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:inherit;">
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:inherit;">
           <button class="btn-pink" onclick="scrollKe('materi-section')">Mulai Belajar 🚀</button>
           <button class="btn-matcha" onclick="gantiDialogHero()">Sapa BUNBYTE 💬</button>
         </div>
@@ -587,11 +821,11 @@
       </div>
     </section>
 
-    <!-- PILIHAN BAB MATERI -->
+    <!-- MODUL MATERI TKJ -->
     <section id="materi-section">
       <div class="sec-head">
-        <h2>📘 Modul Materi TKJ</h2>
-        <p>Pilih bab di bawah untuk membaca materi dan mendapatkan tips belajar dari BUNBYTE</p>
+        <h2>📘 Modul Pembelajaran TKJ</h2>
+        <p>Pilih bab di bawah untuk membaca ringkasan materi dan tips praktis dari BUNBYTE</p>
       </div>
       <div class="chapters-grid" id="chaptersGrid"></div>
 
@@ -609,7 +843,6 @@
         <div class="materi-summary" id="readerSummary"></div>
         <ul class="materi-points" id="readerPoints"></ul>
 
-        <!-- Maskot Pemberi Tips di Halaman Materi -->
         <div class="bunbyte-tip-bar">
           <div id="materiMascotSlot" style="flex-shrink:0;"></div>
           <div>
@@ -619,8 +852,84 @@
         </div>
 
         <div style="margin-top:20px; text-align:right;">
-          <button class="btn-pink" onclick="mulaiKuisBab()">Lanjut Kuis Bab Ini 📝</button>
+          <button class="btn-pink" onclick="mulaiKuisBab(true)">Lanjut Kuis Bab Ini 📝</button>
         </div>
+      </div>
+    </section>
+
+    <!-- LAB PRAKTIK 1: SIMULASI CRIMPING KABEL LAN -->
+    <section class="panel-box" id="lab-kabel">
+      <div class="panel-top">
+        <div>
+          <span class="hero-tag" style="margin-bottom:6px;">LAB PRAKTIK 1 • KABEL JARINGAN</span>
+          <h2 style="margin-bottom:2px;">🔌 Simulasi Crimping Kabel LAN (RJ-45)</h2>
+        </div>
+        <div style="display:flex; gap:8px; flex-wrap:wrap;">
+          <button class="btn-matcha active-mode" id="btnModeStraight" onclick="ubahModeKabel('straight')">Straight (T568B)</button>
+          <button class="btn-matcha" id="btnModeCross" onclick="ubahModeKabel('cross')">Crossover (T568A)</button>
+        </div>
+      </div>
+
+      <div class="materi-summary" id="petunjukModeKabel">
+        <strong>Mode Straight (Standar T568B):</strong> Susun 8 warna kabel dari Pin 1 sampai Pin 8 untuk menghubungkan <strong>PC ke Switch/Router</strong>.
+      </div>
+
+      <div class="rj45-head">
+        <div class="rj45-label">Konektor RJ-45 • Pin 1 sampai Pin 8 (Klik pin untuk mencabut warna)</div>
+        <div class="utp-slots" id="utpSlots"></div>
+      </div>
+
+      <div class="wire-palette" id="wirePalette"></div>
+
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <button class="btn-pink" onclick="crimpingDanTes()">Crimping & Tes LAN Tester ⚡</button>
+        <button class="btn-matcha" onclick="resetKabel()">Potong & Ulangi 🔄</button>
+      </div>
+
+      <div id="hasilSimulasi" style="text-align:center; font-weight:800; margin-top:14px; font-size:0.98rem;"></div>
+
+      <div class="lan-tester">
+        <div style="font-family:'Fredoka',sans-serif; font-size:1.05rem; color:var(--matcha-dark);">
+          📟 Indikator Lampu LAN Tester (Pin 1 – 8)
+        </div>
+        <div style="font-size:0.84rem; color:var(--text-dark); margin-top:3px;" id="testerSubtext">
+          Lampu hijau akan menyala berurutan jika hasil crimping benar!
+        </div>
+        <div class="led-row" id="ledRow"></div>
+      </div>
+    </section>
+
+    <!-- LAB PRAKTIK 2: MINI TERMINAL UBUNTU SERVER -->
+    <section class="panel-box" id="lab-cli">
+      <span class="hero-tag">LAB PRAKTIK 2 • ADMINISTRASI SERVER</span>
+      <h2>🐧 Mini Terminal Ubuntu Server</h2>
+      <p style="color:var(--text-muted); font-weight:600; font-size:0.94rem;">
+        Ketik perintah dasar Linux jaringan di bawah (atau klik tombol pintasan) untuk melihat output server!
+      </p>
+
+      <div class="terminal-box">
+        <div class="terminal-bar">
+          <span class="term-dot" style="background:#FF8FB7;"></span>
+          <span class="term-dot" style="background:#FDE047;"></span>
+          <span class="term-dot" style="background:#88B884;"></span>
+          <span>siswa@tkj-playground:~$ (Ubuntu 24.04 LTS)</span>
+        </div>
+        <div class="terminal-output" id="termOutput">Selamat datang di Lab Terminal Linux TKJ PLAYGROUND!
+Ketik perintah: help, ip a, ping 8.8.8.8, systemctl status apache2, ls -la, atau clear.</div>
+        <div class="terminal-input-row">
+          <span style="color:#88B884; font-weight:bold;">siswa@tkj-playground:~$</span>
+          <input type="text" id="termInput" placeholder="Ketik perintah lalu tekan Enter..." onkeydown="if(event.key==='Enter') jalankanPerintah()" />
+          <button class="btn-pink" style="padding:6px 14px; font-size:0.86rem;" onclick="jalankanPerintah()">Run</button>
+        </div>
+      </div>
+
+      <div class="quick-cmds">
+        <button class="cmd-chip" onclick="isiPerintah('help')">help</button>
+        <button class="cmd-chip" onclick="isiPerintah('ip a')">ip a</button>
+        <button class="cmd-chip" onclick="isiPerintah('ping 8.8.8.8')">ping 8.8.8.8</button>
+        <button class="cmd-chip" onclick="isiPerintah('systemctl status apache2')">systemctl status apache2</button>
+        <button class="cmd-chip" onclick="isiPerintah('ls -la')">ls -la</button>
+        <button class="cmd-chip" onclick="isiPerintah('clear')">clear</button>
       </div>
     </section>
 
@@ -640,7 +949,6 @@
           </div>
         </div>
 
-        <!-- Maskot Kuis dengan Ekspresi Berbeda Sesuai Jawaban -->
         <div class="mascot-stage">
           <div class="speech-bubble" id="quizBubble">
             "Let's explore the world of technology!"
@@ -652,16 +960,16 @@
 
     <!-- 6. HALAMAN ACHIEVEMENT: BUNBYTE PEMBERI UCAPAN SELAMAT -->
     <section class="panel-box" id="achievement-section">
-      <div class="sec-head" style="margin-bottom:16px;">
+      <div class="sec-head" style="margin-bottom:14px;">
         <h2>🏆 Achievement TKJ PLAYGROUND</h2>
-        <p>Selesaikan kuis setiap bab dengan nilai tinggi untuk membuka semua lencana!</p>
+        <p>Selesaikan kuis setiap bab (nilai ≥ 75) dan lab praktik untuk membuka semua lencana!</p>
       </div>
 
-      <div class="bunbyte-tip-bar" style="background:#FFF5F9; border-color:var(--pink-main); margin-bottom:20px;">
+      <div class="bunbyte-tip-bar" style="background:#FFF5F9; border-color:var(--pink-main); margin-bottom:18px;">
         <div id="achieveMascotSlot" style="flex-shrink:0;"></div>
         <div>
           <strong style="color:var(--pink-dark);">🐰 Pesan Spesial BUNBYTE:</strong>
-          <span id="achieveSpeech">"Ayo selesaikan tantangan kuis untuk mengumpulkan lencana pertamamu!"</span>
+          <span id="achieveSpeech">"Hiii! Siap belajar TKJ hari ini? Ayo taklukkan tantangan kuis dan lab praktik!"</span>
         </div>
       </div>
 
@@ -679,10 +987,9 @@
 
   <script>
     /**
-     * GENERATOR ILUSTRASI MASKOT BUNBYTE (KONSISTEN DI SELURUH HALAMAN)
-     * Karakter: Kelinci putih kawaii, hoodie baby pink bertuliskan TKJ,
-     * headset matcha-cream, dan laptop mini di depan.
-     * Ekspresi: 'normal' | 'happy' | 'oops' | 'celebrate'
+     * MASKOT KONSISTEN: BUNBYTE 🐰
+     * Kelinci putih kawaii, hoodie baby pink bertuliskan TKJ PLAY,
+     * headset matcha-cream, dan laptop mini.
      */
     function renderBunbyteSVG(expression = 'normal', size = 145) {
       let eyesSVG = '';
@@ -690,27 +997,20 @@
       let extraDecor = '';
 
       if (expression === 'happy') {
-        // Mata melengkung senang (^ ^)
         eyesSVG = `
           <path d="M68 92 Q75 83 82 92" stroke="#4A3B42" stroke-width="3.5" stroke-linecap="round" fill="none"/>
           <path d="M118 92 Q125 83 132 92" stroke="#4A3B42" stroke-width="3.5" stroke-linecap="round" fill="none"/>
         `;
-        mouthSVG = `
-          <path d="M93 102 Q100 112 107 102 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5" stroke-linejoin="round"/>
-        `;
+        mouthSVG = `<path d="M93 102 Q100 112 107 102 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5" stroke-linejoin="round"/>`;
         extraDecor = `<text x="152" y="65" font-size="18">✨</text>`;
       } else if (expression === 'oops') {
-        // Mata kaget/menyemangati (> <)
         eyesSVG = `
           <path d="M69 86 L80 91 L69 96" stroke="#4A3B42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
           <path d="M131 86 L120 91 L131 96" stroke="#4A3B42" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         `;
-        mouthSVG = `
-          <circle cx="100" cy="105" r="4.5" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.3"/>
-        `;
+        mouthSVG = `<circle cx="100" cy="105" r="4.5" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.3"/>`;
         extraDecor = `<text x="150" y="68" font-size="16">💧</text>`;
       } else if (expression === 'celebrate') {
-        // Mata berbinar + mahkota kecil matcha/emas
         eyesSVG = `
           <circle cx="75" cy="90" r="6.5" fill="#4A3B42"/>
           <circle cx="77" cy="88" r="2.4" fill="#FFFFFF"/>
@@ -719,81 +1019,53 @@
           <circle cx="127" cy="88" r="2.4" fill="#FFFFFF"/>
           <circle cx="122" cy="92" r="1.3" fill="#FFFFFF"/>
         `;
-        mouthSVG = `
-          <path d="M91 101 Q100 114 109 101 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5"/>
-        `;
-        extraDecor = `
-          <text x="26" y="62" font-size="18">🎉</text>
-          <text x="154" y="62" font-size="18">⭐</text>
-        `;
+        mouthSVG = `<path d="M91 101 Q100 114 109 101 Z" fill="#FF8FB7" stroke="#4A3B42" stroke-width="2.5"/>`;
+        extraDecor = `<text x="26" y="62" font-size="18">🎉</text><text x="154" y="62" font-size="18">⭐</text>`;
       } else {
-        // Ekspresi ramah & ceria default
         eyesSVG = `
           <circle cx="75" cy="90" r="6" fill="#4A3B42"/>
           <circle cx="77" cy="88" r="2.2" fill="#FFFFFF"/>
           <circle cx="125" cy="90" r="6" fill="#4A3B42"/>
           <circle cx="127" cy="88" r="2.2" fill="#FFFFFF"/>
         `;
-        mouthSVG = `
-          <path d="M93 102 Q97 107 100 103 Q103 107 107 102" stroke="#4A3B42" stroke-width="2.8" stroke-linecap="round" fill="none"/>
-        `;
+        mouthSVG = `<path d="M93 102 Q97 107 100 103 Q103 107 107 102" stroke="#4A3B42" stroke-width="2.8" stroke-linecap="round" fill="none"/>`;
       }
 
       return `
         <svg width="${size}" height="${size}" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <!-- Telinga Kelinci Putih + Dalam Baby Pink -->
           <rect x="64" y="14" width="22" height="54" rx="11" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
           <rect x="70" y="22" width="10" height="38" rx="5" fill="#FFD6E5"/>
           <rect x="114" y="14" width="22" height="54" rx="11" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
           <rect x="120" y="22" width="10" height="38" rx="5" fill="#FFD6E5"/>
-
-          <!-- Band Headset Matcha -->
           <path d="M52 84 C52 46, 148 46, 148 84" stroke="#88B884" stroke-width="7" stroke-linecap="round"/>
-
-          <!-- Badan Hoodie Baby Pink -->
           <path d="M54 134 C54 118, 146 118, 146 134 L154 176 C154 184, 46 184, 46 176 Z" fill="#FFD6E5" stroke="#4A3B42" stroke-width="3"/>
-          <!-- Tali Hoodie Cream -->
           <line x1="88" y1="126" x2="88" y2="142" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round"/>
           <line x1="112" y1="126" x2="112" y2="142" stroke="#FFFDF9" stroke-width="3" stroke-linecap="round"/>
-          <!-- Logo Kecil TKJ PLAYGROUND di Hoodie -->
           <rect x="77" y="128" width="46" height="14" rx="7" fill="#E4F2E1" stroke="#88B884" stroke-width="1.5"/>
           <text x="100" y="138" text-anchor="middle" font-family="Fredoka, sans-serif" font-size="8.5" font-weight="700" fill="#4E7A4B">TKJ PLAY</text>
-
-          <!-- Kepala Kelinci Putih -->
           <ellipse cx="100" cy="90" rx="46" ry="38" fill="#FFFFFF" stroke="#4A3B42" stroke-width="3"/>
-
-          <!-- Earcup Headset Matcha-Cream -->
           <rect x="44" y="74" width="14" height="30" rx="7" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
           <rect x="142" y="74" width="14" height="30" rx="7" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
-
-          <!-- Pipi Merona Pink -->
           <ellipse cx="64" cy="100" rx="7.5" ry="4.5" fill="#FF8FB7" opacity="0.55"/>
           <ellipse cx="136" cy="100" rx="7.5" ry="4.5" fill="#FF8FB7" opacity="0.55"/>
-
-          <!-- Hidung Kecil Pink -->
           <ellipse cx="100" cy="96" rx="3.5" ry="2.5" fill="#FF8FB7"/>
-
-          <!-- Ekspresi Mata & Mulut -->
           ${eyesSVG}
           ${mouthSVG}
-
-          <!-- Laptop Mini Cream & Matcha di Depan -->
           <rect x="64" y="145" width="72" height="42" rx="8" fill="#FAF3E8" stroke="#4A3B42" stroke-width="3"/>
           <circle cx="100" cy="166" r="7" fill="#88B884"/>
           <path d="M97 166 L99 168 L104 163" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           <rect x="56" y="185" width="88" height="7" rx="3.5" fill="#88B884" stroke="#4A3B42" stroke-width="2.5"/>
-
           ${extraDecor}
         </svg>
       `;
     }
 
-    // Data Materi & Kuis TKJ
+    // Data 4 Bab Materi TKJ
     const daftarBab = [
       {
         bab: "Bab 1",
         judul: "Kabel LAN & Crimping RJ-45",
-        desc: "Mengenal kabel UTP, perbedaan Straight vs Crossover, serta urutan warna T568B.",
+        desc: "Mengenal kabel UTP Cat5e/Cat6, perbedaan Straight vs Crossover, serta urutan warna T568B.",
         ringkasan: "<strong>Kabel UTP (Unshielded Twisted Pair)</strong> adalah kabel utama jaringan lokal (LAN) yang memiliki 8 helai kabel tembaga berpilin di dalamnya.",
         poin: [
           "<strong>Kabel Straight (T568B – T568B):</strong> Digunakan untuk menghubungkan perangkat berbeda jenis seperti <em>PC ke Switch</em> atau <em>Switch ke Router</em>.",
@@ -822,7 +1094,7 @@
       {
         bab: "Bab 2",
         judul: "IP Address & Subnetting",
-        desc: "Memahami kelas IP privat, prefix /24, Network ID, dan alamat Gateway.",
+        desc: "Memahami kelas IP privat (A, B, C), prefix /24, Network ID, dan alamat Gateway.",
         ringkasan: "<strong>IP Address (IPv4)</strong> adalah identitas numerik unik setiap perangkat dalam jaringan komputer yang terdiri dari 32-bit (4 oktet).",
         poin: [
           "<strong>IP Privat Kelas C:</strong> Rentang <code>192.168.0.0 – 192.168.255.255</code>, paling sering dipakai di jaringan sekolah dan rumah.",
@@ -850,15 +1122,15 @@
       },
       {
         bab: "Bab 3",
-        judul: "Linux Server & MikroTik Dasar",
-        desc: "Perintah wajib Ubuntu Server (ip a, systemctl) serta NAT Masquerade pada MikroTik.",
-        ringkasan: "Dalam administrasi jaringan, <strong>MikroTik</strong> bertugas mengatur lalu lintas jaringan dan NAT, sedangkan <strong>Linux Server</strong> menjalankan layanan seperti Web & DNS Server.",
+        judul: "Konfigurasi Dasar MikroTik",
+        desc: "Setting interface WAN/LAN, DHCP Client, DHCP Server, dan Firewall NAT Masquerade.",
+        ringkasan: "<strong>MikroTik RouterOS</strong> bertugas mengatur lalu lintas jaringan, membagi alamat IP otomatis, dan menghubungkan jaringan lokal ke internet.",
         poin: [
-          "<strong>Firewall NAT Masquerade:</strong> Di MikroTik, fitur ini menyamarkan IP lokal agar klien bisa mengakses internet.",
-          "<strong>Perintah Cek IP Linux:</strong> Gunakan perintah <code>ip a</code> pada terminal Ubuntu untuk melihat alamat IP tiap interface.",
-          "<strong>Manajemen Layanan Linux:</strong> Gunakan <code>systemctl status apache2</code> untuk mengecek status web server."
+          "<strong>Pembagian Port:</strong> <code>ether1</code> dihubungkan ke internet/ISP (WAN), sedangkan <code>ether2</code> ke jaringan lokal (LAN).",
+          "<strong>Firewall NAT Masquerade:</strong> Menyamarkan IP lokal agar klien bisa mengakses internet.",
+          "<strong>DHCP Server:</strong> Membagikan IP Address, Gateway, dan DNS secara otomatis kepada komputer/HP klien."
         ],
-        tipsBunbyte: "Kalau klien di jaringan belum bisa internetan setelah setting MikroTik, cek menu IP > Firewall > NAT apakah masquerade sudah aktif!",
+        tipsBunbyte: "Kalau klien di jaringan belum bisa internetan setelah setting MikroTik, cek IP > Firewall > NAT apakah action masquerade sudah aktif!",
         kuis: [
           {
             tanya: "Action pada Firewall NAT MikroTik agar klien LAN bisa mengakses internet adalah...",
@@ -866,14 +1138,43 @@
             benar: 1
           },
           {
+            tanya: "Fitur di MikroTik yang berfungsi membagikan IP Address otomatis ke klien adalah...",
+            opsi: ["DHCP Client", "DHCP Server", "WinBox", "Web Proxy"],
+            benar: 1
+          },
+          {
+            tanya: "Port pada MikroTik yang umumnya dihubungkan menuju sumber internet (ISP) adalah...",
+            opsi: ["ether1", "ether5", "wlan2", "console"],
+            benar: 0
+          }
+        ]
+      },
+      {
+        bab: "Bab 4",
+        judul: "Linux Server & Perintah CLI",
+        desc: "Perintah wajib Ubuntu Server (ip a, systemctl) serta layanan Apache2 dan DNS BIND9.",
+        ringkasan: "<strong>Linux Ubuntu Server</strong> dioperasikan lewat tampilan teks (CLI). Anak TKJ wajib hafal perintah dasar untuk konfigurasi jaringan dan layanan server.",
+        poin: [
+          "<strong>Cek Jaringan:</strong> Gunakan <code>ip a</code> untuk melihat alamat IP tiap interface, dan <code>ping</code> untuk menguji koneksi.",
+          "<strong>Kelola Paket & Service:</strong> Gunakan <code>sudo apt update</code> memperbarui repositori, serta <code>systemctl status apache2</code> mengecek status web server.",
+          "<strong>Layanan Server Populer:</strong> <code>Apache2</code> (Web Server port 80), <code>BIND9</code> (DNS Server port 53), dan <code>OpenSSH</code> (Remote Server port 22)."
+        ],
+        tipsBunbyte: "Selalu gunakan perintah 'ip a' setelah mengedit konfigurasi netplan untuk memastikan IP Address baru sudah terpasang!",
+        kuis: [
+          {
             tanya: "Perintah terminal Ubuntu Server untuk menampilkan daftar alamat IP adalah...",
             opsi: ["ip a", "cls", "dir", "mkdir"],
             benar: 0
           },
           {
             tanya: "Layanan server yang menerjemahkan nama domain menjadi alamat IP disebut...",
-            opsi: ["DHCP", "DNS", "FTP", "SSH"],
+            opsi: ["DHCP", "DNS (BIND9)", "FTP", "SSH"],
             benar: 1
+          },
+          {
+            tanya: "Port default yang digunakan oleh layanan Web Server HTTP adalah...",
+            opsi: ["Port 21", "Port 22", "Port 53", "Port 80"],
+            benar: 3
           }
         ]
       }
@@ -883,13 +1184,13 @@
     let indexSoal = 0;
     let skorSementara = 0;
     let sudahMenjawab = false;
-    let lencanaTerbuka = [false, false, false];
+    let lencanaTerbuka = [false, false, false, false, false]; // 4 Bab + 1 Lab Praktik
 
     // Dialog Hero & Corner Buddy
     const dialogHeroList = [
       '"Hiii! Siap belajar TKJ hari ini?"',
       '"Let\'s explore the world of technology!"',
-      '"Jangan lupa cek tips aku di setiap bab materi ya! 🐰"'
+      '"Cobain juga simulasi crimping kabel LAN & terminal Linux di bawah ya! 🐰"'
     ];
     let heroDialogIdx = 0;
 
@@ -901,7 +1202,7 @@
     const dialogCornerList = [
       '"Hiii! Siap belajar TKJ hari ini?"',
       '"Butuh semangat? Kamu pasti bisa kuasai materi TKJ! 🍵"',
-      '"Yuk kerjakan kuisnya setelah selesai baca materi!"'
+      '"Yuk selesaikan semua kuis & lab praktik!"'
     ];
     let cornerDialogIdx = 0;
 
@@ -945,7 +1246,6 @@
       pilihBab(next, false);
     }
 
-    // Render Halaman Materi + Tips BUNBYTE
     function renderMateri() {
       const data = daftarBab[babAktif];
       document.getElementById('readerBadge').textContent = `${data.bab.toUpperCase()} • MATERI & TIPS`;
@@ -961,32 +1261,255 @@
       });
 
       document.getElementById('materiTipText').textContent = `"${data.tipsBunbyte}"`;
-      document.getElementById('materiMascotSlot').innerHTML = renderBunbyteSVG('happy', 88);
+      document.getElementById('materiMascotSlot').innerHTML = renderBunbyteSVG('happy', 86);
     }
 
-    // Render Kuis & Hasil Kuis
+    // --- LAB PRAKTIK 1: SIMULASI KABEL LAN ---
+    const standarT568B = [
+      { id: 'po', nama: 'Putih Oranye', cls: 'c-putih-oranye' },
+      { id: 'o',  nama: 'Oranye',       cls: 'c-oranye' },
+      { id: 'ph', nama: 'Putih Hijau',  cls: 'c-putih-hijau' },
+      { id: 'b',  nama: 'Biru',         cls: 'c-biru' },
+      { id: 'pb', nama: 'Putih Biru',   cls: 'c-putih-biru' },
+      { id: 'h',  nama: 'Hijau',        cls: 'c-hijau' },
+      { id: 'pc', nama: 'Putih Coklat', cls: 'c-putih-coklat' },
+      { id: 'c',  nama: 'Coklat',       cls: 'c-coklat' }
+    ];
+
+    const standarT568A = [
+      { id: 'ph', nama: 'Putih Hijau',  cls: 'c-putih-hijau' },
+      { id: 'h',  nama: 'Hijau',        cls: 'c-hijau' },
+      { id: 'po', nama: 'Putih Oranye', cls: 'c-putih-oranye' },
+      { id: 'b',  nama: 'Biru',         cls: 'c-biru' },
+      { id: 'pb', nama: 'Putih Biru',   cls: 'c-putih-biru' },
+      { id: 'o',  nama: 'Oranye',       cls: 'c-oranye' },
+      { id: 'pc', nama: 'Putih Coklat', cls: 'c-putih-coklat' },
+      { id: 'c',  nama: 'Coklat',       cls: 'c-coklat' }
+    ];
+
+    let modeKabel = 'straight';
+    let slotTerisi = Array(8).fill(null);
+    let ledInterval = null;
+
+    function ubahModeKabel(mode) {
+      modeKabel = mode;
+      document.getElementById('btnModeStraight').classList.toggle('active-mode', mode === 'straight');
+      document.getElementById('btnModeCross').classList.toggle('active-mode', mode === 'cross');
+      const info = document.getElementById('petunjukModeKabel');
+      if (mode === 'straight') {
+        info.innerHTML = '<strong>Mode Straight (Standar T568B):</strong> Susun 8 warna kabel dari Pin 1 sampai Pin 8 untuk menghubungkan <strong>PC ke Switch/Router</strong>.';
+      } else {
+        info.innerHTML = '<strong>Mode Crossover (Standar T568A):</strong> Anggap ujung pertama sudah T568B, susun ujung kedua memakai <strong>T568A</strong> (Putih-Hijau di Pin 1) untuk menghubungkan <strong>PC ke PC</strong>.';
+      }
+      resetKabel();
+    }
+
+    function renderSimulasiKabel() {
+      const slotsEl = document.getElementById('utpSlots');
+      const paletteEl = document.getElementById('wirePalette');
+      slotsEl.innerHTML = '';
+      paletteEl.innerHTML = '';
+
+      for (let i = 0; i < 8; i++) {
+        const item = slotTerisi[i];
+        const slotDiv = document.createElement('div');
+        slotDiv.className = 'slot';
+        slotDiv.onclick = () => {
+          if (slotTerisi[i]) {
+            slotTerisi[i] = null;
+            document.getElementById('hasilSimulasi').textContent = '';
+            matikanSemuaLed();
+            renderSimulasiKabel();
+          }
+        };
+        slotDiv.innerHTML = `
+          <span>Pin ${i + 1}</span>
+          <div class="wire-bar ${item ? item.cls : ''}" style="${!item ? 'background:#FAF3E8' : ''}"></div>
+          <span>${item ? item.nama : 'Kosong'}</span>
+        `;
+        slotsEl.appendChild(slotDiv);
+      }
+
+      const acak = [...standarT568B].sort((a, b) => a.nama.localeCompare(b.nama));
+      acak.forEach(kabel => {
+        const dipakai = slotTerisi.some(s => s && s.id === kabel.id);
+        const btn = document.createElement('button');
+        btn.className = 'wire-btn';
+        btn.disabled = dipakai;
+        btn.innerHTML = `<span class="dot-color ${kabel.cls}"></span> ${kabel.nama}`;
+        btn.onclick = () => {
+          const kosongIdx = slotTerisi.findIndex(s => s === null);
+          if (kosongIdx !== -1) {
+            slotTerisi[kosongIdx] = kabel;
+            renderSimulasiKabel();
+          }
+        };
+        paletteEl.appendChild(btn);
+      });
+    }
+
+    function initLedTester() {
+      const row = document.getElementById('ledRow');
+      row.innerHTML = '';
+      for (let i = 1; i <= 8; i++) {
+        const item = document.createElement('div');
+        item.className = 'led-item';
+        item.innerHTML = `<div class="led-bulb" id="led-${i}"></div><span>${i}</span>`;
+        row.appendChild(item);
+      }
+    }
+
+    function matikanSemuaLed() {
+      if (ledInterval) clearInterval(ledInterval);
+      for (let i = 1; i <= 8; i++) {
+        const el = document.getElementById(`led-${i}`);
+        if (el) el.classList.remove('on');
+      }
+    }
+
+    function jalankanAnimasiLed(urutanPin) {
+      matikanSemuaLed();
+      let step = 0;
+      ledInterval = setInterval(() => {
+        for (let i = 1; i <= 8; i++) document.getElementById(`led-${i}`).classList.remove('on');
+        const pinAktif = urutanPin[step];
+        if (pinAktif) document.getElementById(`led-${pinAktif}`).classList.add('on');
+        step = (step + 1) % urutanPin.length;
+      }, 420);
+    }
+
+    function crimpingDanTes() {
+      const hasilEl = document.getElementById('hasilSimulasi');
+      const testerText = document.getElementById('testerSubtext');
+      if (slotTerisi.includes(null)) {
+        hasilEl.style.color = '#E0578A';
+        hasilEl.textContent = '⚠️ Isi semua 8 pin konektor RJ-45 terlebih dahulu ya!';
+        return;
+      }
+
+      const target = modeKabel === 'straight' ? standarT568B : standarT568A;
+      const benar = slotTerisi.every((item, idx) => item.id === target[idx].id);
+
+      if (benar) {
+        hasilEl.style.color = '#4E7A4B';
+        if (modeKabel === 'straight') {
+          hasilEl.textContent = '🎉 Yay! Kabel Straight (T568B) ter-crimping sempurna! Lampu LAN Tester menyala 1–8.';
+          testerText.textContent = 'Status LAN Tester: PASS (1-2-3-4-5-6-7-8 menyala berurutan)';
+          jalankanAnimasiLed([1, 2, 3, 4, 5, 6, 7, 8]);
+        } else {
+          hasilEl.textContent = '🎉 Yay! Kabel Crossover (T568A) ter-crimping sempurna! Lampu menyilang 3-6-1-4-5-2-7-8.';
+          testerText.textContent = 'Status LAN Tester: PASS Crossover (Pin 1↔3 dan 2↔6 bertukar)';
+          jalankanAnimasiLed([3, 6, 1, 4, 5, 2, 7, 8]);
+        }
+        lencanaTerbuka[4] = true;
+        renderAchievements();
+        luncurkanKonfeti();
+      } else {
+        hasilEl.style.color = '#E0578A';
+        hasilEl.textContent = '❌ Ups! Urutan warna belum sesuai standar ' + (modeKabel === 'straight' ? 'T568B' : 'T568A') + '. Klik pin yang salah untuk mengganti!';
+        testerText.textContent = 'Status LAN Tester: ERROR / Urutan pin tertukar';
+        matikanSemuaLed();
+      }
+    }
+
+    function resetKabel() {
+      slotTerisi = Array(8).fill(null);
+      document.getElementById('hasilSimulasi').textContent = '';
+      document.getElementById('testerSubtext').textContent = 'Lampu hijau akan menyala berurutan jika hasil crimping benar!';
+      matikanSemuaLed();
+      renderSimulasiKabel();
+    }
+
+    // --- LAB PRAKTIK 2: MINI TERMINAL UBUNTU ---
+    function isiPerintah(cmd) {
+      document.getElementById('termInput').value = cmd;
+      jalankanPerintah();
+    }
+
+    function jalankanPerintah() {
+      const inputEl = document.getElementById('termInput');
+      const outputEl = document.getElementById('termOutput');
+      const rawCmd = inputEl.value.trim();
+      if (!rawCmd) return;
+
+      const cmd = rawCmd.toLowerCase();
+      if (cmd === 'clear') {
+        outputEl.textContent = 'Terminal dibersihkan. Ketik "help" untuk daftar perintah.';
+        inputEl.value = '';
+        return;
+      }
+
+      let respon = '';
+      if (cmd === 'help') {
+        respon = `Perintah tersedia:
+- ip a                      : Cek alamat IP interface jaringan
+- ping 8.8.8.8              : Tes koneksi ke server DNS Google
+- systemctl status apache2  : Cek status Web Server Apache2
+- ls -la                    : Lihat daftar file & konfigurasi
+- clear                     : Bersihkan layar terminal`;
+      } else if (cmd === 'ip a' || cmd === 'ifconfig') {
+        respon = `1: lo: <LOOPBACK,UP> inet 127.0.0.1/8 scope host lo
+2: enp0s3: <BROADCAST,MULTICAST,UP> inet 192.168.10.1/24 brd 192.168.10.255`;
+      } else if (cmd.startsWith('ping')) {
+        respon = `PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+64 bytes from 8.8.8.8: icmp_seq=1 ttl=117 time=14.2 ms
+64 bytes from 8.8.8.8: icmp_seq=2 ttl=117 time=13.8 ms
+--- 8.8.8.8 ping statistics: 2 packets transmitted, 2 received, 0% packet loss ---`;
+      } else if (cmd === 'systemctl status apache2') {
+        respon = `● apache2.service - The Apache HTTP Server
+   Loaded: loaded (/lib/systemd/system/apache2.service; enabled)
+   Active: active (running) since Sun 2026-11-22 08:00:00 WIB`;
+      } else if (cmd === 'ls -la' || cmd === 'ls') {
+        respon = `drwxr-xr-x  4 siswa tkj 4096 Nov 22 08:15 .
+-rw-r--r--  1 siswa tkj  512 Nov 22 08:10 index.html
+-rw-r--r--  1 siswa tkj  240 Nov 22 08:12 db.tkjplayground.local`;
+      } else {
+        respon = `bash: ${rawCmd}: command not found (ketik 'help' untuk melihat perintah yang tersedia)`;
+      }
+
+      outputEl.textContent += `\n\nsiswa@tkj-playground:~$ ${rawCmd}\n${respon}`;
+      outputEl.scrollTop = outputEl.scrollHeight;
+      inputEl.value = '';
+    }
+
+    // --- KUIS & HASIL KUIS ---
     function mulaiKuisBab(scrollKeKuis = true) {
       indexSoal = 0;
       skorSementara = 0;
+      resetTampilanKuisHTML();
       tampilkanSoal();
       if (scrollKeKuis) {
         document.getElementById('kuis-section').scrollIntoView({ behavior: 'smooth' });
       }
     }
 
+    function resetTampilanKuisHTML() {
+      document.getElementById('quizContainer').innerHTML = `
+        <div>
+          <div class="quiz-question" id="quizQuestionText"></div>
+          <div class="options-list" id="quizOptions"></div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
+            <button class="btn-pink" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
+          </div>
+        </div>
+        <div class="mascot-stage">
+          <div class="speech-bubble" id="quizBubble">"Let's explore the world of technology!"</div>
+          <div id="quizMascotSlot"></div>
+        </div>
+      `;
+    }
+
     function tampilkanSoal() {
       sudahMenjawab = false;
       const babData = daftarBab[babAktif];
       const totalSoal = babData.kuis.length;
-
       document.getElementById('quizBadge').textContent = `KUIS INTERAKTIF • ${babData.bab.toUpperCase()}`;
 
-      // Jika semua soal selesai -> Tampilkan Halaman Hasil Kuis
       if (indexSoal >= totalSoal) {
         const nilai = Math.round((skorSementara / totalSoal) * 100);
         const lulusTinggi = nilai >= 75;
-
         document.getElementById('quizCounter').textContent = 'Hasil Akhir';
+
         const ekspresiHasil = lulusTinggi ? 'celebrate' : 'oops';
         const ucapanHasil = lulusTinggi
           ? '"Hebat! Kamu berhasil menyelesaikan tantangan!"'
@@ -1000,16 +1523,16 @@
 
         document.getElementById('quizContainer').innerHTML = `
           <div>
-            <h3 style="font-size:1.6rem; color:var(--pink-dark); margin-bottom:10px;">
+            <h3 style="font-size:1.55rem; color:var(--pink-dark); margin-bottom:10px;">
               ${lulusTinggi ? '🎉 Selamat! Nilai Kamu Tinggi!' : '💪 Yuk Coba Lagi!'}
             </h3>
-            <p style="font-size:1.1rem; font-weight:800; margin-bottom:8px;">
+            <p style="font-size:1.08rem; font-weight:800; margin-bottom:8px;">
               Skor ${babData.bab}: ${skorSementara} dari ${totalSoal} Benar (Nilai: ${nilai})
             </p>
-            <p style="color:var(--text-muted); margin-bottom:20px;">
-              ${lulusTinggi ? 'Lencana prestasi untuk bab ini sudah terbuka di bagian Achievement!' : 'Baca kembali tips dari BUNBYTE lalu ulangi kuis untuk membuka lencana.'}
+            <p style="color:var(--text-muted); margin-bottom:18px;">
+              ${lulusTinggi ? 'Lencana prestasi untuk bab ini sudah terbuka di halaman Achievement!' : 'Baca kembali tips dari BUNBYTE lalu ulangi kuis untuk membuka lencana.'}
             </p>
-            <button class="btn-pink" onclick="resetTampilanKuis()">Ulangi Kuis Bab Ini 🔄</button>
+            <button class="btn-pink" onclick="mulaiKuisBab(false)">Ulangi Kuis Bab Ini 🔄</button>
           </div>
           <div class="mascot-stage">
             <div class="speech-bubble">${ucapanHasil}</div>
@@ -1053,7 +1576,6 @@
         document.getElementById('quizBubble').textContent = '"Ups! Jangan menyerah, coba lagi ya!"';
         document.getElementById('quizMascotSlot').innerHTML = renderBunbyteSVG('oops', 145);
       }
-
       document.getElementById('btnNextSoal').style.display = 'inline-block';
     }
 
@@ -1062,29 +1584,14 @@
       tampilkanSoal();
     }
 
-    function resetTampilanKuis() {
-      document.getElementById('quizContainer').innerHTML = `
-        <div>
-          <div class="quiz-question" id="quizQuestionText"></div>
-          <div class="options-list" id="quizOptions"></div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <button class="btn-pink" id="btnNextSoal" onclick="lanjutSoal()" style="display:none;">Soal Berikutnya →</button>
-          </div>
-        </div>
-        <div class="mascot-stage">
-          <div class="speech-bubble" id="quizBubble">"Let's explore the world of technology!"</div>
-          <div id="quizMascotSlot"></div>
-        </div>
-      `;
-      mulaiKuisBab(false);
-    }
-
-    // Render Halaman Achievement
+    // --- HALAMAN ACHIEVEMENT ---
     function renderAchievements() {
       const daftarBadge = [
-        { icon: "🔌", title: "Master Kabel LAN", desc: "Lulus kuis Bab 1 dengan nilai ≥ 75" },
-        { icon: "🔢", title: "Ahli IP & Subnetting", desc: "Lulus kuis Bab 2 dengan nilai ≥ 75" },
-        { icon: "🐧", title: "Jagoan Server & Router", desc: "Lulus kuis Bab 3 dengan nilai ≥ 75" }
+        { icon: "🔌", title: "Master Kabel LAN", desc: "Lulus kuis Bab 1 (nilai ≥ 75)" },
+        { icon: "🔢", title: "Ahli IP & Subnetting", desc: "Lulus kuis Bab 2 (nilai ≥ 75)" },
+        { icon: "📡", title: "Teknisi MikroTik", desc: "Lulus kuis Bab 3 (nilai ≥ 75)" },
+        { icon: "🐧", title: "Admin Linux Server", desc: "Lulus kuis Bab 4 (nilai ≥ 75)" },
+        { icon: "⚡", title: "Juara Crimping RJ-45", desc: "Berhasil merakit kabel di Lab LAN" }
       ];
 
       const grid = document.getElementById('badgesGrid');
@@ -1098,8 +1605,8 @@
         card.className = 'badge-item' + (aktif ? ' unlocked' : '');
         card.innerHTML = `
           <div class="badge-icon">${aktif ? b.icon : '🔒'}</div>
-          <h3 style="font-size:1.1rem; margin-bottom:4px;">${b.title}</h3>
-          <p style="font-size:0.84rem; color:var(--text-muted);">${b.desc}</p>
+          <h3 style="font-size:1.06rem; margin-bottom:4px;">${b.title}</h3>
+          <p style="font-size:0.82rem; color:var(--text-muted);">${b.desc}</p>
         `;
         grid.appendChild(card);
       });
@@ -1107,11 +1614,11 @@
       const achieveMascot = document.getElementById('achieveMascotSlot');
       const achieveSpeech = document.getElementById('achieveSpeech');
       if (jumlahTerbuka > 0) {
-        achieveMascot.innerHTML = renderBunbyteSVG('celebrate', 92);
-        achieveSpeech.textContent = `"Hebat! Kamu berhasil menyelesaikan tantangan! (${jumlahTerbuka}/3 lencana terbuka)"`;
+        achieveMascot.innerHTML = renderBunbyteSVG('celebrate', 90);
+        achieveSpeech.textContent = `"Hebat! Kamu berhasil menyelesaikan tantangan! (${jumlahTerbuka}/5 lencana terbuka)"`;
       } else {
-        achieveMascot.innerHTML = renderBunbyteSVG('normal', 92);
-        achieveSpeech.textContent = '"Hiii! Siap belajar TKJ hari ini? Selesaikan kuis untuk membuka lencana!"';
+        achieveMascot.innerHTML = renderBunbyteSVG('normal', 90);
+        achieveSpeech.textContent = '"Hiii! Siap belajar TKJ hari ini? Selesaikan kuis dan lab praktik untuk membuka lencana!"';
       }
     }
 
@@ -1137,11 +1644,13 @@
       }
     }
 
-    // Inisialisasi Semua Maskot BUNBYTE & Halaman
+    // Inisialisasi Semua Komponen
     document.getElementById('heroMascotSlot').innerHTML = renderBunbyteSVG('normal', 165);
-    document.getElementById('cornerMascotSlot').innerHTML = renderBunbyteSVG('normal', 58);
+    document.getElementById('cornerMascotSlot').innerHTML = renderBunbyteSVG('normal', 56);
     renderDaftarBab();
     renderMateri();
+    initLedTester();
+    renderSimulasiKabel();
     tampilkanSoal();
     renderAchievements();
   </script>
